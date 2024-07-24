@@ -1,8 +1,15 @@
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "../components/Navbar/navbar";
+import { Button } from "@/components/ui/button";
+import '../styles/globals.css';
+import Hero from "@/components/Hero/Hero";
+
 
 export default function Home(){
     return (
-        <Navbar/>
+        <>
+          <Navbar/>
+          <Hero/>
+        </>        
     )
        
     

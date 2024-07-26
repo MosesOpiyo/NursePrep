@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar text-white relative z-10 flex justify-between items-center">
+    <nav className="navbar relative z-10 flex justify-between items-center">
       <div className="navbar-logo text-2xl">NursePrep</div>
 
       <ul className="navbar-link flex gap-4 list-none">

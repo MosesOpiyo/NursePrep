@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../assets/nurse-2.jpg";
+import hero from "../../assets/hero3.png";
 import Image from "next/image";
 import "./Hero.css";
 import { Button } from "../ui/button";
@@ -15,9 +15,9 @@ import exam from "../../assets/examday.jpg";
 
 const Hero = () => {
   return (
-      <section className="hero-container text-white grid items-center justify-center relative w-full left-0">
-        <div className="hero-text px-8 h-full w-full flex flex-col gap-10 z-10 items-start justify-center">
-          <h1 className="text-6xl">
+      <section className="hero-container grid items-center justify-center w-full">
+        <div className="hero-text ps-16 h-full w-full flex flex-col gap-10 items-start justify-center">
+          <h1 className="hero-header">
             Ace your nursing school entrance exams. <span>Guaranteed.</span>
           </h1>
           <p className="hero-paragraph">
@@ -33,7 +33,7 @@ const Hero = () => {
 
         <div className="image-container h-full w-full">
           <Image
-            className="h-full w-full object-top object-cover"
+            className="h-full w-full object-center object-cover"
             src={hero}
             alt="a smiling nurse"
             priority

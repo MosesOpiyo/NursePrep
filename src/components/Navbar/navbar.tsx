@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar: React.FC = () => {
+  const currentPath = usePathname();
+
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const handleLogin = () => {
@@ -17,28 +20,32 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar relative z-10 text-white flex justify-between items-center">
+    <nav className="navbar text-white relative z-10 flex justify-between items-center">
       <div className="navbar-logo text-2xl">NursePrep</div>
 
-      <ul className="navbar-links flex gap-2.5 list-none">
+      <ul className="navbar-link flex gap-4 list-none">
         <li>
-          <Link href="/">About</Link>
+          <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>Home</Link>
+        </li>
+        
+        <li>
+          <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>About</Link>
         </li>
 
         <li className="dropdown">
-          <Link href="/about">ATI LEAS 7</Link>
+          <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>ATI LEAS 7</Link>
         </li>
 
         <li>
-          <Link href="/contact">HESI A2</Link>
+          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>HESI A2</Link>
         </li>
 
         <li>
-          <Link href="/contact">Nursing School</Link>
+          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>Nursing School</Link>
         </li>
 
         <li>
-          <Link href="/contact">Events</Link>
+          <Link href="/events" className={currentPath === "/events" ? "active p-2" : "p-2"}>Events</Link>
         </li>
       </ul>
 

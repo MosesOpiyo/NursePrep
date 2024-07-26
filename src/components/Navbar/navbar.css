@@ -20,4 +20,17 @@
   margin-left: 10px;
   border-radius: 20px; /* Space between button and text */
 }
+
+.navbar-link li a {
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
   
+.navbar-link li a:hover {
+  border: 2px solid #fff;
+}
+
+.navbar-link li a.active {
+  border: 2px solid #fff;
+}

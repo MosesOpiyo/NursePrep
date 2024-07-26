@@ -45,6 +45,7 @@ const Homepage = () => {
                   src={item.coverImg}
                   alt="a smiling nurse"
                   fill={true}
+                  sizes="100%"
                 />
 
                 <div className="card-header z-10 text-white text-center absolute">

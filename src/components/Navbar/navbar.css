@@ -1,16 +1,5 @@
 .navbar {
     padding: 10px 20px;
-    position: relative;
-}
-
-.navbar::after {
-  content: '';
-  background-color: #5f9ea047;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
 }
 
 .navbar-auth .login-button {

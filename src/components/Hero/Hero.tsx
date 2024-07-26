@@ -15,9 +15,10 @@ import exam from "../../assets/examday.jpg";
 
 const Hero = () => {
   return (
-      <section className="hero-container grid items-center justify-center w-full">
-        <div className="hero-text ps-16 h-full w-full flex flex-col gap-10 items-start justify-center">
-          <h1 className="hero-header">
+      <section className="hero-container grid items-center justify-center w-full relative">
+
+        <div className="hero-text pt-12 text-white ps-16 h-full w-full flex flex-col gap-10 items-center justify-center">
+          <h1 className="hero-header text-center">
             Ace your nursing school entrance exams. <span>Guaranteed.</span>
           </h1>
           <p className="hero-paragraph">
@@ -33,7 +34,7 @@ const Hero = () => {
 
         <div className="image-container h-full w-full">
           <Image
-            className="h-full w-full object-center object-cover"
+            className="h-full w-full object-top object-cover"
             src={hero}
             alt="a smiling nurse"
             priority

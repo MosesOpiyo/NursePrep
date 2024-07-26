@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar relative z-10 flex justify-between items-center">
       <div className="navbar-logo text-2xl">NursePrep</div>
 
-      <ul className="navbar-link flex gap-4 list-none">
+      <ul className="navbar-link text-white flex gap-4 list-none">
         <li>
           <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>Home</Link>
         </li>

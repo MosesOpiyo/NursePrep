@@ -63,32 +63,17 @@
     opacity: 0;
 }
 
-.start,
-.learn {
+.start {
     border: 1px solid transparent;
 }
 
-.start {
+button.start {
     background-color: #244b50;
     transition: all 150ms ease-in-out;
 }
 
-.start:hover {
+button.start:hover {
     background-color: transparent;
     border: 1px solid #506d60;
     color: inherit;
-}
-
-.learn {
-    border: 1px solid #506d60;
-    transition: all 150ms ease-in-out;
-}
-
-.learn:hover {
-    background-color: #244b50;
-    color: #fff;
-}
-
-.learn:hover {
-    color: red;
 }

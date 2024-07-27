@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../assets/hero3.png";
+import hero from "../../assets/hero4.jpg";
 import Image from "next/image";
 import "./Hero.css";
 import { Button } from "../ui/button";
@@ -16,9 +16,8 @@ import exam from "../../assets/examday.jpg";
 const Hero = () => {
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
-
-        <div className="hero-text pt-12 text-white px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
-          <h1 className="hero-header text-center">
+        <div className="hero-text pt-32 text-white px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
+          <h1 className="hero-header relative text-center">
             Ace your nursing school entrance exams. <span>Guaranteed.</span>
           </h1>
           <p className="hero-paragraph">
@@ -33,12 +32,9 @@ const Hero = () => {
         </div>
 
         <div className="image-container h-full w-full">
-          <Image
-            className="h-full w-full object-top object-cover"
-            src={hero}
-            alt="a smiling nurse"
-            priority
-          />
+          <video className="video h-full w-full object-cover" autoPlay muted loop>
+            <source src="/nurse.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
   );

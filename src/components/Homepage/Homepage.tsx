@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
+import works from "../../assets/works1.jpg";
 import Image from "next/image";
-import dataArray from "../../assets/servicesData/services";
+import { dataArray } from "../../assets/servicesData/services";
+import { worksArray } from "../../assets/servicesData/services";
 
 const Homepage = () => {
   return (
@@ -35,7 +37,10 @@ const Homepage = () => {
         {/* SERVICES LIST */}
         <div className="services-list grid gap-y-12 gap-x-10">
           {dataArray.map((item) => (
-            <div key={item.id} className="service-card cursor-pointer relative flex flex-col">
+            <div
+              key={item.id}
+              className="service-card cursor-pointer relative flex flex-col"
+            >
               <div className="card-image relative top-0 left-0 h-full w-full">
                 <Image
                   className="h-full w-full object-top object-cover"
@@ -58,7 +63,6 @@ const Homepage = () => {
 
               <div className="card-content flex flex-col gap-1 p-2 text-left justify-between absolute">
                 <div className="card-text flex flex-col gap-8">
-
                   <h2 className="card-title font-light text-3xl">
                     {item.title}
                   </h2>
@@ -73,9 +77,43 @@ const Homepage = () => {
         </div>
       </section>
 
-      <div className="data">
-        <p>hello</p>
-      </div>
+      {/* HOW IT WORKS SECTION */}
+      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center">
+        <div className="works-header text-center">
+          <h2 className="font-bold text-5xl">How it works</h2>
+        </div>
+
+        <div className="works-content text-center my-16 grid grid-cols-4 grid-rows-1 gap-4">
+
+          {worksArray.map((item) => (
+            <div className="works-card flex flex-col gap-8 p-4 items-center" key={item.id}>
+              <div className="works-image relative mx-auto">
+                <Image
+                  className="h-full w-full object-center object-contain"
+                  src={item.coverImg}
+                  alt="a smiling nurse"
+                  fill={true}
+                  sizes="100%"
+                />
+              </div>
+
+              <div className="works-cardcontent flex flex-col items-center gap-4">
+                <h3 className="font-bold">{item.title}</h3>
+
+                <p>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="cta-container mb-16 p-12 text-4xl text-white text-center justify-center z-10 flex flex-col gap-12 items-center bg-cover bg-center">
+        <h2>Take your next steps. Join Now and Start Your Journey to Success!</h2>
+        <Button>Get Started</Button>
+      </section>
     </div>
   );
 };

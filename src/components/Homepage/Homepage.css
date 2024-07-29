@@ -26,7 +26,8 @@
     overflow: hidden;
 }
 
-.card-image::after {
+.card-image::after,
+.cta-container::after {
     content: '';
     background-color: #000;
     opacity: .4;
@@ -76,4 +77,36 @@ button.start:hover {
     background-color: transparent;
     border: 1px solid #506d60;
     color: inherit;
+}
+
+
+/* HOW IT WORKS */
+.works-container {
+    width: 95%;
+}
+
+.works-content {
+    height: 300px;
+}
+
+.works-image {
+    height: 100px;
+    width: 100px;
+}
+
+.getstarted-btn button {
+    width: 300px;
+}
+
+/* CTA CONTAINER */
+.cta-container {
+    background-image: url('../../assets/steps.jpg');
+    height: 400px;
+    font-size: 2rem;
+    position: relative;
+}
+
+.cta-container::after {
+    top: 0;
+    z-index: -1;
 }

@@ -1,6 +1,8 @@
 // This array is Mimicking Data which is usually captured through an API
 
-const dataArray =  [
+import { title } from "process"
+
+export const dataArray =  [
     {
         id: 1,
         title: "Comprehensive Course Packages",
@@ -75,4 +77,32 @@ const dataArray =  [
     
 ]
 
-export default dataArray;
+export const worksArray =  [
+    {
+        id: 1,
+        title: '1. Sign-up',
+        description: "Create your account and choose the study plan that fits your needs.",
+        coverImg: "/sign-up.png",
+    },
+
+    {
+        id: 2,
+        title: '2. Access Comprehensive Resources',
+        description: "Explore our extensive library of study guides, practice tests, and e-books.",
+        coverImg: "/book.png",
+    },
+
+    {
+        id: 3,
+        title: '3. Practice and Assess',
+        description: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+        coverImg: "/brain.png",
+    },
+
+    {
+        id: 4,
+        title: '4. Achieve Success',
+        description: "Confidently pass your nursing entrance exams and take the first step toward your nursing career.",
+        coverImg: "/award.png",
+    }
+]

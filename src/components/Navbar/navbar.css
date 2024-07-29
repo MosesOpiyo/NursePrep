@@ -4,7 +4,7 @@
 
 .navbar-auth .login-button {
   background-color: transparent;
-  /* color: black; */
+  color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;

@@ -86,17 +86,39 @@ button.start:hover {
 }
 
 .works-content {
-    height: 300px;
+    height: 550px;
 }
 
 .works-image {
-    height: 100px;
-    width: 100px;
+    height: 85%;
+    width: 45%;
 }
 
-.getstarted-btn button {
-    width: 300px;
+.works-card.signup {
+    grid-area: 1 / 1 / 2 / 3;
+    background-color: #edf0f7;
 }
+
+.works-card.resources {
+    grid-area: 1 / 3 / 2 / 7;
+    background-color: #fbf1f0;
+}
+
+.works-card.practice {
+    grid-area: 2 / 1 / 3 / 5;
+    background-color: #edf7f9;
+}
+
+.works-card.success {
+    grid-area: 2 / 5 / 3 / 7;
+    background-color: #fdf0e7;
+}
+
+
+
+
+
+
 
 /* CTA CONTAINER */
 .cta-container {

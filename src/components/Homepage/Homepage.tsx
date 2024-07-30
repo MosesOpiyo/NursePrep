@@ -78,16 +78,16 @@ const Homepage = () => {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center">
+      <section className="works-container my-16 flex flex-col gap-8 mx-auto items-center">
         <div className="works-header text-center">
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
 
-        <div className="works-content text-center my-16 grid grid-cols-4 grid-rows-1 gap-4">
+        <div className="works-content text-left grid grid-cols-6 grid-rows-2 gap-4">
 
           {worksArray.map((item) => (
-            <div className="works-card flex flex-col gap-8 p-4 items-center" key={item.id}>
-              <div className="works-image relative mx-auto">
+            <div className={item.class} key={item.id}>
+              <div className="works-image absolute right-4 bottom-4 mx-auto">
                 <Image
                   className="h-full w-full object-center object-contain"
                   src={item.coverImg}
@@ -97,8 +97,8 @@ const Homepage = () => {
                 />
               </div>
 
-              <div className="works-cardcontent flex flex-col items-center gap-4">
-                <h3 className="font-bold">{item.title}</h3>
+              <div className="works-cardcontent w-1/2 flex flex-col items-start gap-4">
+                <h3 className="font-extralight text-4xl">{item.title}</h3>
 
                 <p>
                   {item.description}

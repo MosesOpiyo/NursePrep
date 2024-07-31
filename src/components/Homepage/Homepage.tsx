@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
-import works from "../../assets/works1.jpg";
+import nurse from "../../assets/hero.jpg";
 import Image from "next/image";
 import { dataArray } from "../../assets/servicesData/services";
 import { worksArray } from "../../assets/servicesData/services";
@@ -78,41 +78,54 @@ const Homepage = () => {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="works-container my-16 flex flex-col gap-8 mx-auto items-center">
+      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center">
         <div className="works-header text-center">
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
 
-        <div className="works-content text-left grid grid-cols-6 grid-rows-2 gap-4">
-
+        <div className="works-content w-4/5 grid grid-cols-12 grid-rows-12 gap-4">
           {worksArray.map((item) => (
             <div className={item.class} key={item.id}>
-              <div className="works-image absolute right-4 bottom-4 mx-auto">
-                <Image
-                  className="h-full w-full object-center object-contain"
-                  src={item.coverImg}
-                  alt="a smiling nurse"
-                  fill={true}
-                  sizes="100%"
-                />
+              <div className="card-number">
+                <span className="text-5xl">{item.id}</span>
               </div>
 
-              <div className="works-cardcontent w-1/2 flex flex-col items-start gap-4">
-                <h3 className="font-extralight text-4xl">{item.title}</h3>
+              <div className="works-cardcontent flex flex-col gap-16">
+                <h3 className="text-2xl">{item.title}</h3>
 
-                <p>
-                  {item.description}
-                </p>
+                <p>{item.description}</p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* <div className="cta-btn">
+          <Button>Get Started</Button>
+        </div> */}
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-container mb-16 p-12 text-4xl text-white text-center justify-center z-10 flex flex-col gap-12 items-center bg-cover bg-center">
-        <h2>Take your next steps. Join Now and Start Your Journey to Success!</h2>
-        <Button>Get Started</Button>
+      <section className="cta-container mb-16 grid grid-cols-12 grid-rows-12 gap-12">
+        <div className="cta-image ms-auto h-full relative">
+          <Image
+            className="h-full w-full object-top object-cover"
+            src={nurse}
+            alt="a smiling nurse"
+            fill={true}
+            sizes="100%"
+          />
+        </div>
+
+        <div className="cta-text me-auto justify-center flex flex-col z-10 gap-12">
+          <h3 className="text-5xl">Built for all dreamers everywhere.</h3>
+
+          <div className="cta-inner text-lg flex flex-col gap-12 ps-12">
+            <p>Practice with our extensive question banks, track your progress with detailed analytics, and join a community of learners for added motivation. Sign up below and discover how we can help you achieve your nursing career goals.</p>
+
+            <Button className="w-3/4 h-12">Get started now</Button>
+          </div>
+        </div>
+
       </section>
     </div>
   );

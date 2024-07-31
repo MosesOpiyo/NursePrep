@@ -80,33 +80,33 @@ export const dataArray =  [
 export const worksArray =  [
     {
         id: 1,
-        title: '1. Sign-up',
+        title: 'Sign-up',
         description: "Create your account and choose the study plan that fits your needs.",
         coverImg: "/signup.svg",
-        class: 'works-card flex flex-col gap-8 p-4 relative items-start signup'
+        class: 'works-card flex gap-8 p-4 relative items-start signup'
     },
 
     {
         id: 2,
-        title: '2. Access Comprehensive Resources',
+        title: 'Access Comprehensive Resources',
         description: "Explore our extensive library of study guides, practice tests, and e-books.",
         coverImg: "/resources.svg",
-        class: 'works-card flex flex-col gap-8 p-4 relative items-start resources'
+        class: 'works-card flex gap-8 p-4 relative items-start resources'
     },
 
     {
         id: 3,
-        title: '3. Practice and Assess',
+        title: 'Practice and Assess',
         description: "Take practice tests and quizzes to assess your knowledge and track your progress.",
         coverImg: "/practice.svg",
-        class: 'works-card flex flex-col gap-8 p-4 relative items-start practice'
+        class: 'works-card flex gap-8 p-4 relative items-start practice'
     },
 
     {
         id: 4,
-        title: '4. Achieve Success',
+        title: 'Achieve Success',
         description: "Confidently pass your nursing entrance exams and take the first step toward your nursing career.",
         coverImg: "/success.svg",
-        class: 'works-card flex flex-col gap-8 p-4 relative items-start success'
+        class: 'works-card flex gap-8 p-4 relative items-start success'
     }
 ]

@@ -238,3 +238,54 @@ export const pricingFeatures = [
         },
    
 ]
+
+export const faqData = [
+    {
+        id: 1,
+        question: 'What study materials are included in the subscription plans?',
+        answer: 'Our subscription plans include comprehensive study guides, practice tests, question banks, and access to live and recorded classes. The plans also offer one-on-one tutoring and career guidance.',
+        value: 'item-1'
+    },
+
+    {
+        id: 2,
+        question: 'Can I upgrade my plan at any time?',
+        answer: 'Yes, you can upgrade your plan at any time. Simply log into your account, select the plan you wish to upgrade to, and follow the prompts.',
+        value: 'item-2'
+    },
+
+    {
+        id: 3,
+        question: 'Is there a money-back guarantee?',
+        answer: 'Yes, we offer a 30-day money-back guarantee. If you`re not satisfied with our services, you can request a full refund within 30 days of your purchase.',
+        value: 'item-3'
+    },
+
+    {
+        id: 4,
+        question: 'How do the personalized study plans work?',
+        answer: 'Personalized study plans are tailored to your specific needs and goals. After an initial assessment, we create a customized plan to help you focus on the areas where you need the most improvement.',
+        value: 'item-4'
+    },
+
+    {
+        id: 5,
+        question: 'Are the live classes recorded?',
+        answer: 'Yes, all live classes are recorded and available for playback. This allows you to review the material at your own pace and convenience.',
+        value: 'item-5'
+    },
+
+    {
+        id: 6,
+        question: 'What is included in the career guidance and resume review service?',
+        answer: 'Our career guidance service includes personalized advice on job search strategies, interview preparation, and resume review to help you stand out to potential employers.',
+        value: 'item-6'
+    },
+
+    {
+        id: 7,
+        question: 'How can I contact customer support?',
+        answer: 'You can contact our customer support team via email, live chat, or phone. Our support team is available 24/7 to assist you with any questions or issues you may have.',
+        value: 'item-7'
+    },
+]

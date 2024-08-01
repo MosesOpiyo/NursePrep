@@ -11,6 +11,13 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
 import { pricingArray } from "../../assets/servicesData/services";
 import { pricingFeatures } from "../../assets/servicesData/services";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faqData } from "../../assets/servicesData/services";
 
 const Homepage = () => {
   return (
@@ -196,7 +203,6 @@ const Homepage = () => {
         </div>
 
         <div className="pricingcard-container grid grid-rows-1 grid-cols-2 gap-8">
-
           {pricingArray.map((item) => (
             <div key={item.id} className={item.className}>
               <div className="save absolute right-8 top-3 bg-black text-white p-4">
@@ -216,7 +222,10 @@ const Homepage = () => {
               </div>
 
               <div className="pricing-features flex flex-col gap-12">
-                <p className="flex items-center"><FaInfoCircle />&nbsp;{item.ideal}</p>
+                <p className="flex items-center">
+                  <FaInfoCircle />
+                  &nbsp;{item.ideal}
+                </p>
 
                 <div className="features-list flex flex-col gap-2">
                   <p className="uppercase text-sm">
@@ -242,6 +251,49 @@ const Homepage = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* CTA BANNER SECTION */}
+      <section className="banner-container bg-black text-white flex flex-col gap-12 p-12 mb-16 items-center justify-center text-center">
+        <div className="banner-text flex-flex-col gap-4">
+          <p className="text-slate-300 text-9xl">Prepare.</p>
+          <p className="text-slate-200 text-9xl">Pass.</p>
+          <p className="text-slate-50 text-9xl">Prevail.</p>
+        </div>
+
+        <div className="banner-btn w-full">
+          <Button className="h-16 w-1/4 bg-white text-black">
+            START TODAY
+          </Button>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 p-4">
+
+        <div className="faq-header">
+          <h2 className="font-bold text-5xl">
+            Have Questions? <br /> We&apos;re here
+          </h2>
+        </div>
+
+        <div className="faq-content p-8">
+
+          <Accordion type="single" collapsible>
+            {faqData.map((item) => (
+              <AccordionItem value={item.value} key={item.id}>
+                <AccordionTrigger className="text-xl">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-slate-600">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          
+        </div>
+
       </section>
     </div>
   );

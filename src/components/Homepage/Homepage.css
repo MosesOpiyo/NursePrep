@@ -109,12 +109,6 @@ button.start:hover {
     /* background-color: #fdf0e7; */
 }
 
-.works-cardcontent span {
-    color: #00000017;
-    height: 100px;
-    font-size: 5rem;
-}
-
 
 /* CTA-CONTAINER */
 .cta-container {
@@ -144,6 +138,125 @@ button.start:hover {
     width: 70%;
 }
 
+
+/* TESTIMONIALS */
+.testimonials-container {
+    /* height: 600px; */
+    grid-template: 1fr / .4fr .6fr;
+}
+
+.testimonialcard-container {
+    width: 90%;
+}
+
+.testimonial-header {
+    width: 95%;
+    background-image: url("../../assets/blob.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.testimonial-header .icon {
+    color: #7b7bfccf;
+}
+
+.testimonial-header button {
+    background-color: #7b7bfc;
+
+}
+
+.testimonial-content {
+    background-color: #f5f5f5;
+    transition: all .5s ease-in;
+    border-radius: 20px;
+}
+
+.testimonial-card:hover .testimonial-content {
+    background-color: #e2eefc;
+    transform: rotate(10deg);
+    position: relative;
+    top: 100px;
+}
+
+.testimonial-image {
+    transition: all .5s ease-in;
+    border-radius: 20px;
+}
+
+.testimonial-image img {
+    border-radius: 20px;
+}
+
+.testimonial-card:hover .testimonial-image {
+    top: -15px;
+}
+
+.testimonial-card {
+    height: 300px;
+}
+
+.testimonial-card.john {
+    grid-area: 2 / 1 / 7 / 7;
+}
+
+.testimonial-card.anne {
+    grid-area: 3 / 7 / 8 / 13;
+}
+
+.testimonial-card.jordan {
+    grid-area: 7 / 1 / 12 / 7;
+}
+
+.testimonial-card.anna {
+    grid-area: 8 / 7 / 13 / 13;
+}
+
+/* .testimonial-card.njenga {
+    grid-area: 8 / 1 / 11 / 7;
+}
+
+.testimonial-card.eunice {
+    grid-area: 9 / 7 / 12 / 13;
+}
+
+.testimonial-card.eric {
+    grid-area: 8 / 1 / 11 / 5;
+}
+
+.testimonial-card.mary {
+    grid-area: 9 / 5 / 12 / 9;
+} */
+
+/* PRICING CARD */
+.pricing-container {
+    width: 90%;
+}
+
+.pricing-card {
+    background-color: #d6f2fe;
+    border-radius: 20px;
+}
+
+.pricing-card.quarter {
+    background-color: #ffd6ff;
+}
+
+.pricing-card.month .save {
+    display: none;
+}
+
+.save {
+    border-radius: 10px;
+    transform: rotate(-5deg);
+}
+
+.pricing-card span.pricetag {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    top: 5px;
+    right: 10px;
+}
 
 
 

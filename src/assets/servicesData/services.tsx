@@ -110,3 +110,131 @@ export const worksArray =  [
         class: 'works-card flex gap-8 p-4 relative items-start success'
     }
 ]
+
+export const testimonialArray =  [
+    {
+        id: 1,
+        name: 'John Doe',
+        title: 'Student',
+        testimony: "Create your account and choose the study plan that fits your needs.",
+        image: "/hero.jpg",
+        class: 'testimonial-card relative john'
+    },
+
+    {
+        id: 2,
+        name: 'Anne Marie',
+        title: 'Student',
+        testimony: "Explore our extensive library of study guides, practice tests, and e-books.",
+        image: "/hero.jpg",
+        class: 'testimonial-card relative anne'
+    },
+
+    {
+        id: 3,
+        name: 'Jordan K',
+        title: 'Student',
+        testimony: "Confidently pass your nursing entrance exams and take the first step toward your nursing career.",
+        image: "/hero.jpg",
+        class: 'testimonial-card relative jordan'
+    },
+
+    {
+        id: 4,
+        name: 'Anna Mitro',
+        title: 'Student',
+        testimony: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+        image: "/hero.jpg",
+        class: 'testimonial-card relative anna'
+    }
+
+    // {
+    //     id: 5,
+    //     name: 'Njenga N.',
+    //     title: 'Student',
+    //     testimony: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+    //     image: "/hero.jpg",
+    //     class: 'testimonial-card relative njenga'
+    // },
+
+    // {
+    //     id: 6,
+    //     name: 'Eunice M.',
+    //     title: 'Student',
+    //     testimony: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+    //     image: "/hero.jpg",
+    //     class: 'testimonial-card relative eunice'
+    // },
+
+    // {
+    //     id: 7,
+    //     name: 'Eric K.',
+    //     title: 'Student',
+    //     testimony: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+    //     image: "/hero.jpg",
+    //     class: 'testimonial-card relative eric'
+    // },
+    // {
+    //     id: 8,
+    //     name: 'Mary A.',
+    //     title: 'Student',
+    //     testimony: "Take practice tests and quizzes to assess your knowledge and track your progress.",
+    //     image: "/hero.jpg",
+    //     class: 'testimonial-card relative mary'
+    // }
+]
+
+export const pricingArray =  [
+    {
+        id: 1,
+        access: 'Monthly',
+        pricing: '29',
+        period: 'month',
+        ideal: 'Ideal for students testing within two months',
+        className: 'pricing-card p-8 flex flex-col gap-8 month relative'
+    },
+
+    {
+        id: 2,
+        access: 'Quarterly',
+        pricing: '75',
+        period: '3 months',
+        ideal: 'Ideal for students testing in three months or later',
+        className: 'pricing-card p-8 flex flex-col gap-8 quarter relative',
+        save: 'Save $12'
+    }
+]
+
+export const pricingFeatures = [
+    
+        {
+            id: 1,
+            feature: 'Immediate access to all 7,500+ exam-like practice questions',
+        },
+
+        {
+            id: 2,
+            feature: 'Step-by-step answer explanations for every question',
+        },
+
+        {
+            id: 3,
+            feature: 'Detailed score reports',
+        },
+
+        {
+            id: 4,
+            feature: 'Convenient customer service chat',
+        },
+
+        {
+            id: 5,
+            feature: 'Track your progress and test history',
+        },
+
+        {
+            id: 6,
+            feature: 'Pass guarantee',
+        },
+   
+]

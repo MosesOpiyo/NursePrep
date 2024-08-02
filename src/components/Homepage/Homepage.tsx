@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
@@ -18,8 +20,37 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqData } from "../../assets/servicesData/services";
+import { contactSchema } from "../../../schema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { FormField, FormItem, FormLabel, Form, FormControl, FormDescription, FormMessage } from "../ui/form";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { z } from "zod";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+
+
 
 const Homepage = () => {
+
+  const form = useForm ({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      email: '',
+      name: '',
+      text: ''
+    }
+  })
+
+  const onSubmit = (data: z.infer<typeof contactSchema>) => {
+    console.log(data)
+  }
+
+
+
+
   return (
     <div>
       {/* SERVICES SECTION */}
@@ -270,7 +301,6 @@ const Homepage = () => {
 
       {/* FAQ SECTION */}
       <section className="faq-container mx-auto flex flex-col gap-8 mb-16 p-4">
-
         <div className="faq-header">
           <h2 className="font-bold text-5xl">
             Have Questions? <br /> We&apos;re here
@@ -278,7 +308,6 @@ const Homepage = () => {
         </div>
 
         <div className="faq-content p-8">
-
           <Accordion type="single" collapsible>
             {faqData.map((item) => (
               <AccordionItem value={item.value} key={item.id}>
@@ -291,9 +320,112 @@ const Homepage = () => {
               </AccordionItem>
             ))}
           </Accordion>
-          
         </div>
+      </section>
 
+      {/* CONTACT US SECTION */}
+      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-24">
+
+        <div className="contact-content p-4 grid grid-cols-2 grid-rows-1">
+          <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">
+            <h2 className="font-bold text-5xl">We would love to hear from you</h2>
+
+            <ul className="flex flex-col gap-4">
+              <li>
+                <a href="" className="flex items-center">
+                  <FaMapMarkerAlt /> &nbsp;&nbsp; 123 CONTACT STR, NAIROBI
+                </a>
+              </li>
+
+              <li>
+                <a href="tel:+254 300 000 000" className="flex items-center">
+                  <FaPhoneAlt />&nbsp;&nbsp; +254 300 000 000 &nbsp;&nbsp; +254 300
+                  000 000
+                </a>
+              </li>
+
+              <li>
+                <a href="mailto:contact@nurseprep.com" className="flex items-center">
+                  <FaEnvelope />&nbsp;&nbsp; contact@nurseprep.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="contact-form p-8 mx-auto">
+            <Form {...form}>
+              <form className="flex flex-col gap-8" onSubmit={form.handleSubmit(onSubmit)}>
+
+                <div className="flex flex-col gap-4">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="relative" >
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="johndoe@gmail.com"
+                            autoComplete="true"
+                            type="email"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="absolute -top-1 left-12" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem className="relative">
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="John Doe"
+                            autoComplete="true"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="absolute -top-1 left-12"  />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="text"
+                    render={({ field }) => (
+                      <FormItem className="relative" >
+                        <FormLabel>Message / Question</FormLabel>
+                        <FormControl>
+                          <Textarea
+                          className="h-24"
+                            placeholder="Enter a Message / Question"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="absolute -top-1 left-12"  />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="disclaimer text-center">
+                  <p>By continuing, you acknowledge you&apos;ve read our Privacy Policy and agree to Our Terms of Service</p>
+                </div>
+
+                <Button type="submit">Submit</Button>
+
+              </form>
+
+              
+            </Form>
+          </div>
+
+        </div>
       </section>
     </div>
   );

@@ -1,0 +1,14 @@
+/* FOOTER */
+.footer-content {
+    grid-template: 1fr / .4fr .6fr;
+}
+
+.footer-card p {
+    border-bottom: 1px solid #fff;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.footer-card ul li {
+    color: #ffffffb3;
+}

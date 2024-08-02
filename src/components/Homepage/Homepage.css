@@ -261,8 +261,15 @@ button.start:hover {
 
 
 
-/* FAQ CONTAINER */
+/* FAQ SECTION */
 .faq-container {
     width: 90%;
     
+}
+
+/* CONTACT SECTION */
+.contact-form {
+    width: 90%;
+    background-color: #f2f2f0;
+    box-shadow: 0 0 5px #ccc;
 }

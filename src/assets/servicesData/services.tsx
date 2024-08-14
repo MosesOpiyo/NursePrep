@@ -514,4 +514,47 @@ export const topicsArray =  [
         ],
         
     },
+
+    {
+        id: 2,
+        subject: 'Science',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Science',
+                content: 'Science is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Chemical comprehension',
+                subtopic: 'introduction to Chemical comprehension',
+                content: 'Chemical comprehension is a universally loved subject'
+            }
+        ],
+    },
+
+    {
+        id: 3,
+        subject: 'Reading',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Reading',
+                content: 'Reading is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Reading comprehension',
+                subtopic: 'introduction to Reading comprehension',
+                content: 'Reading comprehension is a universally loved subject'
+            }
+        ],
+        
+    },
+        
+   
 ]

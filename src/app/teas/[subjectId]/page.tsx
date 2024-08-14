@@ -22,25 +22,37 @@ export const getSingleSubject = async (id: any) => {
   return data;
 };
 
+export const getSingleTopic = async (subjectId: any, topicId: any) => {
+  const data = topicsArray[subjectId].content[topicId];
+
+  if (!data) {
+    notFound();
+  }
+
+  return data;
+};
+
 
 async function SubjectPage( { params }: {
-  params: { subjectId: string }
+  params: {
+    subjectId: string;
+    topicId: string;
+    subtopicId: string;
+  }
 }) {
 
   const subject = await getSingleSubject(params.subjectId);
+  const topic = await getSingleTopic(params.subjectId, 0);
 
   return (
     <div>
       <h1>Subject: {params.subjectId} - {subject.subject} </h1>
-      <p>Select a topic to explore:</p>
-
-      {subject.content.map(topic => (
-        <ul key={topic.id}>
-        <li>
-          <Link href={`/teas/${params.subjectId}/topics/${topic.id}`}>{topic.topic}</Link>
-        </li>
-        </ul>
-      ))}
+      
+        <div key={topic.id}>
+          <h1 className='font-bold'>TOPIC {topic.id}: {topic.topic}</h1>
+          <p>SUB-TOPIC: {topic.subtopic}</p>
+          <p>CONTENT: {topic.content}</p>
+        </div>
      
     </div>
   );

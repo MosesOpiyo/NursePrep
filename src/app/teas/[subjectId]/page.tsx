@@ -32,6 +32,14 @@ export const getSingleTopic = async (subjectId: any, topicId: any) => {
   return data;
 };
 
+function nextsubTopic(value: any): any {
+  return Number(value) + 1;
+}
+
+function nextTopic(value: any): any {
+  return Number(value) + 1;
+}
+
 
 async function SubjectPage( { params }: {
   params: {
@@ -43,9 +51,16 @@ async function SubjectPage( { params }: {
 
   const subject = await getSingleSubject(params.subjectId);
   const topic = await getSingleTopic(params.subjectId, 0);
+  const nextsubtopic = nextsubTopic(0)
+  const nexttopic = nextTopic(0)
+  console.log(params.subjectId)
 
   return (
-    <div>
+    <div className='relative'>
+      <div className='absolute top-2 right-2'>
+            <Link href={`/teas/${params.subjectId}/topics/${nexttopic}/${nextsubtopic}`}>NEXT</Link>
+        </div>
+
       <h1>Subject: {params.subjectId} - {subject.subject} </h1>
       
         <div key={topic.id}>

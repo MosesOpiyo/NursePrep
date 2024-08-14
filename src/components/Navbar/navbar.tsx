@@ -33,19 +33,19 @@ const Navbar: React.FC = () => {
         </li>
 
         <li className="dropdown">
-          <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>ATI LEAS 7</Link>
+          <Link href="/teas" className={currentPath === "/teas" ? "active p-2" : "p-2"}>ATI LEAS 7</Link>
         </li>
 
         <li>
-          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>HESI A2</Link>
+          <Link href="/hesi" className={currentPath === "/hesi" ? "active p-2" : "p-2"}>HESI A2</Link>
         </li>
 
         <li>
-          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>Nursing School</Link>
+          <Link href="/nursing_school" className={currentPath === "/nursing_school" ? "active p-2" : "p-2"}>Nursing School</Link>
         </li>
 
         <li>
-          <Link href="/events" className={currentPath === "/events" ? "active p-2" : "p-2"}>Events</Link>
+          <Link href="/nurseevent" className={currentPath === "/events" ? "active p-2" : "p-2"}>Events</Link>
         </li>
       </ul>
 

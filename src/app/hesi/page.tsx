@@ -2,19 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 import '../../styles/globals.css';
 import Navbar from '@/components/Navbar/navbar';
-import './page.css';
-import AboutPage from '@/components/AboutPage/About';
+import './page.css'
 
-const About = () => {
+const Hesi = () => {
   return (
-    <>
+    <div>
         <div className='navbar-container'>
-          <Navbar />
+          <Navbar></Navbar>
         </div>
-
-        <AboutPage />
-    </>
+      <h1>HESI PAGE</h1>
+      <Link href="/">Home page</Link>
+    </div>
   )
 }
 
-export default About
+export default Hesi

@@ -239,6 +239,60 @@ export const pricingFeatures = [
    
 ]
 
+export const comparisonData = [
+    {
+        id: 0,
+        topic: '',
+        traditional: 'TRADITIONAL STUDY GUIDES',
+        nurseprep: 'NursePrep',
+        textclassName: 'textheaders',
+        topclassName: 'top-div'
+    },
+
+    {
+        id: 1,
+        topic: 'COST',
+        traditional: 'Upfront cost for each book or guide, which can add up. Additional costs for supplementary materials or new editions. No opportunity to try before buying.',
+        nurseprep: '$29.99 / month'
+    },
+
+    {
+        id: 2,
+        topic: 'Accessibility',
+        traditional: 'Physical books or printed materials that need to be carried around. Study limited to where the materials are available. No flexibility in access time unless carrying the materials everywhere.',
+        nurseprep: 'Accessible from anywhere with an internet connection. Available 24/7, allowing flexible study times. Compatible with various devices (desktop, laptop, tablet, smartphone).'
+    },
+
+    {
+        id: 3,
+        topic: 'Interactivity',
+        traditional: 'Static content with no interactive elements. Limited to text and static images. No real-time feedback or interactive discussion opportunities.',
+        nurseprep: 'Interactive quizzes and practice tests with instant feedback. Multimedia resources such as videos, animations, and interactive diagrams. Discussion forums and support from educators and peers.'
+    },
+
+    {
+        id: 4,
+        topic: 'Customization and Adaptability',
+        traditional: 'One-size-fits-all approach with no personalization. Fixed content that doesnt adapt to individual progress. Updates require purchasing new editions.',
+        nurseprep: 'Personalized study plans based on strengths and weaknesses. Adaptive learning technology that adjusts difficulty based on performance. Regular updates with the latest exam information and practice questions.'
+    },
+
+    {
+        id: 5,
+        topic: 'Engagement and Motivation',
+        traditional: 'Limited to self-motivation and discipline to follow through. Static content can become monotonous. No built-in tracking or goal-setting features.',
+        nurseprep: 'Gamified elements like badges, leaderboards, and progress tracking. Regular updates and new content keep learning fresh and engaging. Ability to track progress and set goals boosts motivation.'
+    },
+
+    {
+        id: 6,
+        topic: 'Support and Resources',
+        traditional: 'Limited to the information provided within the guide. No direct access to educators or support communities. Rely on self-study and external resources for additional help.',
+        nurseprep: 'Access to online tutors, webinars, and live Q&A sessions. Community support through forums and social media groups. Comprehensive FAQ sections and customer support.',
+        textclassName: 'bottom-div',
+    },
+]
+
 export const faqData = [
     {
         id: 1,
@@ -287,5 +341,177 @@ export const faqData = [
         question: 'How can I contact customer support?',
         answer: 'You can contact our customer support team via email, live chat, or phone. Our support team is available 24/7 to assist you with any questions or issues you may have.',
         value: 'item-7'
+    },
+]
+
+export const teamData = [
+    {
+        id: 1,
+        image: '/founder.jpg',
+        name: 'John Doe',
+        title: 'Founder'
+    },
+
+    {
+        id: 2,
+        image: '/co-founder.jpg',
+        name: 'Jane Doe',
+        title: 'Co-Founder'
+    },
+
+    {
+        id: 3,
+        image: '/CEO.jpg',
+        name: 'James Doe',
+        title: 'CEO'
+    }
+]
+
+
+export const teasData = [
+    {
+        id: 0,
+        name: 'Math',
+    },
+
+    {
+        id: 1,
+        name: 'English',
+    },
+
+    {
+        id: 2,
+        name: 'Science',
+    },
+
+    {
+        id: 3,
+        name: 'Reading',
+    },
+]
+
+export const subjectArray =  [
+    {
+        id: 0,
+        lessonTitle: "Math",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Maths',
+                content: 'Maths is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Numbers',
+                subtitle: 'introduction to Numbers',
+                content: 'Numbers is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 1,
+        lessonTitle: "English",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to English',
+                content: 'English is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'English Reading',
+                subtitle: 'introduction to English Reading',
+                content: 'English Reading is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 2,
+        lessonTitle: "Science",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Science',
+                content: 'Science is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Science Reading',
+                subtitle: 'introduction to Science Reading',
+                content: 'Science Reading is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 3,
+        lessonTitle: "Reading",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Reading',
+                content: 'Reading is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Reading comprehension',
+                subtitle: 'introduction to Reading comprehension',
+                content: 'Reading comprehension is not a boring subject'
+            }
+        ],
+    },    
+]
+
+export const topicsArray =  [
+    {
+        id: 0,
+        subject: 'Math',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Maths',
+                content: 'Maths is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Algebra',
+                subtopic: 'introduction to Algebra',
+                content: 'Algebra is a universally loved subject'
+            }
+        ],
+        
+    },
+
+    {
+        id: 1,
+        subject: 'English',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to English',
+                content: 'English is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Language comprehension',
+                subtopic: 'introduction to Language comprehension',
+                content: 'Language comprehension is a universally loved subject'
+            }
+        ],
+        
     },
 ]

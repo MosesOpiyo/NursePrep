@@ -30,6 +30,7 @@ import { z } from "zod";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
+import { comparisonData } from "../../assets/servicesData/services";
 
 
 
@@ -56,9 +57,9 @@ const Homepage = () => {
       {/* SERVICES SECTION */}
       <section className="services-container flex flex-col gap-4">
         {/* SERVICES-HEADER */}
-        <div className="services-header my-16 p-4 mx-auto grid gap-4">
+        <div className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]" >
           <div className="header">
-            <h2 className="font-bold text-5xl">
+            <h2 className="font-bold text-4xl sm:text-5xl">
               Unlock Your Nursing <br /> Career Success
             </h2>
           </div>
@@ -79,7 +80,7 @@ const Homepage = () => {
         </div>
 
         {/* SERVICES LIST */}
-        <div className="services-list grid gap-y-12 gap-x-10">
+        <div className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {dataArray.map((item) => (
             <div
               key={item.id}
@@ -127,7 +128,7 @@ const Homepage = () => {
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
 
-        <div className="works-content w-4/5 grid grid-cols-12 grid-rows-12 gap-4">
+        <div className="works-content w-full md:w-4/5 grid grid-cols-1 md:grid-cols-12 md:grid-rows-12 gap-4">
           {worksArray.map((item) => (
             <div className={item.class} key={item.id}>
               <div className="card-number flex flex-col gap-4 items-center justify-center">
@@ -146,7 +147,7 @@ const Homepage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-container pb-16 mb-16 grid grid-cols-12 grid-rows-12 gap-12">
+      <section className="cta-container pb-16 mb-16 grid grid-cols-1 md:grid-cols-12 md:grid-rows-12 gap-12">
         <div className="cta-image ms-auto h-full relative">
           <Image
             className="h-full w-full object-top object-cover"
@@ -176,9 +177,6 @@ const Homepage = () => {
       {/* TESTIMONIALS SECTION */}
       <section className="testimonials-container overflow-hidden mb-16 grid">
         <div className="testimonial-header flex mx-auto justify-center flex-col gap-8 p-4 relative">
-          <div className="icon absolute top-0  left-4 text-6xl">
-            <FaQuoteLeft />
-          </div>
 
           <h2 className="font-bold text-5xl">What our clients say</h2>
           <p>
@@ -284,6 +282,36 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* WHY US/ COMPARISON */}
+      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto">
+        <div className="comparison-header">
+          <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
+        </div>
+
+        <div className="comparison-content">
+          <div className="comparisoncard-container p-4 grid grid-cols-1">
+
+          {comparisonData.map((item) => (
+
+            <div key={item.id} className="comparison-card grid grid-cols-3 gap-4">
+            <div className={`comparison-name p-4`}>
+              <p className="uppercase font-bold">{item.topic}</p>
+            </div>
+
+            <div className={`comparison-traditional p-4 ${item.textclassName}`}>
+              <p>{item.traditional}</p>
+            </div>
+
+            <div className={`comparison-nurseprep p-4 ${item.textclassName} ${item.topclassName}`}>
+              <p>{item.nurseprep}</p>
+            </div>
+          </div>
+          ))}
+          </div>
+          
+        </div>
+      </section>
+
       {/* CTA BANNER SECTION */}
       <section className="banner-container bg-black text-white flex flex-col gap-12 p-12 mb-16 items-center justify-center text-center">
         <div className="banner-text flex-flex-col gap-4">
@@ -328,7 +356,7 @@ const Homepage = () => {
 
         <div className="contact-content p-4 grid grid-cols-2 grid-rows-1">
           <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">
-            <h2 className="font-bold text-5xl">We would love to hear from you</h2>
+            <h2 className="font-bold text-5xl">Or <br /> Contact Us</h2>
 
             <ul className="flex flex-col gap-4">
               <li>
@@ -371,7 +399,7 @@ const Homepage = () => {
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage className="absolute -top-1 left-12" />
+                        <FormMessage className="absolute -top-1 left-36" />
                       </FormItem>
                     )}
                   />
@@ -389,7 +417,7 @@ const Homepage = () => {
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage className="absolute -top-1 left-12"  />
+                        <FormMessage className="absolute -top-1 left-36"  />
                       </FormItem>
                     )}
                   />
@@ -407,7 +435,7 @@ const Homepage = () => {
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage className="absolute -top-1 left-12"  />
+                        <FormMessage className="absolute -top-1 left-36"  />
                       </FormItem>
                     )}
                   />

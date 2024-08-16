@@ -1,18 +1,18 @@
 import Link from "next/link";
 import "../../../../../../styles/globals.css";
-import { topicsArray } from "@/assets/servicesData/services";
+import { testsArray } from "@/assets/servicesData/services";
 import { notFound } from "next/navigation";
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return topicsArray.map((lesson) => ({
+  return testsArray.map((lesson) => ({
     id: lesson.id,
   }));
 }
 
 export const getSingleSubject = async (id: any) => {
-  const data = topicsArray[id];
+  const data = testsArray[id];
 
   if (!data) {
     notFound();
@@ -22,7 +22,7 @@ export const getSingleSubject = async (id: any) => {
 };
 
 export const getSingleTopic = async (subjectId: any, contentId: any) => {
-  const data = topicsArray[subjectId].content[contentId];
+  const data = testsArray[subjectId].topics[contentId];
 
   if (!data) {
     notFound();
@@ -31,11 +31,9 @@ export const getSingleTopic = async (subjectId: any, contentId: any) => {
   return data;
 };
 
-export const getSingleSubTopicContent = async (
-  subjectId: any,
-  topicId: any
-) => {
-  const data = topicsArray[subjectId].content[topicId].content;
+export const getSingleSubTopicContent = async (subjectId: any,topicId: any) => {
+
+  const data = testsArray[subjectId].topics[topicId].content;
 
   if (!data) {
     notFound();
@@ -52,7 +50,7 @@ function nextTopic(value: any): any {
   return Number(value) + 1;
 }
 
-async function topicPage({
+async function testtopicPage({
   params,
 }: {
   params: {
@@ -61,12 +59,11 @@ async function topicPage({
     subtopicId: string;
   };
 }) {
-  const subject = await getSingleSubject(params.subjectId);
-  const topic = await getSingleTopic(params.subjectId, params.topicId);
-  const subtopic = await getSingleSubTopicContent(
-    params.subjectId,
-    params.topicId
-  );
+
+  const subject = await getSingleSubject(params.subjectId); // gets single subject
+  const topic = await getSingleTopic(params.subjectId, params.topicId); // gets single topic
+  const quiz = await getSingleSubTopicContent(params.subjectId,params.topicId);  // gets single topic content
+  
   const nextsubtopic = nextsubTopic(params.subtopicId);
   const nexttopic = nextTopic(params.topicId);
 
@@ -82,20 +79,20 @@ async function topicPage({
       </div>
 
       <h1>
-        Subject: {params.subjectId} - {subject.subject}
+        Subject: {params.subjectId} - {subject.lessonTitle}
       </h1>
 
       <h1>
-        Topic: {params.topicId} - {topic.topic}{" "}
+        Topic: {params.topicId} - {topic.title}{" "}
       </h1>
 
       <p>
-        subtopic: {params.subtopicId} - {topic.subtopic}
+        subtopic: {params.subtopicId} - {topic.subtitle}
       </p>
 
-      <p>Content: {subtopic}</p>
+      <p>QUIZ: {quiz}</p>
     </div>
   );
 }
 
-export default topicPage;
+export default testtopicPage;

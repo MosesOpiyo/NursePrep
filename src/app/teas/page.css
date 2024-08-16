@@ -2,3 +2,7 @@
 .navbar-container .navbar-links li a {
     color: black;
 }
+
+.walkthrough-video {
+    height: 500px;
+}

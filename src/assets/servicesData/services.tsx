@@ -372,25 +372,55 @@ export const teasData = [
     {
         id: 0,
         name: 'Math',
+        imageUrl: '/math.jpg'
     },
 
     {
         id: 1,
         name: 'English',
+        imageUrl: '/english.jpg'
     },
 
     {
         id: 2,
         name: 'Science',
+        imageUrl: '/science.jpg'
     },
 
     {
         id: 3,
         name: 'Reading',
+        imageUrl: '/reading.jpg'
     },
 ]
 
-export const subjectArray =  [
+export const hesiData = [
+    {
+        id: 0,
+        name: 'Math',
+        imageUrl: '/math.jpg'
+    },
+
+    {
+        id: 1,
+        name: 'English',
+        imageUrl: '/english.jpg'
+    },
+
+    {
+        id: 2,
+        name: 'Science',
+        imageUrl: '/science.jpg'
+    },
+
+    {
+        id: 3,
+        name: 'Reading',
+        imageUrl: '/reading.jpg'
+    },
+]
+
+export const testsArray =  [
     {
         id: 0,
         lessonTitle: "Math",
@@ -398,15 +428,15 @@ export const subjectArray =  [
             {
                 id: 0,
                 title: 'Introduction',
-                subtitle: 'introduction to Maths',
-                content: 'Maths is a universally loved subject'
+                subtitle: 'introduction to Maths test',
+                content: 'Maths test is a universally loved subject'
             },
 
             {
                 id: 1,
                 title: 'Numbers',
-                subtitle: 'introduction to Numbers',
-                content: 'Numbers is not a boring subject'
+                subtitle: 'introduction to Algebra test',
+                content: 'Algebra test is not a boring subject'
             }
         ],
     },
@@ -418,15 +448,15 @@ export const subjectArray =  [
             {
                 id: 0,
                 title: 'Introduction',
-                subtitle: 'introduction to English',
-                content: 'English is a universally loved subject'
+                subtitle: 'introduction to English test',
+                content: 'English test is a universally loved subject'
             },
 
             {
                 id: 1,
                 title: 'English Reading',
-                subtitle: 'introduction to English Reading',
-                content: 'English Reading is not a boring subject'
+                subtitle: 'introduction to Language comprehension test',
+                content: 'Language comprehension test is not a boring subject'
             }
         ],
     },
@@ -438,15 +468,15 @@ export const subjectArray =  [
             {
                 id: 0,
                 title: 'Introduction',
-                subtitle: 'introduction to Science',
+                subtitle: 'introduction to Science test',
                 content: 'Science is a universally loved subject'
             },
 
             {
                 id: 1,
-                title: 'Science Reading',
-                subtitle: 'introduction to Science Reading',
-                content: 'Science Reading is not a boring subject'
+                title: 'Chemical comprehension',
+                subtitle: 'introduction to Chemical comprehension test',
+                content: 'Chemical comprehension test is not a boring subject'
             }
         ],
     },
@@ -458,15 +488,15 @@ export const subjectArray =  [
             {
                 id: 0,
                 title: 'Introduction',
-                subtitle: 'introduction to Reading',
-                content: 'Reading is a universally loved subject'
+                subtitle: 'introduction to Reading test',
+                content: 'Reading test is a universally loved subject'
             },
 
             {
                 id: 1,
-                title: 'Reading comprehension',
-                subtitle: 'introduction to Reading comprehension',
-                content: 'Reading comprehension is not a boring subject'
+                title: 'Reading comprehension test',
+                subtitle: 'introduction to Reading comprehension test',
+                content: 'Reading comprehension test is not a boring subject'
             }
         ],
     },    

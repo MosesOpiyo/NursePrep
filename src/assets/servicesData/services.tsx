@@ -434,7 +434,7 @@ export const testsArray =  [
 
             {
                 id: 1,
-                title: 'Numbers',
+                title: 'Algebra',
                 subtitle: 'introduction to Algebra test',
                 content: 'Algebra test is not a boring subject'
             }

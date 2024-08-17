@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import "./layout.css";
 import Footer from "@/components/Footer/Footer";
+import { FaBook, FaQuestion } from "react-icons/fa";
 
 export const dynamicParams = true;
 
@@ -57,14 +58,15 @@ export default async function SideNav({
              
               <Link
                 href={`/teas/${params.subjectId}/topics/${topic.id}/${topic.id}`}
+                className="flex items-center gap-2"
               >
-                &nbsp;&nbsp;{topic.subtopic}
+                &nbsp;&nbsp;<FaBook />{topic.subtopic}
               </Link>
 
-              <br />
+   
 
-              <Link href={`/teas/${params.subjectId}/quizes/${topic.id}/${topic.id}`}>
-              &nbsp;&nbsp; { testsArray[Number(params.subjectId)].topics[topic.id].subtitle }
+              <Link href={`/teas/${params.subjectId}/quizes/${topic.id}/${topic.id}`} className="flex items-center gap-2">
+              &nbsp;&nbsp;<FaQuestion /> { testsArray[Number(params.subjectId)].topics[topic.id].subtitle }
 
               </Link>
             </div>

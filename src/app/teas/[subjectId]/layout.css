@@ -8,6 +8,7 @@
     height: 500px;
 }
 
-.layoutcontent-container {
+.layoutcontent-container,
+.footer-container {
     top: 70px;
 }

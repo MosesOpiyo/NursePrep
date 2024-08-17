@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import "./layout.css";
+import Footer from "@/components/Footer/Footer";
 
 export const dynamicParams = true;
 
@@ -42,9 +43,10 @@ export default async function SideNav({
         <Navbar />
       </div>
 
-      <div className="flex relative layoutcontent-container h-svh">
+      {/* MAIN CONTENT */}
+      <div className="flex relative layoutcontent-container h-full">
         {/* SIDENAV */}
-        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 fixed h-svh border-solid p-4 flex flex-col gap-8">
+        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 fixed h-full border-solid p-4 flex flex-col gap-8">
           <h1 className="font-bold text-3xl sm:text-3xl">
             Subject: {subject.subject}{" "}
           </h1>
@@ -75,6 +77,13 @@ export default async function SideNav({
         </div>
         
       </div>
+
+      
+        {/* FOOTER */}
+        {/* <div className="relative footer-container">
+          <Footer />
+        </div> */}
+        
     </section>
   );
 }

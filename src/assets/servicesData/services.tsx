@@ -588,3 +588,95 @@ export const topicsArray =  [
         
    
 ]
+
+export const nursingCourses = [
+    {
+        id: 0,
+        title: 'Nursing Life',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/professional.jpg',
+                largeimageUrl: '/professional-large.jpg',
+                courseTitle: 'Professionalism',
+                courseInfo: 'Learn about or review the professional expectations you will be held to as a professional nurse'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/selfcare.jpg',
+                largeimageUrl: '/selfcare-large.jpg',
+                courseTitle: 'Self-Care',
+                courseInfo: 'Learn about the importance of self-care and how to develop your own self-care plan'
+            }
+        ]
+    },
+
+    {
+        id: 1,
+        title: 'Classroom',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/time.jpg',
+                largeimageUrl: '/time-large.jpg',
+                courseTitle: 'Time Management',
+                courseInfo: 'Learn how to effectively manage your time while in Nursing School'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/apa.jpg',
+                largeimageUrl: '/apa-large.jpg',
+                courseTitle: 'APA Formatting',
+                courseInfo: 'Learn how to use APA formatting in your writing while in Nursing School'
+            },
+
+            {
+                id: 2,
+                imageUrl: '/thinking.jpg',
+                largeimageUrl: '/thinking-large.jpg',
+                courseTitle: 'Introduction to Critical Thinking and Clinical Reasoning',
+                courseInfo: 'Learn how to use APA formatting in your writing while in Nursing School',
+            }
+        ]
+    },
+
+    {
+        id: 2,
+        title: 'Academic',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/ap.jpg',
+                largeimageUrl: '/ap-large.jpg',
+                courseTitle: 'A&P Refresher',
+                courseInfo: 'Refresh yourself on A&P content that is essential for nursing school'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/dosage.jpg',
+                largeimageUrl: '/dosage-large.jpg',
+                courseTitle: 'Dosage Calculations',
+                courseInfo: 'Learn how to do dosage calculations quickly and effectively'
+            },
+
+            {
+                id: 2,
+                imageUrl: '/math.jpg',
+                largeimageUrl: '/math-large.jpg',
+                courseTitle: 'Math Refresher',
+                courseInfo: 'Refresh your math skills for nursing school.',
+            },
+
+            {
+                id: 3,
+                imageUrl: '/medical.jpg',
+                largeimageUrl: '/medical-large.jpg',
+                courseTitle: 'Medical Terminologies',
+                courseInfo: 'Refresh yourself on the commonly used medical terminologies used in nursing school.',
+            }
+        ]
+    },
+]

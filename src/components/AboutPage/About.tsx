@@ -34,7 +34,7 @@ const AboutPage = () => {
   return (
     <>
       {/* ABOUT HERO SECTION */}
-      <section className="about-hero mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
+      <section className="about-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
         <div className="abouthero-header z-10 flex flex-col items-center justify-center gap-8">
           <p className="text-base">About NursePrep</p>
           <h2 className="text-4xl w-4/5 mx-auto text-center font-extralight">

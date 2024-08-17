@@ -63,8 +63,8 @@ export default function NurseCourses({
 
       {/* HERO */}
       {/* NURSING COURSES HERO SECTION */}
-      <section className="nursing-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
-        <div className="nursinghero-header z-10 flex flex-col items-center justify-center gap-8">
+      <section className="nursingcourse-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
+        <div className="nursingcoursehero-header z-10 flex flex-col items-center justify-center gap-8">
           <p className="text-base">{topic.courseTitle}</p>
           <h2 className="text-4xl w-4/5 mx-auto text-center font-extralight">
             {topic.courseInfo}

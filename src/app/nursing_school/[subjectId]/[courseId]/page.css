@@ -10,7 +10,7 @@
 }
 
 
- .nursing-hero {
+ .nursingcourse-hero {
     height: 400px;
     /* background-image: url(https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);*/
     width: 95%;
@@ -22,7 +22,7 @@
     border-radius: 24px;
 }
 
-/*.nursing-hero::after {
+/*.nursingcourse-hero::after {
     content: '';
     border-radius: 24px;
     position: absolute;

@@ -80,9 +80,9 @@ function TopicPage({
 
       {/* HEADER */}
       <div className="content-header relative p-8 flex flex-col gap-2 text-center items-center justify-center">
-        <h2 className="font-bold text-4xl">Topic: {topic.topic} </h2>
+        <h2 className="font-bold text-4xl">{topic.topic} </h2>
 
-        <p className="font-bold text-2xl">subtopic: {topic.subtopic}</p>
+        <p className="font-bold text-2xl">{topic.subtopic}</p>
       </div>
 
       {/* INTRO */}
@@ -97,7 +97,7 @@ function TopicPage({
       <hr className="h-0.5 bg-slate-300 w-4/5 mx-auto block" />
 
       {/* VIDEO */}
-      <div className="content-video flex flex-col gap-4 items-center">
+      <div className="content-video flex flex-col gap-4 items-center w-4/5 mx-auto">
         <div className="video-heder">
           <h2 className="font-bold text-2xl">
             Watch the short video about the lesson below
@@ -105,14 +105,15 @@ function TopicPage({
         </div>
 
         <div className="video-container h-80 w-full mx-auto">
-          <video
-            className="video h-full w-full object-cover"
-            muted
-            loop
-            controls
-          >
-            <source src="/nurse.mp4" type="video/mp4" />
-          </video>
+        <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/bKEGd72Lwf4"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
         </div>
       </div>
 

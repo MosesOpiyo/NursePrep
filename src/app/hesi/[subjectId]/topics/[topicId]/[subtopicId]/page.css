@@ -1,0 +1,14 @@
+.radioContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .radioInput {
+    margin-right: 10px;
+    accent-color: #0070f3; /* Customize the color */
+  }
+  
+  .radioLabel {
+    font-weight: bold;
+  }

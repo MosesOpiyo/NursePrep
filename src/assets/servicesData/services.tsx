@@ -239,6 +239,60 @@ export const pricingFeatures = [
    
 ]
 
+export const comparisonData = [
+    {
+        id: 0,
+        topic: '',
+        traditional: 'TRADITIONAL STUDY GUIDES',
+        nurseprep: 'NursePrep',
+        textclassName: 'textheaders',
+        topclassName: 'top-div'
+    },
+
+    {
+        id: 1,
+        topic: 'COST',
+        traditional: 'Upfront cost for each book or guide, which can add up. Additional costs for supplementary materials or new editions. No opportunity to try before buying.',
+        nurseprep: '$29.99 / month'
+    },
+
+    {
+        id: 2,
+        topic: 'Accessibility',
+        traditional: 'Physical books or printed materials that need to be carried around. Study limited to where the materials are available. No flexibility in access time unless carrying the materials everywhere.',
+        nurseprep: 'Accessible from anywhere with an internet connection. Available 24/7, allowing flexible study times. Compatible with various devices (desktop, laptop, tablet, smartphone).'
+    },
+
+    {
+        id: 3,
+        topic: 'Interactivity',
+        traditional: 'Static content with no interactive elements. Limited to text and static images. No real-time feedback or interactive discussion opportunities.',
+        nurseprep: 'Interactive quizzes and practice tests with instant feedback. Multimedia resources such as videos, animations, and interactive diagrams. Discussion forums and support from educators and peers.'
+    },
+
+    {
+        id: 4,
+        topic: 'Customization and Adaptability',
+        traditional: 'One-size-fits-all approach with no personalization. Fixed content that doesnt adapt to individual progress. Updates require purchasing new editions.',
+        nurseprep: 'Personalized study plans based on strengths and weaknesses. Adaptive learning technology that adjusts difficulty based on performance. Regular updates with the latest exam information and practice questions.'
+    },
+
+    {
+        id: 5,
+        topic: 'Engagement and Motivation',
+        traditional: 'Limited to self-motivation and discipline to follow through. Static content can become monotonous. No built-in tracking or goal-setting features.',
+        nurseprep: 'Gamified elements like badges, leaderboards, and progress tracking. Regular updates and new content keep learning fresh and engaging. Ability to track progress and set goals boosts motivation.'
+    },
+
+    {
+        id: 6,
+        topic: 'Support and Resources',
+        traditional: 'Limited to the information provided within the guide. No direct access to educators or support communities. Rely on self-study and external resources for additional help.',
+        nurseprep: 'Access to online tutors, webinars, and live Q&A sessions. Community support through forums and social media groups. Comprehensive FAQ sections and customer support.',
+        textclassName: 'bottom-div',
+    },
+]
+
 export const faqData = [
     {
         id: 1,
@@ -287,5 +341,388 @@ export const faqData = [
         question: 'How can I contact customer support?',
         answer: 'You can contact our customer support team via email, live chat, or phone. Our support team is available 24/7 to assist you with any questions or issues you may have.',
         value: 'item-7'
+    },
+]
+
+export const teamData = [
+    {
+        id: 1,
+        image: '/founder.jpg',
+        name: 'John Doe',
+        title: 'Founder'
+    },
+
+    {
+        id: 2,
+        image: '/co-founder.jpg',
+        name: 'Jane Doe',
+        title: 'Co-Founder'
+    },
+
+    {
+        id: 3,
+        image: '/CEO.jpg',
+        name: 'James Doe',
+        title: 'CEO'
+    }
+]
+
+
+export const teasData = [
+    {
+        id: 0,
+        name: 'Math',
+        imageUrl: '/math.jpg'
+    },
+
+    {
+        id: 1,
+        name: 'English',
+        imageUrl: '/english.jpg'
+    },
+
+    {
+        id: 2,
+        name: 'Science',
+        imageUrl: '/science.jpg'
+    },
+
+    {
+        id: 3,
+        name: 'Reading',
+        imageUrl: '/reading.jpg'
+    },
+]
+
+export const hesiData = [
+    {
+        id: 0,
+        name: 'Math',
+        imageUrl: '/math.jpg'
+    },
+
+    {
+        id: 1,
+        name: 'English',
+        imageUrl: '/english.jpg'
+    },
+
+    {
+        id: 2,
+        name: 'Science',
+        imageUrl: '/science.jpg'
+    },
+
+    {
+        id: 3,
+        name: 'Reading',
+        imageUrl: '/reading.jpg'
+    },
+]
+
+export const testsArray =  [
+    {
+        id: 0,
+        lessonTitle: "Math",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Maths test',
+                content: 'Maths test is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Algebra',
+                subtitle: 'introduction to Algebra test',
+                content: 'Algebra test is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 1,
+        lessonTitle: "English",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to English test',
+                content: 'English test is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'English Reading',
+                subtitle: 'introduction to Language comprehension test',
+                content: 'Language comprehension test is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 2,
+        lessonTitle: "Science",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Science test',
+                content: 'Science is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Chemical comprehension',
+                subtitle: 'introduction to Chemical comprehension test',
+                content: 'Chemical comprehension test is not a boring subject'
+            }
+        ],
+    },
+
+    {
+        id: 3,
+        lessonTitle: "Reading",
+        topics: [
+            {
+                id: 0,
+                title: 'Introduction',
+                subtitle: 'introduction to Reading test',
+                content: 'Reading test is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                title: 'Reading comprehension test',
+                subtitle: 'introduction to Reading comprehension test',
+                content: 'Reading comprehension test is not a boring subject'
+            }
+        ],
+    },    
+]
+
+export const topicsArray =  [
+    {
+        id: 0,
+        subject: 'Math',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Maths',
+                content: 'Maths is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Algebra',
+                subtopic: 'introduction to Algebra',
+                content: 'Algebra is a universally loved subject'
+            }
+        ],
+        
+    },
+
+    {
+        id: 1,
+        subject: 'English',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to English',
+                content: 'English is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Language comprehension',
+                subtopic: 'introduction to Language comprehension',
+                content: 'Language comprehension is a universally loved subject'
+            }
+        ],
+        
+    },
+
+    {
+        id: 2,
+        subject: 'Science',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Science',
+                content: 'Science is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Chemical comprehension',
+                subtopic: 'introduction to Chemical comprehension',
+                content: 'Chemical comprehension is a universally loved subject'
+            }
+        ],
+    },
+
+    {
+        id: 3,
+        subject: 'Reading',
+        content: [
+            {
+                id: 0,
+                topic: 'Introduction',
+                subtopic: 'introduction to Reading',
+                content: 'Reading is a universally loved subject'
+            },
+
+            {
+                id: 1,
+                topic: 'Reading comprehension',
+                subtopic: 'introduction to Reading comprehension',
+                content: 'Reading comprehension is a universally loved subject'
+            }
+        ],
+        
+    },
+        
+   
+]
+
+export const nursingCourses = [
+    {
+        id: 0,
+        title: 'Nursing Life',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/professional.jpg',
+                largeimageUrl: '/professional-large.jpg',
+                courseTitle: 'Professionalism',
+                courseInfo: 'Learn about or review the professional expectations you will be held to as a professional nurse'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/selfcare.jpg',
+                largeimageUrl: '/selfcare-large.jpg',
+                courseTitle: 'Self-Care',
+                courseInfo: 'Learn about the importance of self-care and how to develop your own self-care plan'
+            }
+        ]
+    },
+
+    {
+        id: 1,
+        title: 'Classroom',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/time.jpg',
+                largeimageUrl: '/time-large.jpg',
+                courseTitle: 'Time Management',
+                courseInfo: 'Learn how to effectively manage your time while in Nursing School'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/apa.jpg',
+                largeimageUrl: '/apa-large.jpg',
+                courseTitle: 'APA Formatting',
+                courseInfo: 'Learn how to use APA formatting in your writing while in Nursing School'
+            },
+
+            {
+                id: 2,
+                imageUrl: '/thinking.jpg',
+                largeimageUrl: '/thinking-large.jpg',
+                courseTitle: 'Introduction to Critical Thinking and Clinical Reasoning',
+                courseInfo: 'Learn how to use APA formatting in your writing while in Nursing School',
+            }
+        ]
+    },
+
+    {
+        id: 2,
+        title: 'Academic',
+        course: [
+            {
+                id: 0,
+                imageUrl: '/ap.jpg',
+                largeimageUrl: '/ap-large.jpg',
+                courseTitle: 'A&P Refresher',
+                courseInfo: 'Refresh yourself on A&P content that is essential for nursing school'
+            },
+
+            {
+                id: 1,
+                imageUrl: '/dosage.jpg',
+                largeimageUrl: '/dosage-large.jpg',
+                courseTitle: 'Dosage Calculations',
+                courseInfo: 'Learn how to do dosage calculations quickly and effectively'
+            },
+
+            {
+                id: 2,
+                imageUrl: '/math.jpg',
+                largeimageUrl: '/math-large.jpg',
+                courseTitle: 'Math Refresher',
+                courseInfo: 'Refresh your math skills for nursing school.',
+            },
+
+            {
+                id: 3,
+                imageUrl: '/medical.jpg',
+                largeimageUrl: '/medical-large.jpg',
+                courseTitle: 'Medical Terminologies',
+                courseInfo: 'Refresh yourself on the commonly used medical terminologies used in nursing school.',
+            }
+        ]
+    },
+]
+
+export const eventsData = [
+    {
+        id: 0,
+        title: 'TEAS 7/HESI A2 Anatomy Review Session',
+        month: 'August',
+        year: '2024',
+        date: '18',
+        day: 'SUN',
+        time: '7:00pm - 7:30pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 1,
+        title: 'TEAS 7/HESI A2 Math Review Session',
+        month: 'August',
+        year: '2024',
+        date: '19',
+        day: 'MON',
+        time: '6:00pm - 7:00pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 2,
+        title: 'TEAS 7/HESI A2 Chemistry Review Session',
+        month: 'August',
+        year: '2024',
+        date: '25',
+        day: 'TUE',
+        time: '6:30pm - 7:30pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 3,
+        title: 'TEAS 7/HESI A2 Languages Review Session',
+        month: 'August',
+        year: '2024',
+        date: '28',
+        day: 'WED',
+        time: '9:00pm - 10:00pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
     },
 ]

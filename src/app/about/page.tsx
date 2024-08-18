@@ -2,17 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 import '../../styles/globals.css';
 import Navbar from '@/components/Navbar/navbar';
-import './page.css'
+import './page.css';
+import AboutPage from '@/components/AboutPage/About';
 
 const About = () => {
   return (
-    <div>
+    <>
         <div className='navbar-container'>
-          <Navbar></Navbar>
+          <Navbar />
         </div>
-      <h1>ABOUT PAGE</h1>
-      <Link href="/">Home page</Link>
-    </div>
+
+        <AboutPage />
+    </>
   )
 }
 

@@ -1,10 +1,13 @@
 .navbar-container .navbar > *,
-.navbar-container .navbar-links li a,
-.navbar-container .navbar-auth .login-button {
+.navbar-container .navbar-links li a {
     color: black;
 }
 
 .navbar-container .navbar-link li a:hover,
 .navbar-container .navbar-link li a.active {
     border: 2px solid #000;
+}
+
+.walkthrough-video {
+    height: 500px;
 }

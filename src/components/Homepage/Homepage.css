@@ -4,7 +4,6 @@
 }
 
 .services-header {
-    grid-template: auto / 1fr 1fr;
     width: 95%;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .services-list {
-    grid-template: auto / repeat(3, 1fr);
+    /* grid-template: auto / repeat(3, 1fr); */
     /* height: 700px; */
     width: 95%;
     margin-inline: auto;
@@ -89,25 +88,28 @@ button.start:hover {
     padding-block: 3rem;
 }
 
-.works-card.signup {
-    grid-area: 1 / 1 / 4 / 7;
-    /* background-color: #edf0f7; */
+@media (min-width: 768px) {
+    .works-card.signup {
+        grid-area: 1 / 1 / 4 / 7;
+        /* background-color: #edf0f7; */
+    }
+    
+    .works-card.resources {
+        grid-area: 4 / 7 / 7 / 13;
+        /* background-color: #fbf1f0; */
+    }
+    
+    .works-card.practice {
+        grid-area: 7 / 1 / 10 / 7;
+        /* background-color: #edf7f9; */
+    }
+    
+    .works-card.success {
+        grid-area: 10 / 7 / 13 / 13;
+        /* background-color: #fdf0e7; */
+    }
 }
 
-.works-card.resources {
-    grid-area: 4 / 7 / 7 / 13;
-    /* background-color: #fbf1f0; */
-}
-
-.works-card.practice {
-    grid-area: 7 / 1 / 10 / 7;
-    /* background-color: #edf7f9; */
-}
-
-.works-card.success {
-    grid-area: 10 / 7 / 13 / 13;
-    /* background-color: #fdf0e7; */
-}
 
 
 /* CTA-CONTAINER */
@@ -256,6 +258,42 @@ button.start:hover {
     border-radius: 50%;
     top: 5px;
     right: 10px;
+}
+
+
+
+/* COMPARISON */
+.comparison-nurseprep {
+    background-color: #fdedc0;
+}
+
+.comparison-card {
+    border-bottom: 1px solid #00000027;
+}
+
+.comparison-card:last-child {
+    border-bottom: none;
+}
+
+.textheaders {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top-div {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.bottom-div {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.comparison-nurseprep {
+    background-color: #263729;
+    color: #fff;
 }
 
 

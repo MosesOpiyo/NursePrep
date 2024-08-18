@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import './Navbar.css';
+import './navbar.css';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
+import { nursingCourses } from '@/assets/servicesData/services';
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
@@ -33,19 +35,35 @@ const Navbar: React.FC = () => {
         </li>
 
         <li className="dropdown">
-          <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>ATI LEAS 7</Link>
+          <Link href="/teas" className={currentPath === "/teas" ? "active p-2" : "p-2"}>ATI LEAS 7</Link>
         </li>
 
         <li>
-          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>HESI A2</Link>
+          <Link href="/hesi" className={currentPath === "/hesi" ? "active p-2" : "p-2"}>HESI A2</Link>
+        </li>
+
+        <li className='dropdown relative'>
+          <Link href="/nursing_school" className={currentPath === "/nursing_school" ? "active p-2" : "p-2"}><span>Nursing School&nbsp;<ChevronDownIcon className='inline relative bottom-0.5' /></span></Link>
+
+          {/* dropdown menu */}
+          <div className='nursing-dropdown'>
+          <ul className='grid grid-cols-2 gap-2'>
+
+            {nursingCourses.map(item => (
+              item.course.map(course => (
+                <li>
+                  <Link className='p-2' href={`/nursing_school/${item.id}/${course.id}`} key={course.id}>{course.courseTitle}</Link>
+                </li>
+              ))
+            ))}
+
+          </ul>        
+    
+          </div>
         </li>
 
         <li>
-          <Link href="/contact" className={currentPath === "/contact" ? "active p-2" : "p-2"}>Nursing School</Link>
-        </li>
-
-        <li>
-          <Link href="/events" className={currentPath === "/events" ? "active p-2" : "p-2"}>Events</Link>
+          <Link href="/nurseevent" className={currentPath === "/events" ? "active p-2" : "p-2"}>Events</Link>
         </li>
       </ul>
 

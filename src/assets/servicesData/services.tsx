@@ -680,3 +680,49 @@ export const nursingCourses = [
         ]
     },
 ]
+
+export const eventsData = [
+    {
+        id: 0,
+        title: 'TEAS 7/HESI A2 Anatomy Review Session',
+        month: 'August',
+        year: '2024',
+        date: '18',
+        day: 'SUN',
+        time: '7:00pm - 7:30pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 1,
+        title: 'TEAS 7/HESI A2 Math Review Session',
+        month: 'August',
+        year: '2024',
+        date: '19',
+        day: 'MON',
+        time: '6:00pm - 7:00pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 2,
+        title: 'TEAS 7/HESI A2 Chemistry Review Session',
+        month: 'August',
+        year: '2024',
+        date: '25',
+        day: 'TUE',
+        time: '6:30pm - 7:30pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+
+    {
+        id: 3,
+        title: 'TEAS 7/HESI A2 Languages Review Session',
+        month: 'August',
+        year: '2024',
+        date: '28',
+        day: 'WED',
+        time: '9:00pm - 10:00pm',
+        about: 'TEAS 7/HESI A2 practice questions with step-by-step answer explanations!',
+    },
+]

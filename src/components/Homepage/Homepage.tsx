@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react";
+import { useState,useEffect } from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
 import nurse from "../../assets/hero.jpg";
@@ -36,6 +37,23 @@ import { comparisonData } from "../../assets/servicesData/services";
 
 const Homepage = () => {
 
+  // const [content,setContent] = useState<Page>();
+  // const [isLoading, setLoading] = useState<boolean>(true);
+  // const [error, setError] = useState<string | null>(null);
+
+  // useEffect(() => {
+  //   const getContent = async () => {
+  //     try {
+  //       const contentService = ContentService.getInstance();
+  //       const data = await contentService.getContent('Homepage');
+  //       setContent(data);
+  //     } catch (error) {
+  //       setError(error);
+  //       setLoading(false)
+  //     }
+  //   }
+  // })
+
   const form = useForm ({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -48,6 +66,7 @@ const Homepage = () => {
   const onSubmit = (data: z.infer<typeof contactSchema>) => {
     console.log(data)
   }
+
 
 
 

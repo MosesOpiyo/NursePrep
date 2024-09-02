@@ -6,6 +6,7 @@ import Homepage from "@/components/Homepage/Homepage";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home(){
+    
     return (
         <>
           <Navbar />

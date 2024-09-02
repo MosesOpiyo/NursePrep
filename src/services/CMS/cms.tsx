@@ -1,24 +1,29 @@
-import axios from "axios";
-import { Content } from "./contentModel";
+import { Page } from "./contentModel";
+import axiosInstance from "../Axios/axiosInstance";
 
-class contentService {
-    private static instance: contentService;
+class ContentService {
+    private static instance: ContentService;
 
     private constructor(){}
 
     public static getInstance():
 
-    contentService {
-        if(!contentService.instance){
-            contentService.instance = new contentService();
+    ContentService {
+        if(!ContentService.instance){
+            ContentService.instance = new ContentService();
         }
-        return contentService.instance;
+        return ContentService.instance;
     }
 
-    // public async getContent():
-    //     Promise<Content[]> {
-    //       '/'
-    //     }
+    public async getContent(slug:string):
+        Promise<Page> {
+          const response = await axiosInstance.get(`http://127.0.0.1:5000/Content/pages/${slug}`);
+          console.log("Loading....")
+          return response.data
+    }
+    
     
 
 }
+
+export default ContentService

@@ -147,8 +147,8 @@ const Homepage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-container pb-16 mb-16 grid grid-cols-1 md:grid-cols-12 md:grid-rows-12 gap-12">
-        <div className="cta-image ms-auto h-full relative">
+      <section className="cta-container relative pb-16 mb-16 grid grid-cols-1 grid-rows-1 md:grid-cols-12 md:grid-rows-12 gap-12">
+        <div className="cta-image ms-auto h-full md:relative">
           <Image
             className="h-full w-full object-top object-cover"
             src={nurse}
@@ -158,10 +158,10 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="cta-text me-auto justify-center flex flex-col z-10 gap-12">
+        <div className="cta-text me-auto justify-center flex flex-col z-10 gap-12 text-center md:text-start">
           <h3 className="text-5xl">Built for all dreamers everywhere.</h3>
 
-          <div className="cta-inner text-lg flex flex-col gap-12 ps-12">
+          <div className="cta-inner text-lg flex flex-col gap-12 items-center ps-4 pe-4 md:ps-12 md:pe-0 md:items-start">
             <p>
               Practice with our extensive question banks, track your progress
               with detailed analytics, and join a community of learners for
@@ -179,15 +179,20 @@ const Homepage = () => {
         <div className="testimonial-header flex mx-auto justify-center flex-col gap-8 p-4 relative">
 
           <h2 className="font-bold text-5xl">What our clients say</h2>
+
           <p>
             Don&apos;t just take our word for it—hear from our successful
             students! Our comprehensive courses and personalized support have
             helped countless aspiring nurses achieve their dreams.{" "}
           </p>
-          <Button className="h-12 w-2/4">View More</Button>
+
+          <div className="testimonials-btn">
+            <Button className="h-12 w-2/4">View More</Button>
+          </div>
+          
         </div>
 
-        <div className="testimonialcard-container cursor-pointer gap-12 grid grid-rows-12 grid-cols-12 mx-auto">
+        <div className="testimonialcard-container cursor-pointer gap-12 mx-auto">
           {testimonialArray.map((item) => (
             <div className={item.class} key={item.id}>
               <div className="testimonial-image absolute -z-10 w-full top-0 left-0 h-full">
@@ -215,6 +220,10 @@ const Homepage = () => {
             </div>
           ))}
         </div>
+
+        <div className="mobiletestimonials-btn lg:hidden">
+            <Button className="h-12 w-2/4">View More</Button>
+          </div>
       </section>
 
       {/* PRICING SECTION */}

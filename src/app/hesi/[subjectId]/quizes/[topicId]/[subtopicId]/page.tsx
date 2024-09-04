@@ -47,7 +47,7 @@ function nextTopic(value: any): any {
   return Number(value) + 1;
 }
 
- function testtopicPage({
+ function TesttopicPage({
   params,
 }: {
   params: {
@@ -92,7 +92,7 @@ function nextTopic(value: any): any {
       <div className="content-intro text-center w-4/5 mx-auto">
         <p>
           Welcome to the first step in NursePrep’s {topic.title} Course! We are
-          so glad you are here! This {topic.title} Practice test is meant to
+          so glad you are here! This {topic.subtitle} Practice test is meant to
           show you exactly how you would score if you were to take the real exam
           today. Score Report and Diagnose : You’ll find your personalized score
           report at the end, which you can use to help develop a study plan
@@ -795,4 +795,4 @@ function nextTopic(value: any): any {
   );
 }
 
-export default testtopicPage;
+export default TesttopicPage;

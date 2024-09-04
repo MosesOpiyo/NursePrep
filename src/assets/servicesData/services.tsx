@@ -2,6 +2,44 @@
 
 import { title } from "process"
 
+export const navLinks = [
+    {
+        id: 0,
+        link: '/',
+        linkName: 'Home'
+    },
+
+    {
+        id: 1,
+        link: '/about',
+        linkName: 'About'
+    },
+
+    {
+        id: 2,
+        link: '/teas',
+        linkName: 'ATI TEAS 7'
+    },
+
+    {
+        id: 3,
+        link: '/hesi',
+        linkName: 'HESI A2'
+    },
+
+    {
+        id: 4,
+        link: '/nursing_school',
+        linkName: 'Nursing School'
+    },
+
+    {
+        id: 5,
+        link: '/nurseevent',
+        linkName: 'Events'
+    }
+]
+
 export const dataArray =  [
     {
         id: 1,
@@ -454,7 +492,7 @@ export const testsArray =  [
 
             {
                 id: 1,
-                title: 'English Reading',
+                title: 'Language Comprehension',
                 subtitle: 'introduction to Language comprehension test',
                 content: 'Language comprehension test is not a boring subject'
             }

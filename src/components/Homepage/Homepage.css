@@ -290,13 +290,15 @@ button.start:hover {
 
 /* FAQ SECTION */
 .faq-container {
-    width: 90%;
-    
+    width: 90%;   
+}
+
+.faq-content button {
+    text-align: start;
 }
 
 /* CONTACT SECTION */
 .contact-form {
-    width: 90%;
     background-color: #f2f2f0;
     box-shadow: 0 0 5px #ccc;
 }
@@ -342,6 +344,12 @@ button.start:hover {
     .works-card.success {
         grid-area: 10 / 7 / 13 / 13;
         /* background-color: #fdf0e7; */
+    }
+}
+
+@media (min-width: 640px) {
+    .contact-form {
+        width: 90%;
     }
 }
 

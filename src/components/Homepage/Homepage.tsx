@@ -324,27 +324,27 @@ const Homepage = () => {
       {/* CTA BANNER SECTION */}
       <section className="banner-container bg-black text-white flex flex-col gap-12 p-12 mb-16 items-center justify-center text-center">
         <div className="banner-text flex-flex-col gap-4">
-          <p className="text-slate-300 text-9xl">Prepare.</p>
-          <p className="text-slate-200 text-9xl">Pass.</p>
-          <p className="text-slate-50 text-9xl">Prevail.</p>
+          <p className="text-slate-300 text-7xl md:text-9xl">Prepare.</p>
+          <p className="text-slate-200 text-7xl md:text-9xl">Pass.</p>
+          <p className="text-slate-50 text-7xl md:text-9xl">Prevail.</p>
         </div>
 
         <div className="banner-btn w-full">
-          <Button className="h-16 w-1/4 bg-white text-black">
+          <Button className="h-16 w-full sm:w-2/4 md:w-1/4 bg-white text-black">
             START TODAY
           </Button>
         </div>
       </section>
 
       {/* FAQ SECTION */}
-      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 p-4">
+      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 md:p-4">
         <div className="faq-header">
           <h2 className="font-bold text-5xl">
             Have Questions? <br /> We&apos;re here
           </h2>
         </div>
 
-        <div className="faq-content p-8">
+        <div className="faq-content lg:p-8">
           <Accordion type="single" collapsible>
             {faqData.map((item) => (
               <AccordionItem value={item.value} key={item.id}>
@@ -363,7 +363,7 @@ const Homepage = () => {
       {/* CONTACT US SECTION */}
       <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-24">
 
-        <div className="contact-content p-4 grid grid-cols-2 grid-rows-1">
+        <div className="contact-content p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:grid-rows-1 md:gap-2">
           <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">
             <h2 className="font-bold text-5xl">Or <br /> Contact Us</h2>
 
@@ -389,7 +389,7 @@ const Homepage = () => {
             </ul>
           </div>
 
-          <div className="contact-form p-8 mx-auto">
+          <div className="contact-form p-4 sm:p-8 mx-auto">
             <Form {...form}>
               <form className="flex flex-col gap-8" onSubmit={form.handleSubmit(onSubmit)}>
 

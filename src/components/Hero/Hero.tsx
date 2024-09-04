@@ -17,14 +17,19 @@ const Hero = () => {
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
         <div className="hero-text pt-32 text-white px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
-          <h1 className="hero-header relative text-center">
+
+          {/* HERO HEADER TEXT */}
+          <h1 className="hero-header relative text-center sm:text-6xl text-5xl">
             Ace your nursing school entrance exams. <span>Guaranteed.</span>
           </h1>
-          <p className="hero-paragraph">
+
+          {/* HERO PARAGRAPH */}
+          <p className="hero-paragraph text-center">
             Pass your entrance tests with our accurate practice questions and
             detailed answer explanations.
           </p>
 
+          {/* HERO BUTTONS */}
           <div className="action-btn flex gap-4">
             <Button>GET STARTED NOW</Button>
             <Button>BROWSE FREE TESTS</Button>

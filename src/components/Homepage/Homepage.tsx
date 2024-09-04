@@ -240,7 +240,7 @@ const Homepage = () => {
           </p>
         </div>
 
-        <div className="pricingcard-container grid grid-rows-1 grid-cols-2 gap-8">
+        <div className="pricingcard-container grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-8">
           {pricingArray.map((item) => (
             <div key={item.id} className={item.className}>
               <div className="save absolute right-8 top-3 bg-black text-white p-4">

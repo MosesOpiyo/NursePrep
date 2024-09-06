@@ -5,7 +5,11 @@ import "./navbar.css";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaBarsStaggered, FaChevronDown  } from "react-icons/fa6";
+import {
+  FaBarsStaggered,
+  FaChevronDown,
+  FaRegCircleUser,
+} from "react-icons/fa6";
 import { nursingCourses } from "@/assets/servicesData/services";
 import {
   Sheet,
@@ -26,6 +30,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
@@ -42,7 +54,6 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar relative z-10 flex justify-between items-center">
-
       {/* LOGO */}
       <div className="navbar-logo text-2xl">NursePrep</div>
 
@@ -88,7 +99,7 @@ const Navbar: React.FC = () => {
           >
             <span>
               Nursing School&nbsp;
-              <FaChevronDown  className="inline relative bottom-0.5" />
+              <FaChevronDown className="inline relative bottom-0.5" />
             </span>
           </Link>
 
@@ -123,7 +134,7 @@ const Navbar: React.FC = () => {
       </ul>
 
       {/* USER AUTH BUTTONS */}
-      <div className="navbar-auth flex items-center">
+      <div className="hidden sm:flex navbar-auth items-center">
         {isLoggedIn ? (
           <>
             <span>Welcome, User!</span>
@@ -142,8 +153,49 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
+      {/* MOBILE USER AUTH BUTTONS */}
+      <div className="sm:hidden flex">
+        <Dialog>
+          <DialogTrigger>
+            <FaRegCircleUser className="text-white text-2xl" />
+          </DialogTrigger>
+
+          <DialogContent>
+            {/* <DialogHeader>
+              <DialogTitle>Are you absolutely sure?</DialogTitle>
+              <DialogDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </DialogDescription>
+            </DialogHeader> */}
+            <div className="flex flex-col gap-4 navbar-auth items-center text-black">
+              {isLoggedIn ? (
+                <>
+                  <span>Welcome, User!</span>
+                  <button type="button" className="text-black" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  className="text-black py-1 px-3"
+                  onClick={handleLogin}
+                >
+                  Sign in
+                </button>
+              )}
+
+              <button type="button" className="sign-up-button">
+                Sign up
+              </button>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+
       {/* MOBILE NAV*/}
-      <div className="mobile-nav lg:hidden">
+      <div className="mobile-nav lg:hidden flex">
         <Sheet>
           {/* MENU ICON */}
           <SheetTrigger>
@@ -173,10 +225,13 @@ const Navbar: React.FC = () => {
                         <DropdownMenu>
                           <DropdownMenuTrigger>
                             {navlink.linkName}
-                            <FaChevronDown  className="text-sml inline relative bottom-0.5 left-1"/>
+                            <FaChevronDown className="text-sml inline relative bottom-0.5 left-1" />
                           </DropdownMenuTrigger>
 
                           <DropdownMenuContent>
+                            <p className="ps-4 text-sm pt-4 pb-1">
+                              All {navlink.linkName} lessons
+                            </p>
                             {nursingCourses.map((item) =>
                               item.course.map((course) => (
                                 <DropdownMenuItem key={course.id}>

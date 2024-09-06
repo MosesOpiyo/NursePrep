@@ -22,11 +22,11 @@ const Events = () => {
       </div>
 
       {/* EVENTS-LIST */}
-      <div className="events-list flex flex-col gap-4 w-4/5 mx-auto mb-16 p-4">
+      <div className="events-list flex flex-col gap-4 w-4/5 mx-auto mb-16">
 
 
       {eventsData.map(event => (
-        <Link href={`/nurseevent/${event.id}`} key={event.id} className="event-card flex gap-16 rounded-xl border-2 border-solid border-blue-100 p-4">
+        <Link href={`/nurseevent/${event.id}`} key={event.id} className="event-card flex flex-col items-start sm:flex-row gap-16 rounded-xl border-2 border-solid border-blue-100 p-4">
 
         <div className="event-date flex-col flex gap-1 items-center justify-center">
           <p>{event.day}</p>

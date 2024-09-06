@@ -36,7 +36,7 @@ export default function Event({
 
       {/* INDIVIDUAL EVENT CONTENT */}
       <div className="individual-event my-16 w-4/5 mx-auto">
-        <div className="event-card flex gap-16 rounded-xl h-80 border-2 border-solid border-blue-100 p-4 items-center justify-center">
+        <div className="event-card flex flex-col items-start sm:flex-row gap-16 rounded-xl border-2 border-solid border-blue-100 p-4 sm:h-80 sm:items-center justify-center">
           <div className="event-date flex-col flex gap-1 items-center justify-center">
             <p>{event.day}</p>
             <span>{event.date}</span>

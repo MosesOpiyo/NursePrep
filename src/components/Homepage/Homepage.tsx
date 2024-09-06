@@ -292,7 +292,7 @@ const Homepage = () => {
       </section>
 
       {/* WHY US/ COMPARISON */}
-      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto">
+      <section className="comparison-container hidden md:flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto">
         <div className="comparison-header">
           <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
         </div>
@@ -330,7 +330,7 @@ const Homepage = () => {
         </div>
 
         <div className="banner-btn w-full">
-          <Button className="h-16 w-full sm:w-2/4 md:w-1/4 bg-white text-black">
+          <Button className="h-16 w-full hover:text-white sm:w-2/4 md:w-1/4 bg-white text-black">
             START TODAY
           </Button>
         </div>

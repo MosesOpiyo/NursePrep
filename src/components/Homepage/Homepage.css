@@ -377,3 +377,15 @@ button.start:hover {
         display: flex;
     }
 }
+
+
+/* @media (max-width: 425px) {
+    .comparison-nurseprep {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .comparison-card {
+        grid-template: auto / 1fr;
+    }
+} */

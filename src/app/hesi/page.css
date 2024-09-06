@@ -4,6 +4,10 @@
     color: black;
 }
 
+.navbar-container .navbar button svg {
+    color: black;
+}
+
 .navbar-container .navbar-link li a:hover,
 .navbar-container .navbar-link li a.active {
     border: 2px solid #000;

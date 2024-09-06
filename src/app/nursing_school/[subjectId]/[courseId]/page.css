@@ -9,6 +9,10 @@
     border: 2px solid #000;
 }
 
+.nursecourses-container .navbar button svg {
+    color: black;
+}
+
 
  .nursingcourse-hero {
     height: 400px;

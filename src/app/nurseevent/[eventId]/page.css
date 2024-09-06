@@ -8,3 +8,7 @@
 .individual-eventnavbar .navbar-link li a.active {
     border: 2px solid #000;
 }
+
+.individual-eventnavbar .navbar button svg {
+    color: black;
+}

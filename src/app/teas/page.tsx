@@ -25,7 +25,7 @@ const Teas = () => {
 
         {/* TEAS SUBJECT LIST */}
         <section className="teas-list mt-16 mb-32 flex flex-col gap-4">
-          <div className="teas-header flex flex-col gap-4 items-center">
+          <div className="teas-header flex flex-col text-center p-4 gap-4 items-center">
             <h2 className="font-bold text-4xl sm:text-5xl">
               ATI TEAS 7 Free Practice Tests
             </h2>
@@ -61,7 +61,7 @@ const Teas = () => {
 
         {/* WALKTHROUGH VIDEO */}
         <section className="walkthrough-container mb-32 flex flex-col gap-16">
-          <div className="walkthrough-header flex flex-col gap-4 items-center">
+          <div className="walkthrough-header flex text-center p-4 flex-col gap-4 items-center">
             <h2 className="font-bold text-4xl sm:text-5xl">
               Wondering where to start?
             </h2>

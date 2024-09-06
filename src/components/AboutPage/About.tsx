@@ -85,7 +85,7 @@ const AboutPage = () => {
       </section>
 
       {/* OUR MISSION */}
-      <section className="mission-container mb-16 relative w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 flex-col gap-4">
+      <section className="mission-container mb-16 relative w-4/5 mx-auto grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 flex-col gap-4">
         <div className="mission-header rounded-xl relative p-4 flex flex-col gap-4 items-center justify-center text-center">
           <h2 className="text-base">Our Mission</h2>
           <p className="text-2xl">
@@ -106,7 +106,7 @@ const AboutPage = () => {
       {/* TEAM */}
       <section className="team-container flex items-center p-4 flex-col gap-8 mb-16">
         <div className="team-header flex flex-col gap-4">
-          <h2 className="font-bold text-5xl">Meet Our Team</h2>
+          <h2 className="font-bold text-5xl text-center">Meet Our Team</h2>
           <p className="w-4/5 mx-auto">Our team is composed of dedicated professionals with extensive experience in nursing and education. Meet the passionate individuals who make NursePrep a leading resource for nursing entrance exam preparation.</p>
         </div>
 
@@ -136,9 +136,9 @@ const AboutPage = () => {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="abouttestimonial-container mb-16 gap-4 grid grid-cols-1 md:grid-cols-2">
+      <section className="abouttestimonial-container mb-16 gap-4 grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2">
         <div className="abouttestimonial-header flex flex-col gap-4 items-center justify-center text-white p-4">
-          <h2 className="text-7xl font-extralight w-2/3 mx-auto">
+          <h2 className="text-5xl md:text-7xl font-extralight w-2/3 mx-auto">
             Real Success Stories from Our Users
           </h2>
           <p className=" w-2/3 mx-auto">
@@ -225,7 +225,7 @@ const AboutPage = () => {
       <section className="aboutcta-container rounded-xl w-4/5 mx-auto flex items-end mb-16">
         <div className="aboutcta-content flex flex-col gap-12 p-8 justify-between items-center w-full">
           <h2 className="text-5xl">Enough Talk, Let&apos;s Get Started</h2>
-          <Button className="w-1/4 h-12">Start Now</Button>
+          <Button className="md:w-1/4 h-12">Start Now</Button>
         </div>
       </section>
 

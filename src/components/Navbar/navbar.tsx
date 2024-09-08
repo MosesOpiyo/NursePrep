@@ -106,6 +106,16 @@ const Navbar: React.FC = () => {
           {/* dropdown menu */}
           <div className="nursing-dropdown">
             <ul className="grid grid-cols-2 gap-2">
+              <li>
+                <Link
+                  href="/nursing_school"
+                  className="p-2"
+                >
+                  <span>
+                    All Nursing School Courses
+                  </span>
+                </Link>
+              </li>
               {nursingCourses.map((item) =>
                 item.course.map((course) => (
                   <li key={course.id}>
@@ -172,7 +182,11 @@ const Navbar: React.FC = () => {
               {isLoggedIn ? (
                 <>
                   <span>Welcome, User!</span>
-                  <button type="button" className="text-black" onClick={handleLogout}>
+                  <button
+                    type="button"
+                    className="text-black"
+                    onClick={handleLogout}
+                  >
                     Logout
                   </button>
                 </>
@@ -229,24 +243,26 @@ const Navbar: React.FC = () => {
                           </DropdownMenuTrigger>
 
                           <DropdownMenuContent>
-                            <p className="ps-4 text-sm pt-4 pb-1">
-                              All {navlink.linkName} lessons
+                            <p className="ps-4 text-sm pt-4 pb-1 cursor-pointer">
+                              All {navlink.linkName} Courses
                             </p>
-                            {nursingCourses.map((item) =>
-                              item.course.map((course) => (
-                                <DropdownMenuItem key={course.id}>
-                                  <li key={course.id} className="list-none">
-                                    <Link
-                                      className="p-2"
-                                      href={`/nursing_school/${item.id}/${course.id}`}
-                                      key={course.id}
-                                    >
-                                      {course.courseTitle}
-                                    </Link>
-                                  </li>
-                                </DropdownMenuItem>
-                              ))
-                            )}
+                            <ul>
+                              {nursingCourses.map((item) =>
+                                item.course.map((course) => (
+                                  <DropdownMenuItem key={course.id}>
+                                    <li key={course.id} className="list-none">
+                                      <Link
+                                        className="p-2"
+                                        href={`/nursing_school/${item.id}/${course.id}`}
+                                        key={course.id}
+                                      >
+                                        {course.courseTitle}
+                                      </Link>
+                                    </li>
+                                  </DropdownMenuItem>
+                                ))
+                              )}
+                            </ul>
                           </DropdownMenuContent>
                         </DropdownMenu>
                       ) : (

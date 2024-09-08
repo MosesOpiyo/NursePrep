@@ -69,11 +69,11 @@ function TesttopicPage({
   const nexttopic = nextTopic(params.topicId);
 
   return (
-    <section className="relative flex flex-col gap-16 items-center justify-center px-16 py-8 mb-24">
+    <section className="relative flex flex-col gap-16 items-center justify-center px-4 md:px-16 py-8 mb-24">
       {/* NEXT BUTTON */}
       <div className="absolute top-2 right-2">
         <Link
-          href={`/teas/${params.subjectId}/topics/${nexttopic}/${nextsubtopic}`}
+          href={`/teas/${params.subjectId}/quizes/${nexttopic}/${nextsubtopic}`}
         >
           NEXT
         </Link>
@@ -107,23 +107,23 @@ function TesttopicPage({
         <Tabs defaultValue="1" className="w-full">
           {/* TAB LIST */}
           <TabsList className="grid grid-cols-5 gap-2 w-4/5 mx-auto">
-            <TabsTrigger value="1" className="w-max">Question 1</TabsTrigger>
-            <TabsTrigger value="2" className="w-max">Question 2</TabsTrigger>
-            <TabsTrigger value="3" className="w-max">Question 3</TabsTrigger>
-            <TabsTrigger value="4" className="w-max">Question 4</TabsTrigger>
-            <TabsTrigger value="5" className="w-max">Question 5</TabsTrigger>
-            <TabsTrigger value="6" className="w-max">Question 6</TabsTrigger>
-            <TabsTrigger value="7" className="w-max">Question 7</TabsTrigger>
-            <TabsTrigger value="8" className="w-max">Question 8</TabsTrigger>
-            <TabsTrigger value="9" className="w-max">Question 9</TabsTrigger>
-            <TabsTrigger value="10" className="w-max">Question 10</TabsTrigger>
+            <TabsTrigger value="1" className="w-max">Q1</TabsTrigger>
+            <TabsTrigger value="2" className="w-max">Q2</TabsTrigger>
+            <TabsTrigger value="3" className="w-max">Q3</TabsTrigger>
+            <TabsTrigger value="4" className="w-max">Q4</TabsTrigger>
+            <TabsTrigger value="5" className="w-max">Q5</TabsTrigger>
+            <TabsTrigger value="6" className="w-max">Q6</TabsTrigger>
+            <TabsTrigger value="7" className="w-max">Q7</TabsTrigger>
+            <TabsTrigger value="8" className="w-max">Q8</TabsTrigger>
+            <TabsTrigger value="9" className="w-max">Q9</TabsTrigger>
+            <TabsTrigger value="10" className="w-max">Q10</TabsTrigger>
           </TabsList>
 
           {/* TAB CONTENT */}
           <div className="mt-4">
             <TabsContent value="1">
               {/* QUESTION 1 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
 
                 <h2 className="font-bold text-2xl">QUESTION 1:</h2>
 
@@ -182,9 +182,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -192,7 +192,7 @@ function TesttopicPage({
 
             <TabsContent value="2">
               {/* QUESTION 2 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 2:</h2>
 
                 <div>
@@ -248,9 +248,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -258,7 +258,7 @@ function TesttopicPage({
 
             <TabsContent value="3">
               {/* QUESTION 3 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 3:</h2>
                 <div>
                   <p>solve</p>
@@ -313,9 +313,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ function TesttopicPage({
 
             <TabsContent value="4">
               {/* QUESTION 4 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 4:</h2>
                 <div>
                   <p>solve</p>
@@ -378,9 +378,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -388,7 +388,7 @@ function TesttopicPage({
 
             <TabsContent value="5">
               {/* QUESTION 5 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 5:</h2>
                 <div>
                   <p>solve</p>
@@ -443,9 +443,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -453,7 +453,7 @@ function TesttopicPage({
 
             <TabsContent value="6">
               {/* QUESTION 6 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 6:</h2>
                 <div>
                   <p>solve</p>
@@ -508,9 +508,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -518,7 +518,7 @@ function TesttopicPage({
 
             <TabsContent value="7">
               {/* QUESTION 7 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 7:</h2>
                 <div>
                   <p>solve</p>
@@ -573,9 +573,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -583,7 +583,7 @@ function TesttopicPage({
 
             <TabsContent value="8">
               {/* QUESTION 8 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 8:</h2>
                 <div>
                   <p>solve</p>
@@ -638,9 +638,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -648,7 +648,7 @@ function TesttopicPage({
 
             <TabsContent value="9">
               {/* QUESTION 9 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 9:</h2>
                 <div>
                   <p>solve</p>
@@ -703,9 +703,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>
@@ -713,7 +713,7 @@ function TesttopicPage({
 
             <TabsContent value="10">
               {/* QUESTION 10 */}
-              <div className="mt-16 flex flex-col gap-4 p-4">
+              <div className="mt-16 flex flex-col items-center gap-4 p-4">
                 <h2 className="font-bold text-2xl">QUESTION 10:</h2>
                 <div>
                   <p>solve</p>
@@ -768,9 +768,9 @@ function TesttopicPage({
                     </div>
                   </form>
 
-                  <div className="answer flex gap-4 items-center">
+                  <div className="answer flex flex-col gap-4 items-start">
                     <p>You selected: {selectedOption}</p>
-                    <Button>VIEW ANSWER</Button>
+                    <Button>CHECK ANSWER</Button>
                   </div>
                 </div>
               </div>

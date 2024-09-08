@@ -61,7 +61,7 @@ function nextTopic(value: any): any {
 
   return (
     
-    <section className="relative flex flex-col gap-16 items-center justify-center px-16 py-8 mb-24">
+    <section className="relative flex flex-col gap-16 items-center justify-center px-4 sm:px-16 py-8 mb-24">
       {/* NEXT BUTTON */}
       <div className="absolute top-2 right-2">
         <Link
@@ -90,8 +90,8 @@ function nextTopic(value: any): any {
       <hr className="h-0.5 bg-slate-300 w-4/5 mx-auto block" />
 
       {/* VIDEO */}
-      <div className="content-video flex flex-col gap-4 items-center w-4/5 mx-auto">
-        <div className="video-heder">
+      <div className="content-video flex flex-col gap-4 items-center w-full lg:w-4/5 mx-auto">
+        <div className="video-header text-center">
           <h2 className="font-bold text-2xl">
             Watch the short video about the lesson below
           </h2>
@@ -113,7 +113,7 @@ function nextTopic(value: any): any {
       <hr className="h-0.5 bg-slate-300 w-4/5 mx-auto block" />
 
       {/* NOTES */}
-      <div className="content-notes flex flex-col gap-8">
+      <div className="content-notes flex flex-col gap-8 p-4">
         {/* GOALS */}
         <div className="goals flex flex-col gap-4">
           <h2 className="font-bold text-4xl">Learning Goals</h2>
@@ -177,7 +177,7 @@ function nextTopic(value: any): any {
       <div className="content-questions flex flex-col gap-8 items-center w-full">
         <h2 className="font-bold text-4xl">Sample Questions</h2>
 
-        <div className="grid grid-cols-2 gap-8 justify-between w-4/5 mx-auto">
+        <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 gap-8 justify-between w-full md:w-4/5 mx-auto">
           {/* QUESTION 1 */}
           <div className="flex flex-col gap-2">
             <h2 className="font-bold text-2xl">QUESTION 1:</h2>
@@ -187,7 +187,7 @@ function nextTopic(value: any): any {
             <div>
               <h1>Select an Option</h1>
               <form>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option1"
@@ -201,7 +201,7 @@ function nextTopic(value: any): any {
                     Option 1
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option2"
@@ -215,7 +215,7 @@ function nextTopic(value: any): any {
                     Option 2
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option3"
@@ -231,9 +231,9 @@ function nextTopic(value: any): any {
                 </div>
               </form>
 
-              <div className="answer flex gap-4 items-center">
+              <div className="answer flex flex-col gap-4 items-start">
                 <p>You selected: {selectedOption}</p>
-                <Button>VIEW ANSWER</Button>
+                <Button>CHECK ANSWER</Button>
               </div>
               
             </div>
@@ -248,7 +248,7 @@ function nextTopic(value: any): any {
             <div>
               <h1>Select an Option</h1>
               <form>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option1"
@@ -262,7 +262,7 @@ function nextTopic(value: any): any {
                     Option 1
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option2"
@@ -276,7 +276,7 @@ function nextTopic(value: any): any {
                     Option 2
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option3"
@@ -292,9 +292,9 @@ function nextTopic(value: any): any {
                 </div>
               </form>
 
-              <div className="answer flex gap-4 items-center">
+              <div className="answer flex flex-col gap-4 items-start">
                 <p>You selected: {selectedOption}</p>
-                <Button>VIEW ANSWER</Button>
+                <Button>CHECK ANSWER</Button>
               </div>
               
             </div>
@@ -309,7 +309,7 @@ function nextTopic(value: any): any {
             <div>
               <h1>Select an Option</h1>
               <form>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option1"
@@ -323,7 +323,7 @@ function nextTopic(value: any): any {
                     Option 1
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option2"
@@ -337,7 +337,7 @@ function nextTopic(value: any): any {
                     Option 2
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option3"
@@ -353,9 +353,9 @@ function nextTopic(value: any): any {
                 </div>
               </form>
               
-              <div className="answer flex gap-4 items-center">
+              <div className="answer flex flex-col gap-4 items-start">
                 <p>You selected: {selectedOption}</p>
-                <Button>VIEW ANSWER</Button>
+                <Button>CHECK ANSWER</Button>
               </div>
             </div>
           </div>
@@ -369,7 +369,7 @@ function nextTopic(value: any): any {
             <div>
               <h1>Select an Option</h1>
               <form>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option1"
@@ -383,7 +383,7 @@ function nextTopic(value: any): any {
                     Option 1
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option2"
@@ -397,7 +397,7 @@ function nextTopic(value: any): any {
                     Option 2
                   </label>
                 </div>
-                <div className="radioContainer">
+                <div className="radioContainer flex gap-1">
                   <input
                     type="radio"
                     id="option3"
@@ -413,9 +413,9 @@ function nextTopic(value: any): any {
                 </div>
               </form>
               
-              <div className="answer flex gap-4 items-center">
+              <div className="answer flex flex-col gap-4 items-start">
                 <p>You selected: {selectedOption}</p>
-                <Button>VIEW ANSWER</Button>
+                <Button>CHECK ANSWER</Button>
               </div>
             </div>
           </div>

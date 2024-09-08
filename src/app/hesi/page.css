@@ -16,3 +16,7 @@
 .walkthrough-video {
     height: 500px;
 }
+
+.faq-content button {
+    text-align: start;
+}

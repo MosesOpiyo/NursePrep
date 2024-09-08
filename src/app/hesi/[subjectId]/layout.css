@@ -4,6 +4,10 @@
     color: black;
 }
 
+.navbar-container .navbar button svg {
+    color: black;
+}
+
 .walkthrough-video {
     height: 500px;
 }

@@ -47,7 +47,7 @@ export default async function SideNav({
       {/* MAIN CONTENT */}
       <div className="flex relative layoutcontent-container h-full">
         {/* SIDENAV */}
-        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 fixed h-full border-solid p-4 flex flex-col gap-8">
+        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 fixed h-full border-solid p-4 flex-col gap-8 hidden md:flex">
           <h1 className="font-bold text-3xl sm:text-3xl">
             Subject: {subject.subject}{" "}
           </h1>
@@ -74,7 +74,7 @@ export default async function SideNav({
         </div>
 
         {/* CONTENT */}
-        <div className="maincontent-container w-3/4 relative left-1/4">
+        <div className="maincontent-container w-full md:w-3/4 relative md:left-1/4">
         {children}
         </div>
         

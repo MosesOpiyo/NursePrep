@@ -1,5 +1,7 @@
+"use client";
+
 import Navbar from "../components/Navbar/navbar";
-import { useQuery } from '@tanstack/react-query';
+import { useQuery,useQueryClient } from '@tanstack/react-query';
 import ContentService from "@/services/CMS/cms";
 import { Section } from "@/services/CMS/contentModel";
 import { Button } from "@/components/ui/button";
@@ -10,20 +12,22 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home(){
 
+  const queryClient = useQueryClient();
+  const queryKey = ['homePageData'];
+
+  const cachedData = queryClient.getQueryData(queryKey);
+
   const { data:page, error, isLoading } = useQuery({
     queryFn: async () => {
-      const contentService = ContentService.getInstance();
-      const response = await contentService.getContent('Homepage');
-      const page = response;
-      const mainSection = page.sections.find((section: Section) => section.title === 'Main');
-    
-      if (!mainSection) {
-          throw new Error("Main section not found");
+      if(!cachedData){
+        const contentService = ContentService.getInstance();
+        const response = await contentService.getContent('Homepage');
+        return response;
       }
-    
-      return mainSection;
+      return cachedData;
     },
-    queryKey: ["homePageData"], //Array according to Documentation
+    queryKey: queryKey,
+    initialData: cachedData, //Array according to Documentation
   });
 
   if (isLoading) return <div>Loading...</div>;

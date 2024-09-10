@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useQuery } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import ContentService from "@/services/CMS/cms";
 import { Page,Section } from "@/services/CMS/contentModel";
 import hero from "../../assets/hero4.jpg";
@@ -19,26 +19,23 @@ import community from "../../assets/community.jpg";
 import exam from "../../assets/examday.jpg"; 
 
 const Hero = () => {
-  const { data: pageData } = useQuery<Page>({queryKey:['homePageData']});
+  const queryClient = useQueryClient();
+  const queryKey = ['homePageData'];
 
-  const bannerSection = pageData?.sections.find(
-    (section) => section.title === 'Banner'
-  );
-  const contentText = bannerSection?.content_blocks.find(
-    (text) => text.type === 'Title-Text'
+  const cachedData = queryClient.getQueryData<Page>(queryKey);
+
+  const heroSection = cachedData?.sections.find(
+    (section) => section.name === 'Hero'
   );
 
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
         <div className="hero-text pt-32 text-white px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
           <h1 className="hero-header relative text-center">
-            {bannerSection?.title}
-            Ace your nursing school entrance exams. <span>Guaranteed.</span>
+            {heroSection?.title}
           </h1>
           <p className="hero-paragraph">
-            {contentText?.content}
-            Pass your entrance tests with our accurate practice questions and
-            detailed answer explanations.
+            {heroSection?.section_text}
           </p>
 
           <div className="action-btn flex gap-4">

@@ -6,14 +6,14 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="footer-container bg-black text-white p-4">
-      <div className="footer-content grid items-center gap-4 px-16 py-32">
+    <section className="footer-container bg-black text-white p-4 md:flex md:flex-col md:justify-between">
+      <div className="footer-content flex flex-col-reverse gap-16 md:gap-4 md:items-center md:grid px-4 py-16">
         <div className="logo">
-          <p className="text-5xl">NursePrep</p>
+          <p className="text-5xl text-center md:text-start">NursePrep</p>
         </div>
 
-        <div className="footercard-container grid grid-cols-4 grid-rows-1 gap-4">
-          <div className="footer-card flex flex-col gap-4">
+        <div className="footercard-container grid gap-8 md:grid-cols-4 md:grid-rows-1 md:gap-4">
+          <div className="footer-card flex flex-col gap-2">
             <p>Products</p>
             <ul className="flex flex-col gap-2">
               <li>Overview</li>
@@ -22,7 +22,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-card flex flex-col gap-4">
+          <div className="footer-card flex flex-col gap-2">
             <p>Company</p>
             <ul className="flex flex-col gap-2">
               <li>About Us</li>
@@ -30,7 +30,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-card flex flex-col gap-4">
+          <div className="footer-card flex flex-col gap-2">
             <p>Social</p>
             <ul className="flex flex-col gap-2">
               <li>Twitter</li>
@@ -39,7 +39,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-card flex flex-col gap-4">
+          <div className="footer-card flex flex-col gap-2">
             <p>Legal</p>
             <ul className="flex flex-col gap-2">
               <li>Terms</li>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-end w-4/5 mx-auto flex justify-between p-4">
+      <div className="footer-end w-4/5 mx-auto flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between p-4">
         <p>&copy;2024. All Rights Reserved</p>
 
         <div className="socials flex gap-4">

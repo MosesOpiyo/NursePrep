@@ -30,14 +30,15 @@ const Hero = () => {
 
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
-        <div className="hero-text pt-32 text-white px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
-          <h1 className="hero-header relative text-center">
+        <div className="hero-text sm:pt-32 text-white p sm:px-16 h-full w-full flex flex-col gap-10 items-center justify-center">
+          <h1 className="hero-header relative text-center sm:text-6xl text-5xl">
             {heroSection?.title}
           </h1>
-          <p className="hero-paragraph">
+          <p className="hero-paragraph text-center">
             {heroSection?.section_text}
           </p>
 
+          {/* HERO BUTTONS */}
           <div className="action-btn flex gap-4">
             <Button>GET STARTED NOW</Button>
             <Button>BROWSE FREE TESTS</Button>

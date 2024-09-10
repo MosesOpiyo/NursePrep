@@ -1,3 +1,14 @@
+.navbar-container .navbar > *,
+.navbar-container .navbar-links li a {
+    color: black;
+}
+
+.navbar-container .navbar button svg {
+    color: black;
+}
+
+
+
 .about-hero {
     height: 400px;
     background-image: url(../../assets/about3.jpg);
@@ -16,6 +27,8 @@
     opacity: .6;
     z-index: 1;
 }
+
+
 
 /* mission container */
 .mission-container {
@@ -76,4 +89,19 @@
     background-color: #d7d7d7;
     background: -webkit-linear-gradient(0deg, #d7d7d7 0%, #e9e9e9 100%);
     background: linear-gradient(0deg, #d7d7d7 0%, #e9e9e9 100%);
+}
+
+
+/* FAQ */
+.faq-content button {
+    text-align: start;
+}
+
+
+@media (max-width:767px) {
+    .mission-container,
+    .abouttestimonial-container,
+    .aboutcta-container {
+        height: auto;
+    }
 }

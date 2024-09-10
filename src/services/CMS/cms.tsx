@@ -18,7 +18,6 @@ class ContentService {
     public async getContent(slug:string):
         Promise<Page> {
           const response = await axiosInstance.get(`http://127.0.0.1:5000/Content/pages/${slug}`);
-          console.log("Loading....")
           return response.data
     }
     

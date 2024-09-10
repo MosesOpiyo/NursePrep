@@ -35,7 +35,7 @@ export default function NursingSchool() {
                     <h2 className="font-bold text-4xl">{item.title} Essentials</h2>
                 </div>
 
-                <div className="grid gap-4 grid-cols-3 w-full">
+                <div className="flex flex-wrap gap-4 w-full">
                 {item.course.map((course) => (
                     <Link href={`/nursing_school/${item.id}/${course.id}`} key={course.id} className="relative lesson-card flex flex-col gap-2 items-center justify-center text-white text-center">
 

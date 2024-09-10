@@ -1,6 +1,16 @@
 /* FOOTER */
+/* .footer-container {
+    height: 400px;
+} */
+
 .footer-content {
     grid-template: 1fr / .4fr .6fr;
+}
+
+.footer-card {
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
 }
 
 .footer-card p {
@@ -11,4 +21,22 @@
 
 .footer-card ul li {
     color: #ffffffb3;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 425px) {
+    .footercard-container {
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        height: 400px;
+    }
+
+    .footer-card {
+        align-items: flex-start;
+        text-align: start;
+    }
 }

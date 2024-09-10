@@ -4,6 +4,10 @@
     color: #000;
 }
 
+.nursingnavbar-container .navbar button svg {
+    color: black;
+}
+
 .nursingnavbar-container .navbar-link li a:hover,
 .nursingnavbar-container .navbar-link li a.active {
     border: 2px solid #000;
@@ -29,5 +33,6 @@
 }
 
 .lesson-card {
-    height: 450px;
+    height: 350px;
+    width: 350px;
 }

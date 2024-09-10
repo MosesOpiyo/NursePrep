@@ -1,0 +1,391 @@
+/* SERVICES */
+.services-container {
+    margin-top: -64px;
+}
+
+.services-header {
+    width: 95%;
+}
+
+.service-paragraph p {
+    width: 75%;
+    margin-inline: auto;
+}
+
+.services-list {
+    /* grid-template: auto / repeat(3, 1fr); */
+    /* height: 700px; */
+    width: 95%;
+    margin-inline: auto;
+}
+
+.service-card {
+    height: 470px;
+    border: 1px solid #00000030;
+    overflow: hidden;
+}
+
+.card-image::after {
+    content: '';
+    background-color: #000;
+    opacity: .4;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.card-header {
+    top: 40%;
+    width: 70%;
+    left: 17.5%;
+    transition: all 1s ease-in-out;
+}
+
+.card-content {
+    background-color: #b7f2d2;
+    height: 100%;
+    opacity: 1;
+    transform: translateY(-100%);
+    transition: all 1s ease-in-out;
+}
+
+.service-card:hover .card-content {
+    transform: translateY(0);
+    opacity: 1;
+    padding: 4rem;
+    z-index: 11;
+}
+
+.service-card:hover .card-header {
+    opacity: 0;
+}
+
+.start {
+    border: 1px solid transparent;
+}
+
+button.start {
+    background-color: #244b50;
+    transition: all 150ms ease-in-out;
+}
+
+button.start:hover {
+    background-color: transparent;
+    border: 1px solid #506d60;
+    color: inherit;
+}
+
+
+/* HOW IT WORKS */
+.works-container {
+    width: 95%;
+}
+
+.works-card {
+    border-radius: 10px;
+    padding-block: 3rem;
+}
+
+
+
+
+
+/* CTA-CONTAINER */
+.cta-container {
+    height: 600px;
+    position: relative;
+}
+
+.cta-container::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: .5;
+    z-index: 1;
+} 
+
+.cta-text {
+    color: #fff;
+}
+
+
+
+/* TESTIMONIALS */
+.testimonials-container {
+    grid-template: auto / 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.testimonialcard-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-header {
+    width: 95%;
+}
+
+.testimonial-header .icon {
+    color: #7b7bfccf;
+}
+
+.testimonial-header button {
+    background-color: #7b7bfc;
+}
+
+.testimonials-btn {
+    display: none;
+}
+
+.testimonial-content {
+    background-color: #f5f5f5;
+    transition: all .5s ease-in;
+    border-radius: 20px;
+}
+
+.testimonial-card:hover .testimonial-content {
+    background-color: #e2eefc;
+    transform: rotate(10deg);
+    position: relative;
+    top: 100px;
+}
+
+.testimonial-image {
+    transition: all .5s ease-in;
+    border-radius: 20px;
+}
+
+.testimonial-image img {
+    border-radius: 20px;
+}
+
+.testimonial-card:hover .testimonial-image {
+    top: -15px;
+}
+
+.testimonial-card {
+    height: 300px;
+}
+
+.testimonial-card.john {
+    grid-area: 2 / 1 / 7 / 7;
+}
+
+.testimonial-card.anne {
+    grid-area: 3 / 7 / 8 / 13;
+}
+
+.testimonial-card.jordan {
+    grid-area: 7 / 1 / 12 / 7;
+}
+
+.testimonial-card.anna {
+    grid-area: 8 / 7 / 13 / 13;
+}
+
+.testimonials-btn {
+    text-align: center;
+    gap: 3rem;
+}
+
+/* .testimonial-card.njenga {
+    grid-area: 8 / 1 / 11 / 7;
+}
+
+.testimonial-card.eunice {
+    grid-area: 9 / 7 / 12 / 13;
+}
+
+.testimonial-card.eric {
+    grid-area: 8 / 1 / 11 / 5;
+}
+
+.testimonial-card.mary {
+    grid-area: 9 / 5 / 12 / 9;
+} */
+ 
+
+
+
+/* PRICING CARD */
+.pricing-container {
+    width: 90%;
+}
+
+.pricing-card {
+    background-color: #d6f2fe;
+    border-radius: 20px;
+}
+
+.pricing-card.quarter {
+    background-color: #ffd6ff;
+}
+
+.pricing-card.month .save {
+    display: none;
+}
+
+.save {
+    border-radius: 10px;
+    transform: rotate(-5deg);
+}
+
+.pricing-card span.pricetag {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    top: 5px;
+    right: 10px;
+}
+
+
+
+/* COMPARISON */
+.comparison-nurseprep {
+    background-color: #fdedc0;
+}
+
+.comparison-card {
+    border-bottom: 1px solid #00000027;
+}
+
+.comparison-card:last-child {
+    border-bottom: none;
+}
+
+.textheaders {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top-div {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.bottom-div {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.comparison-nurseprep {
+    background-color: #263729;
+    color: #fff;
+}
+
+
+
+
+/* FAQ SECTION */
+.faq-container {
+    width: 90%;   
+}
+
+.faq-content button {
+    text-align: start;
+}
+
+/* CONTACT SECTION */
+.contact-form {
+    background-color: #f2f2f0;
+    box-shadow: 0 0 5px #ccc;
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    .cta-image {
+        grid-area: 1 / 1 / 13 / 7;
+        width: 90%;
+    }
+    
+    .cta-text {
+        grid-area: 1 / 6 / 13 / 13;
+        width: 90%;
+        color: #000;
+    }
+
+    .cta-container::after {
+        top: 35%;
+        height: 65%;
+        background-color: #a5c9ed;
+        opacity: .5;
+        z-index: -1;
+    }
+
+    .works-card.signup {
+        grid-area: 1 / 1 / 4 / 7;
+        /* background-color: #edf0f7; */
+    }
+    
+    .works-card.resources {
+        grid-area: 4 / 7 / 7 / 13;
+        /* background-color: #fbf1f0; */
+    }
+    
+    .works-card.practice {
+        grid-area: 7 / 1 / 10 / 7;
+        /* background-color: #edf7f9; */
+    }
+    
+    .works-card.success {
+        grid-area: 10 / 7 / 13 / 13;
+        /* background-color: #fdf0e7; */
+    }
+}
+
+@media (min-width: 640px) {
+    .contact-form {
+        width: 90%;
+    }
+}
+
+@media (min-width: 600px) {
+    .testimonialcard-container {
+        display: grid;
+        grid-template-rows: repeat(12, minmax(0, 1fr));
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-container {
+        grid-template: 1fr / .4fr .6fr;
+        text-align: start;
+    }
+
+    .testimonial-header {
+        background-image: url("../../assets/blob.svg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .testimonials-btn {
+        display: flex;
+    }
+}
+
+
+/* @media (max-width: 425px) {
+    .comparison-nurseprep {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .comparison-card {
+        grid-template: auto / 1fr;
+    }
+} */

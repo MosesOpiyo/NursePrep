@@ -1,0 +1,14 @@
+.eventsnavbar-container .navbar > *,
+.eventsnavbar-container .navbar-links li a,
+.eventsnavbar-container .navbar-auth .login-button {
+    color: #000;
+}
+
+.eventsnavbar-container .navbar-link li a:hover,
+.eventsnavbar-container .navbar-link li a.active {
+    border: 2px solid #000;
+}
+
+.eventsnavbar-container .navbar button svg {
+    color: black;
+}

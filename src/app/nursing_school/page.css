@@ -1,0 +1,38 @@
+.nursingnavbar-container .navbar > *,
+.nursingnavbar-container .navbar-links li a,
+.nursingnavbar-container .navbar-auth .login-button {
+    color: #000;
+}
+
+.nursingnavbar-container .navbar button svg {
+    color: black;
+}
+
+.nursingnavbar-container .navbar-link li a:hover,
+.nursingnavbar-container .navbar-link li a.active {
+    border: 2px solid #000;
+}
+
+.nursing-hero {
+    height: 400px;
+    background-image: url(https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    width: 95%;
+}
+
+.nursing-hero::after {
+    content: '';
+    border-radius: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .6;
+    z-index: 1;
+}
+
+.lesson-card {
+    height: 350px;
+    width: 350px;
+}

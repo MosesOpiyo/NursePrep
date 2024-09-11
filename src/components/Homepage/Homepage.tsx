@@ -57,7 +57,7 @@ const Homepage = () => {
       {/* SERVICES SECTION */}
       <section className="services-container flex flex-col gap-4">
         {/* SERVICES-HEADER */}
-        <div className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]" >
+        <div className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]" id="overview">
           <div className="header">
             <h2 className="font-bold text-4xl sm:text-5xl">
               Unlock Your Nursing <br /> Career Success
@@ -80,7 +80,7 @@ const Homepage = () => {
         </div>
 
         {/* SERVICES LIST */}
-        <div className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="services">
           {dataArray.map((item) => (
             <div
               key={item.id}
@@ -123,7 +123,7 @@ const Homepage = () => {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center">
+      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center" id="works">
         <div className="works-header text-center">
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
@@ -175,7 +175,7 @@ const Homepage = () => {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="testimonials-container overflow-hidden mb-16 grid">
+      <section className="testimonials-container overflow-hidden mb-16 grid" id="testimonials">
         <div className="testimonial-header flex mx-auto justify-center flex-col gap-8 p-4 relative">
 
           <h2 className="font-bold text-5xl">What our clients say</h2>
@@ -227,7 +227,7 @@ const Homepage = () => {
       </section>
 
       {/* PRICING SECTION */}
-      <section className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16">
+      <section className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16" id="pricing">
         <div className="pricing-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl">
             Our pricing is simple with no hidden fees
@@ -292,7 +292,7 @@ const Homepage = () => {
       </section>
 
       {/* WHY US/ COMPARISON */}
-      <section className="comparison-container hidden md:flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto">
+      <section className="comparison-container hidden md:flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto" id="why-us">
         <div className="comparison-header">
           <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
         </div>
@@ -337,7 +337,7 @@ const Homepage = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 md:p-4">
+      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 md:p-4" id="faq">
         <div className="faq-header">
           <h2 className="font-bold text-5xl">
             Have Questions? <br /> We&apos;re here
@@ -361,7 +361,7 @@ const Homepage = () => {
       </section>
 
       {/* CONTACT US SECTION */}
-      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-24">
+      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-24" id="contact">
 
         <div className="contact-content p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:grid-rows-1 md:gap-2">
           <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">

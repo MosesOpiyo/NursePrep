@@ -2,6 +2,8 @@
 
 import React from "react";
 import "./About.css";
+import { useQueryClient } from '@tanstack/react-query';
+import { Page } from "@/services/CMS/contentModel";
 import {
     Accordion,
     AccordionContent,
@@ -31,15 +33,62 @@ const AboutPage = () => {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
+  const queryClient = useQueryClient();
+  const queryKey = ['aboutPageData'];
+
+  const cachedData = queryClient.getQueryData<Page>(queryKey);
+
+  const aboutBannerSection = cachedData?.sections.find(
+    (section) => section.name === 'About-Banner'
+  );
+
+  const howItStartedSection = cachedData?.sections.find(
+    (section) => section.name === 'About-How-It_Started'
+  );
+
+  const approachSection = cachedData?.sections.find(
+    (section) => section.name === 'About-Our-Approach'
+  );
+
+  const ourMissionSection = cachedData?.sections.find(
+    (section) => section.name === 'About-Our-Mission'
+  );
+
+  const meetTheTeamSection = cachedData?.sections.find(
+    (section) => section.name === 'About-Meet-The-Team'
+  );
+
+  const aboutTestimonialsSection = cachedData?.sections.find(
+    (section) => section.name === 'About-Testimonials'
+  );
+
+  function splitText(text: string): [string, string] {
+    return text.split(" - ") as [string, string];
+  }
+
+  const aboutFAQsSection = cachedData?.sections.find(
+    (section) => section.name === 'About-FAQ'
+  );
+
+  function splitQuestion(text: string | undefined): [string, string] {
+    if(!text){
+      return ["",""]
+    }
+    return text.split("?") as [string, string];
+  }
+
+  const aboutCTAsSection = cachedData?.sections.find(
+    (section) => section.name === 'About-CTA'
+  );
+
   return (
     <>
       {/* ABOUT HERO SECTION */}
       <section className="about-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
         <div className="abouthero-header z-10 flex flex-col items-center justify-center gap-8">
-          <p className="text-base">About NursePrep</p>
+          <p className="text-base">{aboutBannerSection?.title}</p>
           <h2 className="text-4xl w-4/5 mx-auto text-center font-extralight">
-            Committed to your success with comprehensive and innovative nursing
-            exam preparation.
+          {aboutBannerSection?.section_text}
           </h2>
         </div>
       </section>
@@ -47,21 +96,12 @@ const AboutPage = () => {
       {/* HOW IT STARTED SECTION */}
       <section className="start-container flex mb-16 flex-col text-center items-center justify-center gap-4">
         <div className="start-header">
-          <h2 className="font-bold text-5xl">How It Started</h2>
+          <h2 className="font-bold text-5xl">{howItStartedSection?.title}</h2>
         </div>
 
         <div className="start-content w-4/5 mx-auto">
           <p>
-            In 2018, a group of passionate nurses and educators recognized a gap
-            in the resources available for nursing entrance exam preparation.
-            They saw students struggling with outdated, static study guides and
-            lacking the support they needed. Driven by a shared vision to
-            revolutionize nursing education, they pooled their expertise and
-            created NursePrep. Their goal was simple: to provide an interactive,
-            personalized, and comprehensive learning experience that empowers
-            nursing aspirants to succeed. Today, NursePrep stands as a testament
-            to their commitment, helping thousands of students achieve their
-            dreams of becoming nurses.
+          {howItStartedSection?.section_text}
           </p>
         </div>
       </section>
@@ -69,17 +109,12 @@ const AboutPage = () => {
       {/* APPROACH SECTION */}
       <section className="approach-container flex mb-16 flex-col text-center items-center justify-center gap-4">
         <div className="approach-header">
-          <h2 className="font-bold text-5xl">Our Approach</h2>
+          <h2 className="font-bold text-5xl">{approachSection?.title}</h2>
         </div>
 
         <div className="approach-content w-4/5 mx-auto">
           <p>
-            At NursePrep, we believe in a holistic approach to learning. Our
-            platform combines interactive lessons, adaptive quizzes, and
-            personalized study plans to cater to the unique needs of each
-            student. We focus on understanding concepts rather than rote
-            memorization, ensuring that our users are well-prepared for both
-            their exams and their future careers in nursing
+          {approachSection?.section_text}
           </p>
         </div>
       </section>
@@ -87,11 +122,9 @@ const AboutPage = () => {
       {/* OUR MISSION */}
       <section className="mission-container mb-16 relative w-4/5 mx-auto grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 flex-col gap-4">
         <div className="mission-header rounded-xl relative p-4 flex flex-col gap-4 items-center justify-center text-center">
-          <h2 className="text-base">Our Mission</h2>
+          <h2 className="text-base">{ourMissionSection?.title}</h2>
           <p className="text-2xl">
-            To revolutionize nursing exam preparation by providing innovative,
-            interactive tools that help students achieve their academic and
-            professional goals.
+            {ourMissionSection?.section_text}
           </p>
 
           <div className="circle-dot left absolute top-4 left-4"></div>
@@ -106,18 +139,18 @@ const AboutPage = () => {
       {/* TEAM */}
       <section className="team-container flex items-center p-4 flex-col gap-8 mb-16">
         <div className="team-header flex flex-col gap-4">
-          <h2 className="font-bold text-5xl text-center">Meet Our Team</h2>
-          <p className="w-4/5 mx-auto">Our team is composed of dedicated professionals with extensive experience in nursing and education. Meet the passionate individuals who make NursePrep a leading resource for nursing entrance exam preparation.</p>
+          <h2 className="font-bold text-5xl text-center">{meetTheTeamSection?.title}</h2>
+          <p className="w-4/5 mx-auto">{meetTheTeamSection?.section_text}</p>
         </div>
 
         <div className="team-content w-4/5 mx-auto grid gap-4 grid-col-1 md:grid-cols-3">
 
-        {teamData.map((item) => (
-          <div key={item.id} className="team-card relative flex flex-col gap-4 p-8">
+        {meetTheTeamSection?.assets.map((personnel) => (
+          <div key={personnel.id} className="team-card relative flex flex-col gap-4 p-8">
             <div className="team-image h-80">
               <Image
                 className="h-full w-full object-top object-cover"
-                src={item.image}
+                src={personnel.asset}
                 alt="a smiling nurse"
                 width={100}
                 height={100}
@@ -126,8 +159,8 @@ const AboutPage = () => {
             </div>
 
             <div className="team-name">
-              <p>{item.name}</p>
-              <p className="title">{item.title}</p>
+              <p>{personnel.title}</p>
+              <p className="title">{personnel.asset_content}</p>
             </div>
           </div>
         ))}
@@ -139,11 +172,10 @@ const AboutPage = () => {
       <section className="abouttestimonial-container mb-16 gap-4 grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2">
         <div className="abouttestimonial-header flex flex-col gap-4 items-center justify-center text-white p-4">
           <h2 className="text-5xl md:text-7xl font-extralight w-2/3 mx-auto">
-            Real Success Stories from Our Users
+            {aboutTestimonialsSection?.title}
           </h2>
           <p className=" w-2/3 mx-auto">
-            Discover how our platform has transformed the lives of nursing
-            students through real success stories and heartfelt testimonials
+          {aboutTestimonialsSection?.section_text}
           </p>
         </div>
 
@@ -158,29 +190,29 @@ const AboutPage = () => {
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent className="h-full">
-              {testimonialArray.map((item) => (
-                <CarouselItem key={item.id} className="h-full">
+              {aboutTestimonialsSection?.assets.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="h-full">
                   <div
-                    className={`flex gap-4 flex-col ${item.class}`}
-                    key={item.id}
+                    className={`flex gap-4 flex-col ${testimonial.class_name}`}
+                    key={testimonial.id}
                   >
                     <div className="abouttestimonial-content flex-col p-12 flex h-full w-full gap-16">
                       <div className="abouttestimonial-name">
-                        <h3 className="text-2xl font-bold">{item.name}</h3>
+                        <h3 className="text-2xl font-bold">{testimonial.title}</h3>
 
-                        <p className="text-slate-500">{item.title}</p>
+                        <p className="text-slate-500">{splitText(testimonial.asset_content)[0]}</p>
                       </div>
 
                       <div className="abouttestimonial-text flex flex-col gap-2">
                         <FaQuoteLeft className="text-slate-400" />
-                        <p>{item.testimony}</p>
+                        <p>{splitText(testimonial.asset_content)[1]}</p>
                       </div>
                     </div>
 
                     <div className="abouttestimonial-image self-center">
                       <Image
                         className="h-full w-full object-center object-cover"
-                        src={item.image}
+                        src={testimonial.asset}
                         alt="a smiling nurse"
                         width={100}
                         height={100}
@@ -201,19 +233,19 @@ const AboutPage = () => {
       <section className="faq-container mx-auto flex flex-col gap-8 mb-16 p-4">
         <div className="faq-header">
           <h2 className="font-bold text-5xl">
-            Have Questions? <br /> We&apos;re here
+            {splitQuestion(aboutFAQsSection?.title)[0]} <br />{splitQuestion(aboutFAQsSection?.title)[1]}
           </h2>
         </div>
 
         <div className="faq-content p-8">
           <Accordion type="single" collapsible>
-            {faqData.map((item) => (
-              <AccordionItem value={item.value} key={item.id}>
+            {aboutFAQsSection?.content_blocks.map((question) => (
+              <AccordionItem value={question.content} key={question.id}>
                 <AccordionTrigger className="text-xl">
-                  {item.question}
+                  {question.title}
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-slate-600">
-                  {item.answer}
+                  {question.content}
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -224,8 +256,8 @@ const AboutPage = () => {
       {/* CTA SECTION */}
       <section className="aboutcta-container rounded-xl w-4/5 mx-auto flex items-end mb-16">
         <div className="aboutcta-content flex flex-col gap-12 p-8 justify-between items-center w-full">
-          <h2 className="text-5xl">Enough Talk, Let&apos;s Get Started</h2>
-          <Button className="md:w-1/4 h-12">Start Now</Button>
+          <h2 className="text-5xl">{aboutCTAsSection?.title}</h2>
+          <Button className="md:w-1/4 h-12">{aboutCTAsSection?.section_text}</Button>
         </div>
       </section>
 

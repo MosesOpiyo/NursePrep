@@ -3,8 +3,8 @@ export interface Page {
     title: string,
     slug: string
     sections: Section[],
-    pricing_items: Pricing
-    benefits: Benefits
+    pricing_items: Pricing[]
+    benefits: Benefits[]
 }
 
 export interface Section {

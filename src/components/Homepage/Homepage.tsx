@@ -59,9 +59,9 @@ const Homepage = () => {
     (section) => section.name === 'Testimonials'
   );
 
-  const pricingSection = cachedData?.pricing_items;
+  const pricingSection = cachedData?.pricing_items[0];
 
-  const benefitsSection = cachedData?.benefits;
+  const benefitsSection = cachedData?.benefits[0];
 
   const ctaBannerSection = cachedData?.sections.find(
     (section) => section.name === 'CTA-Banner'
@@ -261,15 +261,15 @@ const Homepage = () => {
           </h2>
 
           <p className="w-4/5 mx-auto">
-           {pricingSection?.content}
+            {pricingSection?.content}
           </p>
         </div>
 
         <div className="pricingcard-container grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-8">
-        {pricingSection?.options.map((option) => (
+          {pricingSection?.options.map((option) => (
             <div key={option.id} className={option.class_name}>
               <div className="save absolute right-8 top-3 bg-black text-white p-4">
-                <p>Save ${option.saving}</p>
+                <p>{option.saving}</p>
                 <span className="bg-white absolute pricetag"></span>
               </div>
 
@@ -294,6 +294,7 @@ const Homepage = () => {
                   <p className="uppercase text-sm">
                     All site features including:
                   </p>
+
                   {option.features.map((feature,index) => (
                     <ul key={index} className="flex flex-col gap-1 ps-4">
                       <li className="flex items-center gap-1">

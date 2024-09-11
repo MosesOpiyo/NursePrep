@@ -306,6 +306,20 @@ button.start:hover {
 
 
 /* MEDIA QUERIES */
+@media (min-width: 600px) {
+    .testimonialcard-container {
+        display: grid;
+        grid-template-rows: repeat(12, minmax(0, 1fr));
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 640px) {
+    .contact-form {
+        width: 90%;
+    }
+}
+
 @media (min-width: 768px) {
     .cta-image {
         grid-area: 1 / 1 / 13 / 7;
@@ -347,20 +361,6 @@ button.start:hover {
     }
 }
 
-@media (min-width: 640px) {
-    .contact-form {
-        width: 90%;
-    }
-}
-
-@media (min-width: 600px) {
-    .testimonialcard-container {
-        display: grid;
-        grid-template-rows: repeat(12, minmax(0, 1fr));
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-}
-
 @media (min-width: 1024px) {
     .testimonials-container {
         grid-template: 1fr / .4fr .6fr;
@@ -377,15 +377,3 @@ button.start:hover {
         display: flex;
     }
 }
-
-
-/* @media (max-width: 425px) {
-    .comparison-nurseprep {
-        background-color: #fff;
-        color: #000;
-    }
-
-    .comparison-card {
-        grid-template: auto / 1fr;
-    }
-} */

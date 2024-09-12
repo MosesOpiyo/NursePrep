@@ -284,7 +284,7 @@ const Homepage = () => {
               </div>
 
               <div className="pricing-cta">
-                <Button>Get Monthly Plan</Button>
+                <Button>Get {item.btn_period} Plan</Button>
               </div>
             </div>
           ))}

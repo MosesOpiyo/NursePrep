@@ -51,7 +51,7 @@ const AboutPage = () => {
         </div>
 
         <div className="start-content w-4/5 mx-auto">
-          <p>
+          <p className="text-start">
             In 2018, a group of passionate nurses and educators recognized a gap
             in the resources available for nursing entrance exam preparation.
             They saw students struggling with outdated, static study guides and
@@ -73,7 +73,7 @@ const AboutPage = () => {
         </div>
 
         <div className="approach-content w-4/5 mx-auto">
-          <p>
+          <p className="text-start">
             At NursePrep, we believe in a holistic approach to learning. Our
             platform combines interactive lessons, adaptive quizzes, and
             personalized study plans to cater to the unique needs of each

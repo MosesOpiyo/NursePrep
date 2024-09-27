@@ -15,6 +15,28 @@
     width: 90%;
 }
 
+.pricing-content .card-content {
+    background-image: url('../../assets/site-content.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.pricing-content .card-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .6;
+    z-index: -1;
+    border-radius: 20px;
+}
+
 .pricing-card {
     background-color: #d6f2fe;
     border-radius: 20px;
@@ -57,10 +79,6 @@
 .pricing-disclaimers .cancel,
 .pricing-disclaimers .secure {
     padding-inline: 10px;
-}
-
-.pricing-disclaimers .cancel {
-    border-right: 1px solid #00000082;
 }
 
 .pricing-cta a {

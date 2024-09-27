@@ -20,3 +20,35 @@
 .faq-content button {
     text-align: start;
 }
+
+.welcome {
+    background-color: #def8cb;
+    border-radius: 20px;
+}
+
+.course-card {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+}
+
+.math-class {
+    background-image: url("../../../public/live.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.math-class::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .6;
+    z-index: -1;
+    border-radius: 20px;
+}

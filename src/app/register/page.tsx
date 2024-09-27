@@ -53,7 +53,7 @@ export default function Register() {
           {/* SITE CONTENT */}
           <div className="site-content">
           
-            <div key={firstItem.id} className={`h-full items-center justify-center card-content ${firstItem.className}`}>
+            <div key={firstItem.id} className={`h-full items-center justify-center pricingcard-content ${firstItem.className}`}>
 
             <div className="pricing-features flex flex-col gap-12">
 

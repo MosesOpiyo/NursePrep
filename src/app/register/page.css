@@ -15,7 +15,7 @@
     width: 90%;
 }
 
-.pricing-content .card-content {
+.pricing-content .pricingcard-content {
     background-image: url('../../assets/site-content.jpg');
     background-position: center;
     background-size: cover;
@@ -24,7 +24,7 @@
     color: #fff;
 }
 
-.pricing-content .card-content::after {
+.pricing-content .pricingcard-content::after {
     content: '';
     position: absolute;
     top: 0;

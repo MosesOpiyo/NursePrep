@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { FaBook, FaQuestion } from "react-icons/fa";
-import { FaChevronDown, FaUser, FaClone, FaBell, FaStethoscope } from "react-icons/fa6";
+import { FaChevronDown, FaUser, FaGear, FaClone, FaBell, FaStethoscope } from "react-icons/fa6";
 import { Input } from "@/components/ui/input"
 import './layout.css';
 import {
@@ -52,8 +52,8 @@ export default function DashboardLayout ({
                   href="/dashboard/profile"
                   className="flex gap-1 items-center"
                 >
-                  <FaUser />
-                  My Profile
+                  <FaGear  />
+                  Settings
                 </Link>
               </li>
               <li></li>
@@ -122,8 +122,8 @@ export default function DashboardLayout ({
                             href="/dashboard/profile"
                             className="flex gap-1 items-center"
                           >
-                            <FaUser />
-                            My Account
+                            <FaGear  />
+                            Settings
                           </Link>
                         </li>
                       </ul>
@@ -136,7 +136,7 @@ export default function DashboardLayout ({
           {/* END OF DASHBOARD-NAV */}
 
           {/* DASHBOARD CONTENT */}
-          <div className="dashboard-content py-8 w-11/12 m-auto">{children}</div>
+          <div className="dashboard-content py-4 w-11/12 m-auto">{children}</div>
           {/* END OF DASHBOARD CONTENT */}
         </div>
       </div>

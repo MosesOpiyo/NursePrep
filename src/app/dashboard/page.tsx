@@ -58,18 +58,18 @@ export default function Dashboard(){
           </div>
 
           {/* STATS */}
-          <div className="stats flex p-8 items-center w-3/4 me-auto">
-            <div className="all p-4 border-x basis-full border-blue-300">
+          <div className="stats flex gap-4 p-8 items-center w-3/4 me-auto">
+            <div className="all p-4 border border-solid basis-full border-black">
               <h2>All courses</h2>
               <p className="font-bold">40</p>
             </div>
 
-            <div className="in-progress p-4 basis-full border-x border-blue-300">
+            <div className="in-progress p-4 border border-solid basis-full border-x border-black">
               <h2>Courses in Progress</h2>
               <p className="font-bold">4</p>
             </div>
 
-            <div className="finished p-4 basis-full border-x border-blue-300">
+            <div className="finished border border-s p-4 basis-full border-x border-black">
               <h2>Finished courses</h2>
               <p className="font-bold">0</p>
             </div>

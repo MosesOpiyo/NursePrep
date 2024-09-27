@@ -110,7 +110,7 @@ export default function Register() {
               </div>
 
               <div className="pricing-cta">
-                <Link href={`/register/${item.id}`} className="pricing-link">Get {item.btn_period} Plan</Link>
+                <Link href={`/register/${item.id}`} className="pricing-link">SIGN UP</Link>
               </div>
 
               <div className="pricing-disclaimers flex justify-center items-start text-start flex-col">

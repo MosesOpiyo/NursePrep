@@ -36,7 +36,7 @@ export default async function SideNav({
   const subject = await getSingleLesson(params.subjectId);
 
   return (
-    <section className="flex flex-col sidebar gap-4">
+    <section className="teas-layout flex flex-col sidebar gap-4">
       {/* Include shared UI here e.g. a header or sidebar */}
 
       {/* NAVBAR */}

@@ -44,35 +44,27 @@ import {
 import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDots, FaBook, FaArrowRightToBracket, FaUser, FaGear, FaClone, FaBell, FaStethoscope, FaBarsStaggered, FaRegCircleUser } from "react-icons/fa6";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
+import { useAuth } from "@/app/contexts/AuthContext";
 
 
 
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
-
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    // Check localStorage for login state when component mounts
-    const storedLoginState = localStorage.getItem('isLoggedIn');
-    if (storedLoginState === 'true') {
-      setIsLoggedIn(true);
-    }
-  }, []);
+  const router = useRouter()
+  const { isLoggedIn, setIsLoggedIn } = useAuth()
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
-    localStorage.setItem('isLoggedIn', 'true');
-    router.push('/dashboard');
-  };
+    setIsLoggedIn(true)
+    localStorage.setItem('isLoggedIn', 'true')
+    router.push('/dashboard')
+  }
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn');
-    router.push('/');
-  };
+    setIsLoggedIn(false)
+    localStorage.removeItem('isLoggedIn')
+    router.push('/')
+  }
 
   return (
     <nav className="navbar relative z-10 flex justify-between items-center">
@@ -81,13 +73,13 @@ const Navbar: React.FC = () => {
 
       {/* LARGE SCREEN NAVBAR */}
       <ul className="navbar-link text-white lg:flex gap-4 list-none hidden">
-        <li>
+        <li className="home">
           <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
             Home
           </Link>
         </li>
 
-        <li>
+        <li className="about">
           <Link
             href="/about"
             className={currentPath === "/about" ? "active p-2" : "p-2"}

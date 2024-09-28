@@ -15,7 +15,7 @@ import {
     PopoverTrigger,
   } from "@/components/ui/popover";
   import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
+import DashboardSidebar from "@/components/DashboardSidebar/DashboardSidebar";
 
 
 export default function DashboardLayout ({
@@ -28,71 +28,13 @@ export default function DashboardLayout ({
     <section className="dashboard-container">
       <div className="flex relative layoutcontent-container h-full">
         {/* SIDENAV */}
-        <div className="sidenav-container overflow-y-auto w-1/4 fixed h-full border-solid p-4 flex-col gap-8 hidden md:flex">
-          {/* LOGO */}
-          <div className="logo">
-            <Link href="/" className="text-3xl flex items-center gap-2">
-              {/* <FaStethoscope /> */}
-              NURSEPREP
-            </Link>
-          </div>
-
-          {/* MENU-ITEMS */}
-          <div className="dashboard-menu">
-            <ul>
-              <li>
-                <Link href="/dashboard" className="flex gap-1 items-center">
-                  <FaClone />
-                  My Dashboard
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/hesi" className="flex gap-1 items-center">
-                  <FaBook />
-                  My Courses
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/dashboard/account_settings"
-                  className="flex gap-1 items-center"
-                >
-                  <FaGear />
-                  Settings
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/dashboard/account_settings"
-                  className="flex gap-1 items-center"
-                >
-                  <FaCommentDots />
-                  Help & Support
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/dashboard/account_settings"
-                  className="flex gap-1 items-center"
-                >
-                  <FaArrowRightToBracket />
-                  Log Out
-                </Link>
-              </li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
+        {/* <DashboardSidebar /> */}
         {/* END OF SIDENAV */}
 
         {/* CONTENT */}
-        <div className="maincontent-container flex flex-col gap-4 w-full md:w-3/4 relative md:left-1/4">
+        <div className="maincontent-container flex flex-col gap-4 relative">
           {/* DASHBOARD-NAV */}
-          <div className="dashboard-nav fixed w-3/4 bg-white z-50 flex">
+          <div className="dashboard-nav fixed bg-white z-50 flex">
             <div className="navbar-container">
               <Navbar />
             </div>

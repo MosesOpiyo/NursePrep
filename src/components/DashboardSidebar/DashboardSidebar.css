@@ -1,0 +1,31 @@
+.sidenav-container {
+    /* width: 256px; */
+    background-color: #f1f4f9;
+}
+
+.sidenav-container {
+    transition: width 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .sidenav-container ul li {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .sidenav-container ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidenav-container ul li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .sidenav-container ul li a svg {
+    min-width: 20px;
+    margin-right: 10px;
+  }

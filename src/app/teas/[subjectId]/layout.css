@@ -12,7 +12,7 @@
     height: 500px;
 }
 
-.layoutcontent-container,
-.footer-container {
+.teas-layout .layoutcontent-container,
+.teas-layout .footer-container {
     top: 70px;
 }

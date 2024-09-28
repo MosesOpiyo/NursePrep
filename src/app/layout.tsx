@@ -1,4 +1,8 @@
 import { Outfit } from 'next/font/google';
+import '../styles/globals.css'
+import DashboardSidebar from '@/components/DashboardSidebar/DashboardSidebar';
+import LayoutWrapper from '@/components/LayoutWrapper/LayoutWrapper';
+import { AuthProvider } from './contexts/AuthContext';
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -14,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>{children}</body>
+      <body className={outfit.className}>
+        <AuthProvider>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </AuthProvider>
+      </body>
     </html>
-  )
+  );
 }

@@ -28,3 +28,16 @@
 .navbar-container .navbar-link li a.active {
     border: 2px solid #000;
 }
+
+.maincontent-container {
+    width: 100%;
+}
+
+.dashboard-nav {
+    width: calc(100% - 258px);
+}
+
+.dashboard-container .dashboard-nav .navbar-container nav ul li.home,
+.dashboard-container .dashboard-nav .navbar-container nav ul li.about {
+    display: none;
+}

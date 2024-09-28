@@ -32,3 +32,13 @@ button.data-\[state\=active\]\:shadow[data-state=active] {
 .profile-details {
     grid-template: 1fr / .4fr .6fr;
 }
+
+.label-text p {
+    font-size: .9rem;
+    line-height: 1;
+}
+
+.detailed-stats .currentplan-text p {
+    color: #696c75;
+    font-size: .9rem;
+}

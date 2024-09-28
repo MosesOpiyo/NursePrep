@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
-import { FaBook, FaQuestion } from "react-icons/fa";
-import { FaChevronDown, FaUser, FaGear, FaClone, FaBell, FaStethoscope } from "react-icons/fa6";
+import { FaQuestion } from "react-icons/fa";
+import { FaChevronDown, FaCommentDots, FaBook, FaArrowRightToBracket, FaUser, FaGear, FaClone, FaBell, FaStethoscope } from "react-icons/fa6";
 import { Input } from "@/components/ui/input"
 import './layout.css';
 import {
@@ -48,16 +48,44 @@ export default function DashboardLayout ({
               </li>
 
               <li>
+              <Link
+                  href="/dashboard/account_settings"
+                  className="flex gap-1 items-center"
+                >
+                  <FaBook   />
+                  My Courses
+                </Link>
+              </li>
+
+              <li>
                 <Link
-                  href="/dashboard/profile"
+                  href="/dashboard/account_settings"
                   className="flex gap-1 items-center"
                 >
                   <FaGear  />
                   Settings
                 </Link>
               </li>
-              <li></li>
-              <li></li>
+
+              <li>
+              <Link
+                  href="/dashboard/account_settings"
+                  className="flex gap-1 items-center"
+                >
+                  <FaCommentDots    />
+                  Help & Support
+                </Link>
+              </li>
+
+              <li>
+              <Link
+                  href="/dashboard/account_settings"
+                  className="flex gap-1 items-center"
+                >
+                  <FaArrowRightToBracket   />
+                  Log Out
+                </Link>
+              </li>
               <li></li>
             </ul>
           </div>

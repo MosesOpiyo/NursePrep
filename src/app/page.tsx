@@ -10,6 +10,9 @@ import Hero from "@/components/Hero/Hero";
 import Homepage from "@/components/Homepage/Homepage";
 import Footer from "@/components/Footer/Footer";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Home(){
 
   const queryClient = useQueryClient();
@@ -39,6 +42,7 @@ export default function Home(){
           <Hero />
           <Homepage />
           <Footer />
+          <ToastContainer />
         </>        
     )
        

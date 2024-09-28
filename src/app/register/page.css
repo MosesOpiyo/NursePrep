@@ -1,0 +1,75 @@
+.navbar-container .navbar > *,
+.navbar-container .navbar-links li a,
+.navbar-container .navbar-auth .login-button {
+    color: black;
+}
+
+.navbar-container .navbar button svg {
+    color: black;
+}
+
+
+
+/* PRICING CARD */
+.pricing-container {
+    width: 90%;
+}
+
+.pricing-card {
+    background-color: #d6f2fe;
+    border-radius: 20px;
+}
+
+.pricing-card.quarter {
+    background-color: #ffd6ff;
+}
+
+.pricing-card.month .save {
+    display: none;
+}
+
+.save {
+    border-radius: 10px;
+    transform: rotate(-5deg);
+}
+
+.pricing-card span.pricetag {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    top: 5px;
+    right: 10px;
+}
+
+
+/* ICON */
+/* .icon-container {
+    background-color: #ffc23b;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+} */
+
+/* .icon-container.secure {
+    background-color: #008000a6;
+} */
+
+.pricing-disclaimers .cancel,
+.pricing-disclaimers .secure {
+    padding-inline: 10px;
+}
+
+.pricing-disclaimers .cancel {
+    border-right: 1px solid #00000082;
+}
+
+.pricing-cta a {
+    background-color: #0f172a;
+    color: rgb(248, 250, 252);
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.pricing-cta a:hover {
+    background-color: #0f172ae6;
+}

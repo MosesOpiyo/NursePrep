@@ -1,0 +1,67 @@
+.registry-navbar .navbar > *,
+.registry-navbar .navbar-links li a,
+.registry-navbar .navbar-auth .login-button {
+    color: black;
+}
+
+.registry-navbar .navbar button svg {
+    color: black;
+}
+
+
+/* CONTENT */
+.choice-container {
+    grid-template: 1fr / .3fr .7fr;
+}
+
+.sidebar {
+    background-color: #d3e4f6;
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow-y: auto;
+}
+
+.sidebar svg {
+    color: #021529;
+}
+
+
+.paypal-radio svg,
+.credit-radio svg {
+    font-size: 5rem;
+}
+
+.paypal-radio,
+.credit-radio {
+    background-color: #e8f0fd;
+}
+
+
+.paypal-radio:has(input[type="radio"]:checked),
+.credit-radio:has(input[type="radio"]:checked)  {
+    background-color: #d3e4f6; /* Change background color for checked */
+}
+
+.paypal-radio label,
+.credit-radio label {
+    padding: 1rem 2rem 1rem 0;
+    cursor: pointer;
+}
+
+.choice-form {
+    width: 100%;
+    box-shadow: 0px 0px 3px #cccccc87;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.choice-container {
+    border-top: 1px solid #e8f0fd;
+}
+
+@media (max-width: 425px) {
+    .choice-form {
+        padding: .5rem;
+    }
+}

@@ -1,5 +1,6 @@
 .navbar-container .navbar > *,
-.navbar-container .navbar-links li a {
+.navbar-container .navbar-links li a,
+.navbar-container .navbar-auth .login-button {
     color: black;
 }
 

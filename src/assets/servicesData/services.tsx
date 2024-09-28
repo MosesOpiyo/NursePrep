@@ -224,19 +224,21 @@ export const testimonialArray =  [
 
 export const pricingArray =  [
     {
-        id: 1,
+        id: 0,
         access: 'Monthly',
         pricing: '29',
         period: 'month',
+        btn_period: 'Monthly',
         ideal: 'Ideal for students testing within two months',
         className: 'pricing-card p-8 flex flex-col gap-8 month relative'
     },
 
     {
-        id: 2,
+        id: 1,
         access: 'Quarterly',
         pricing: '75',
         period: '3 months',
+        btn_period: '3-Month',
         ideal: 'Ideal for students testing in three months or later',
         className: 'pricing-card p-8 flex flex-col gap-8 quarter relative',
         save: 'Save $12'

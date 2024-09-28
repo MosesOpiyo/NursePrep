@@ -3,6 +3,9 @@ import "./Footer.css";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
+
+
 
 const Footer = () => {
   return (
@@ -16,17 +19,27 @@ const Footer = () => {
           <div className="footer-card flex flex-col gap-2">
             <p>Products</p>
             <ul className="flex flex-col gap-2">
-              <li>Overview</li>
-              <li>Features</li>
-              <li>Pricing</li>
+              <li>
+                <Link href="/#overview"> Overview </Link>
+              </li>
+              <li>
+                <Link href="/#services"> Features </Link>
+              </li>
+              <li>
+                <Link href="/#pricing"> Pricing </Link>
+              </li>
             </ul>
           </div>
 
           <div className="footer-card flex flex-col gap-2">
             <p>Company</p>
             <ul className="flex flex-col gap-2">
-              <li>About Us</li>
-              <li>Contact</li>
+              <li>
+                <Link href="/about"> About Us </Link>
+              </li>
+              <li>
+                <Link href="/#contact"> Contact Us </Link>
+              </li>
             </ul>
           </div>
 

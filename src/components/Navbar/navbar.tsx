@@ -107,13 +107,8 @@ const Navbar: React.FC = () => {
           <div className="nursing-dropdown">
             <ul className="grid grid-cols-2 gap-2">
               <li>
-                <Link
-                  href="/nursing_school"
-                  className="p-2"
-                >
-                  <span>
-                    All Nursing School Courses
-                  </span>
+                <Link href="/nursing_school" className="p-2">
+                  <span>All Nursing School Courses</span>
                 </Link>
               </li>
               {nursingCourses.map((item) =>
@@ -158,9 +153,9 @@ const Navbar: React.FC = () => {
           </button>
         )}
 
-        <button type="button" className="sign-up-button">
-          Sign up
-        </button>
+        <div className="sign-up-button">
+          <Link href="/register">Sign Up</Link>
+        </div>
       </div>
 
       {/* MOBILE USER AUTH BUTTONS */}
@@ -200,9 +195,9 @@ const Navbar: React.FC = () => {
                 </button>
               )}
 
-              <button type="button" className="sign-up-button">
-                Sign up
-              </button>
+              <div className="sign-up-button">
+                <Link href="/membership">Sign Up</Link>
+              </div>
             </div>
           </DialogContent>
         </Dialog>

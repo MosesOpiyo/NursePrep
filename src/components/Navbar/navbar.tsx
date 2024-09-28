@@ -1,15 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  FaBarsStaggered,
-  FaChevronDown,
-  FaRegCircleUser,
-} from "react-icons/fa6";
 import { nursingCourses } from "@/assets/servicesData/services";
 import {
   Sheet,
@@ -40,7 +35,15 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Label } from "@/components/ui/label";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDots, FaBook, FaArrowRightToBracket, FaUser, FaGear, FaClone, FaBell, FaStethoscope, FaBarsStaggered, FaRegCircleUser } from "react-icons/fa6";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useRouter } from 'next/navigation';
 
 
 
@@ -49,13 +52,26 @@ const Navbar: React.FC = () => {
   const currentPath = usePathname();
 
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check localStorage for login state when component mounts
+    const storedLoginState = localStorage.getItem('isLoggedIn');
+    if (storedLoginState === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
+    router.push('/dashboard');
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    localStorage.removeItem('isLoggedIn');
+    router.push('/');
   };
 
   return (
@@ -147,79 +163,164 @@ const Navbar: React.FC = () => {
       {/* USER AUTH BUTTONS */}
       <div className="hidden sm:flex navbar-auth items-center">
         {isLoggedIn ? (
+          // DISPLAY WHEN USER IS LOGGED IN
           <>
-            <span>Welcome, User!</span>
-            <button type="button" onClick={handleLogout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <Dialog>
-            {/* LOG IN BUTTON */}
-            <DialogTrigger asChild>
-              <Button variant="outline" className="login-button">
-                Sign In
-              </Button>
-            </DialogTrigger>
+            <div className="nav-content flex items-center justify-end p-4 gap-8">
+              {/* NOTIFS ICON */}
+              <div className="notifications">
+                <Popover>
+                  {/* POPOVER TRIGGER */}
+                  <PopoverTrigger className="flex items-center justify-center gap-1">
+                    <FaBell />
+                  </PopoverTrigger>
 
-            {/* DIALOG BOX CONTENT */}
-            <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
-              {/* DIALOG BOX HEADER */}
-              <DialogHeader>
-                <DialogTitle className="text-center">Login</DialogTitle>
-                {/* <DialogDescription>
-                  Login
-                </DialogDescription> */}
-              </DialogHeader>
-              {/* END OF DIALOG BOX HEADER */}
-
-              {/* DIALOG BOX INFO */}
-              <div className="flex flex-col w-full gap-4 py-4">
-                {/* NAME LABEL AND INPUT  */}
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    defaultValue="Pedro Duarte"
-                    className="col-span-3"
-                  />
-                </div>
-                {/* END OF NAME LABEL AND INPUT  */}
-
-                {/* PASSWORD LABEL AND INPUT */}
-                <div
-                  className="grid grid-cols-4 items-cent
-                er gap-4"
-                >
-                  <Label htmlFor="username" className="text-right">
-                    Password
-                  </Label>
-                  <Input
-                    id="username"
-                    defaultValue="@peduarte"
-                    className="col-span-3"
-                    type="password"
-                  />
-                </div>
-                {/* END OF PASSWORD LABEL AND INPUT */}
+                  {/* POPOVER CONTENT */}
+                  <PopoverContent>
+                    <div>
+                      <p>Your exam date is tomorrow</p>
+                    </div>
+                  </PopoverContent>
+                </Popover>
               </div>
 
-              {/* DIALOG FOOTER */}
-              <DialogFooter>
-                <Button type="submit">
-                <Link href="/dashboard">Sign In</Link>
-                </Button>
-              </DialogFooter>
-              {/* END OF DIALOG FOOTER */}
-            </DialogContent>
-          </Dialog>
-        )}
+              {/* SEARCH ICON*/}
+              <div className="search">
+              <Popover>
+                  {/* POPOVER TRIGGER */}
+                  <PopoverTrigger className="flex items-center justify-center gap-1">
+                    <FaMagnifyingGlass  />
+                  </PopoverTrigger>
 
-        <div className="sign-up-button">
-          <Link href="/register">Sign Up</Link>
-        </div>
+                  {/* POPOVER CONTENT */}
+                  <PopoverContent>
+                    <div>
+                     <Input type="search" placeholder="Search..." />
+                    </div>
+                  </PopoverContent>
+                </Popover>
+                
+              </div>
+
+              {/* AVATAR */}
+              <div className="icon flex gap-2 items-center justify-center">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+
+                <Popover>
+                  {/* POPOVER TRIGGER */}
+                  <PopoverTrigger className="user-name flex items-center justify-center gap-1">
+                    Hi, Isaac
+                    <FaChevronDown />
+                  </PopoverTrigger>
+
+                  {/* POPOVER CONTENT */}
+                  <PopoverContent>
+                    <div>
+                      <ul>
+                        <li>
+                          <Link
+                            href="/dashboard"
+                            className="flex gap-1 items-center"
+                          >
+                            <FaClone />
+                            My Dashboard
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            href="/dashboard/profile"
+                            className="flex gap-1 items-center"
+                          >
+                            <FaGear />
+                            Settings
+                          </Link>
+                        </li>
+
+                        {/* LOG OUT */}
+                        <li>
+                          <button type="button" onClick={handleLogout} className="flex gap-1 items-center">
+                            <FaArrowRightFromBracket />
+                            Log out
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+            </div>
+          </>
+        ) : (
+
+          // DISPLAY IF USER IS NOT LOGGED IN
+          <div className="flex items-center justify-center">
+            {/* LOG IN BUTTON AND SIGN UP BUTTON DISPLAY IF NOT LOGGED IN */}
+            <Dialog>
+              {/* LOG IN BUTTON */}
+              <DialogTrigger asChild>
+                <Button variant="outline" className="login-button">
+                  Sign In
+                </Button>
+              </DialogTrigger>
+
+              {/* DIALOG BOX CONTENT */}
+              <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                {/* DIALOG BOX HEADER */}
+                <DialogHeader>
+                  <DialogTitle className="text-center">Login</DialogTitle>
+                </DialogHeader>
+                {/* END OF DIALOG BOX HEADER */}
+
+                {/* DIALOG BOX INFO */}
+                <div className="flex flex-col w-full gap-4 py-4">
+                  {/* NAME LABEL AND INPUT  */}
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      defaultValue="Pedro Duarte"
+                      className="col-span-3"
+                    />
+                  </div>
+                  {/* END OF NAME LABEL AND INPUT  */}
+
+                  {/* PASSWORD LABEL AND INPUT */}
+                  <div
+                    className="grid grid-cols-4 items-center gap-4"
+                  >
+                    <Label htmlFor="username" className="text-right">
+                      Password
+                    </Label>
+                    <Input
+                      id="username"
+                      defaultValue="@peduarte"
+                      className="col-span-3"
+                      type="password"
+                    />
+                  </div>
+                  {/* END OF PASSWORD LABEL AND INPUT */}
+                </div>
+
+                {/* DIALOG FOOTER */}
+                <DialogFooter>
+                  <Button type="submit" onClick={handleLogin}>
+                    Sign In
+                  </Button>
+                </DialogFooter>
+                {/* END OF DIALOG FOOTER */}
+              </DialogContent>
+            </Dialog>
+
+            <div className="sign-up-button">
+              <Link href="/register">Sign Up</Link>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* MOBILE USER AUTH BUTTONS */}
@@ -279,8 +380,7 @@ const Navbar: React.FC = () => {
 
                       {/* PASSWORD LABEL AND INPUT */}
                       <div
-                        className="grid grid-cols-4 items-cent
-                er gap-4"
+                        className="grid grid-cols-4 items-center gap-4"
                       >
                         <Label htmlFor="username" className="text-right">
                           Password
@@ -297,8 +397,8 @@ const Navbar: React.FC = () => {
 
                     {/* DIALOG FOOTER */}
                     <DialogFooter>
-                      <Button type="submit">
-                      <Link href="/dashboard">Sign In</Link>
+                      <Button type="submit" onClick={handleLogin}>
+                        Sign In
                       </Button>
                     </DialogFooter>
                     {/* END OF DIALOG FOOTER */}

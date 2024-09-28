@@ -6,3 +6,25 @@
     position: relative;
     top: 80px;
 }
+
+.navbar-container {
+    width: 100%;
+}
+
+.navbar-container .navbar > *,
+.navbar-container .navbar-links li a,
+.navbar-container .navbar-auth .login-button,
+.navbar-container .navbar button svg,
+.navbar-container .nav-content .user-name {
+    color: black;
+}
+
+.navbar-container .nav-content {
+    padding: .5rem;
+}
+
+
+.navbar-container .navbar-link li a:hover,
+.navbar-container .navbar-link li a.active {
+    border: 2px solid #000;
+}

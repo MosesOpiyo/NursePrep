@@ -1,5 +1,14 @@
+nav {
+  height: 80px;
+}
+
 .navbar {
     padding: 10px 20px;
+}
+
+.nav-content svg,
+.nav-content .user-name {
+  color: #fff;
 }
 
 .navbar-logo {
@@ -64,7 +73,7 @@ li.dropdown .nursing-dropdown {
 
 li.dropdown:hover .nursing-dropdown {
   visibility: visible;
-  top: 52px;
+  top: 58px;
   opacity: 1;
   padding: 1rem;
   pointer-events: auto;

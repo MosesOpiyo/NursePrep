@@ -45,7 +45,7 @@ export default function Dashboard(){
         <div className="maindashboard-container flex flex-col gap-8">
           {/* WELCOME */}
           <div className="welcome p-8">
-            <div className="greeting flex flex-col gap-7">
+            <div className="greeting flex flex-col gap-2">
               <h2 className="text-5xl font-normal">Hello, Isaac!</h2>
 
               <p className="flex flex-col">

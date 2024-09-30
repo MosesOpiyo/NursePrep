@@ -22,6 +22,9 @@ import Link from "next/link";
 
 
 export default function Register() {
+
+  const firstItem = pricingArray[0];
+
   return (
     <div>
       {/* NAVBAR SECTION */}
@@ -46,7 +49,41 @@ export default function Register() {
           </p>
         </div>
 
-        <div className="pricingcard-container grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-8">
+        <div className="pricing-content gap-4 flex flex-col-reverse md:grid md:grid-cols-2 md:grid-rows-1">
+          {/* SITE CONTENT */}
+          <div className="site-content">
+          
+            <div key={firstItem.id} className={`h-full items-center justify-center pricingcard-content ${firstItem.className}`}>
+
+            <div className="pricing-features flex flex-col gap-12">
+
+              <div className="features-list flex flex-col gap-2">
+                <p className="uppercase text-sm">
+                  All site features available for both plans including:
+                </p>
+
+                {pricingFeatures.map((item) => (
+                  <ul key={item.id} className="flex flex-col gap-1 ps-4">
+                    <li className="flex items-center gap-1">
+                      <span>
+                        <FaRegCheckCircle className="text-white" />
+                      </span>
+                      {item.feature}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            </div>
+
+       
+
+           
+          </div>
+            
+          </div>
+
+          {/* 2 PRICING CHOICES */}
+          <div className="pricingcard-container grid grid-cols-1 grid-rows-2 gap-8">
           {pricingArray.map((item) => (
             <div key={item.id} className={item.className}>
               <div className="save absolute right-8 top-3 bg-black text-white p-4">
@@ -65,35 +102,18 @@ export default function Register() {
                 </p>
               </div>
 
-              <div className="pricing-features flex flex-col gap-12">
-                <p className="flex items-center">
+              <div>
+              <p className="flex items-center">
                   <FaInfoCircle />
                   &nbsp;{item.ideal}
                 </p>
-
-                <div className="features-list flex flex-col gap-2">
-                  <p className="uppercase text-sm">
-                    All site features including:
-                  </p>
-
-                  {pricingFeatures.map((item) => (
-                    <ul key={item.id} className="flex flex-col gap-1 ps-4">
-                      <li className="flex items-center gap-1">
-                        <span>
-                          <FaRegCheckCircle className="text-green-900" />
-                        </span>
-                        {item.feature}
-                      </li>
-                    </ul>
-                  ))}
-                </div>
               </div>
 
               <div className="pricing-cta">
-                <Link href={`/register/${item.id}`} className="pricing-link">Get {item.btn_period} Plan</Link>
+                <Link href={`/register/${item.id}`} className="pricing-link">SIGN UP</Link>
               </div>
 
-              <div className="pricing-disclaimers flex justify-center">
+              <div className="pricing-disclaimers flex justify-center items-start text-start flex-col">
                 <div className="cancel flex items-center justify-center gap-1">
                   <div className="icon-container flex items-center justify-center">
                     <FaCircleXmark />
@@ -113,6 +133,8 @@ export default function Register() {
             </div>
           ))}
         </div>
+        </div>
+
       </section>
 
       {/* FAQ SECTION */}
@@ -123,11 +145,11 @@ export default function Register() {
           </h2>
         </div>
 
-        <div className="faq-content p-8">
+        <div className="faq-content p-8 text-start">
           <Accordion type="single" collapsible>
             {faqData.map((item) => (
               <AccordionItem value={item.value} key={item.id}>
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-xl text-start">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-slate-600">

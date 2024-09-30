@@ -16,7 +16,9 @@ import one from "../../assets/oneonone.jpg";
 import guides from "../../assets/guides.jpg";
 import performance from "../../assets/performance.jpg";
 import community from "../../assets/community.jpg";
-import exam from "../../assets/examday.jpg"; 
+import exam from "../../assets/examday.jpg";
+import { useEffect, useRef, useState } from "react";
+import styles from './ScrollAnimation.module.css';
 
 const Hero = () => {
   const queryClient = useQueryClient();
@@ -27,6 +29,30 @@ const Hero = () => {
   const heroSection = cachedData?.sections.find(
     (section) => section.name === 'Hero'
   );
+
+  const boxRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const boxElement = boxRef.current;
+
+    const handleScroll = () => {
+      if (boxElement) {
+        const rect = boxElement.getBoundingClientRect();
+        const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+        setIsVisible(isInViewport);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    // Initial check in case the element is already visible on load
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
@@ -40,8 +66,8 @@ const Hero = () => {
 
           {/* HERO BUTTONS */}
           <div className="action-btn flex gap-4">
-            <Button>GET STARTED NOW</Button>
-            <Button>BROWSE FREE TESTS</Button>
+            <Button className="p-5">GET STARTED NOW</Button>
+            <Button className="p-5">BROWSE FREE TESTS</Button>
           </div>
         </div>
 

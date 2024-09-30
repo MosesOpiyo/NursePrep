@@ -34,10 +34,16 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+
+
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
@@ -148,9 +154,67 @@ const Navbar: React.FC = () => {
             </button>
           </>
         ) : (
-          <button type="button" className="login-button" onClick={handleLogin}>
-            Sign in
-          </button>
+          <Dialog>
+            {/* LOG IN BUTTON */}
+            <DialogTrigger asChild>
+              <Button variant="outline" className="login-button">
+                Sign In
+              </Button>
+            </DialogTrigger>
+
+            {/* DIALOG BOX CONTENT */}
+            <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+              {/* DIALOG BOX HEADER */}
+              <DialogHeader>
+                <DialogTitle className="text-center">Login</DialogTitle>
+                {/* <DialogDescription>
+                  Login
+                </DialogDescription> */}
+              </DialogHeader>
+              {/* END OF DIALOG BOX HEADER */}
+
+              {/* DIALOG BOX INFO */}
+              <div className="flex flex-col w-full gap-4 py-4">
+                {/* NAME LABEL AND INPUT  */}
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="name" className="text-right">
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    defaultValue="Pedro Duarte"
+                    className="col-span-3"
+                  />
+                </div>
+                {/* END OF NAME LABEL AND INPUT  */}
+
+                {/* PASSWORD LABEL AND INPUT */}
+                <div
+                  className="grid grid-cols-4 items-cent
+                er gap-4"
+                >
+                  <Label htmlFor="username" className="text-right">
+                    Password
+                  </Label>
+                  <Input
+                    id="username"
+                    defaultValue="@peduarte"
+                    className="col-span-3"
+                    type="password"
+                  />
+                </div>
+                {/* END OF PASSWORD LABEL AND INPUT */}
+              </div>
+
+              {/* DIALOG FOOTER */}
+              <DialogFooter>
+                <Button type="submit">
+                <Link href="/dashboard">Sign In</Link>
+                </Button>
+              </DialogFooter>
+              {/* END OF DIALOG FOOTER */}
+            </DialogContent>
+          </Dialog>
         )}
 
         <div className="sign-up-button">
@@ -166,13 +230,6 @@ const Navbar: React.FC = () => {
           </DialogTrigger>
 
           <DialogContent>
-            {/* <DialogHeader>
-              <DialogTitle>Are you absolutely sure?</DialogTitle>
-              <DialogDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </DialogDescription>
-            </DialogHeader> */}
             <div className="flex flex-col gap-4 navbar-auth items-center text-black">
               {isLoggedIn ? (
                 <>
@@ -186,13 +243,67 @@ const Navbar: React.FC = () => {
                   </button>
                 </>
               ) : (
-                <button
-                  type="button"
-                  className="text-black py-1 px-3"
-                  onClick={handleLogin}
-                >
-                  Sign in
-                </button>
+                <Dialog>
+                  {/* LOG IN BUTTON */}
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="login-button">
+                      Sign In
+                    </Button>
+                  </DialogTrigger>
+
+                  {/* DIALOG BOX CONTENT */}
+                  <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                    {/* DIALOG BOX HEADER */}
+                    <DialogHeader>
+                      <DialogTitle className="text-center">Login</DialogTitle>
+                      {/* <DialogDescription>
+                  Login
+                </DialogDescription> */}
+                    </DialogHeader>
+                    {/* END OF DIALOG BOX HEADER */}
+
+                    {/* DIALOG BOX INFO */}
+                    <div className="flex flex-col w-full gap-4 py-4">
+                      {/* NAME LABEL AND INPUT  */}
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="name" className="text-right">
+                          Name
+                        </Label>
+                        <Input
+                          id="name"
+                          defaultValue="Pedro Duarte"
+                          className="col-span-3"
+                        />
+                      </div>
+                      {/* END OF NAME LABEL AND INPUT  */}
+
+                      {/* PASSWORD LABEL AND INPUT */}
+                      <div
+                        className="grid grid-cols-4 items-cent
+                er gap-4"
+                      >
+                        <Label htmlFor="username" className="text-right">
+                          Password
+                        </Label>
+                        <Input
+                          id="username"
+                          defaultValue="@peduarte"
+                          className="col-span-3"
+                          type="password"
+                        />
+                      </div>
+                      {/* END OF PASSWORD LABEL AND INPUT */}
+                    </div>
+
+                    {/* DIALOG FOOTER */}
+                    <DialogFooter>
+                      <Button type="submit">
+                      <Link href="/dashboard">Sign In</Link>
+                      </Button>
+                    </DialogFooter>
+                    {/* END OF DIALOG FOOTER */}
+                  </DialogContent>
+                </Dialog>
               )}
 
               <div className="sign-up-button">

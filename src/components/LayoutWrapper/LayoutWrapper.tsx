@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import '../../styles/globals.css'
 import DashboardSidebar from '../DashboardSidebar/DashboardSidebar'
-import { useAuth } from '@/app/contexts/AuthContext'
+import { useAuth } from '@/app/contexts/AuthContext' 
 
 type SidebarState = 'full' | 'icon' | 'hidden'
 
@@ -21,7 +21,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
 
   return (
     <div className="flex">
-      <DashboardSidebar />
+      <DashboardSidebar sidebarState={sidebarState} setSidebarState={setSidebarState} />
       <main className={`flex-1 transition-all duration-300 ${mainMargin}`}>
         {children}
       </main>

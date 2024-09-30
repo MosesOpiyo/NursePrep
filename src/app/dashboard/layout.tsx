@@ -1,3 +1,6 @@
+'use client'
+
+
 import "../../styles/globals.css";
 import { topicsArray } from "@/assets/servicesData/services";
 import { testsArray } from "@/assets/servicesData/services";
@@ -16,6 +19,11 @@ import {
   } from "@/components/ui/popover";
   import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DashboardSidebar from "@/components/DashboardSidebar/DashboardSidebar";
+import { useAuth } from '@/app/contexts/AuthContext' 
+import { useState } from 'react'
+
+
+type SidebarState = 'full' | 'icon' | 'hidden'
 
 
 export default function DashboardLayout ({
@@ -23,6 +31,20 @@ export default function DashboardLayout ({
   }: {
     children: React.ReactNode;
   }) {
+
+
+    const { isLoggedIn } = useAuth()
+  const [sidebarState, setSidebarState] = useState<SidebarState>('full')
+
+  const mainMargin = isLoggedIn
+    ? sidebarState === 'full'
+      ? 'ml-64'
+      : sidebarState === 'icon'
+      ? 'ml-16'
+      : 'ml-0'
+    : ''
+
+    const sidebarWidth = sidebarState === 'full' ? 'sixteenrems' : sidebarState === 'icon' ? 'fourrems' : 'w-0'
 
   return (
     <section className="dashboard-container">
@@ -34,7 +56,7 @@ export default function DashboardLayout ({
         {/* CONTENT */}
         <div className="maincontent-container flex flex-col gap-4 relative">
           {/* DASHBOARD-NAV */}
-          <div className="dashboard-nav fixed bg-white z-50 flex">
+          <div className={`dashboard-nav ${sidebarWidth} fixed bg-white z-50 flex`}>
             <div className="navbar-container">
               <Navbar />
             </div>

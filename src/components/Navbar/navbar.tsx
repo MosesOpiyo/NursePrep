@@ -39,7 +39,7 @@ import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDot
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/app/contexts/AuthContext";
-import { FileClock, LayoutDashboard, LogOut, UserRoundCog } from 'lucide-react'
+import { FileClock, LayoutDashboard, LogOut, UserRoundCog, Wallet } from 'lucide-react'
 
 
 
@@ -205,18 +205,7 @@ const Navbar: React.FC = () => {
                           </Link>
                         </li>
 
-                        {/* SETTINGS */}
-                        <li>
-                          <Link
-                            href="/dashboard/profile"
-                            className="flex gap-1 items-center"
-                          >
-                            <UserRoundCog />
-                            Settings
-                          </Link>
-                        </li>
-
-                        {/* SETTINGS */}
+                        {/* TEST HISTORY */}
                         <li>
                           <Link
                             href="/dashboard/test_history"
@@ -224,6 +213,28 @@ const Navbar: React.FC = () => {
                           >
                             <FileClock />
                             My Test History
+                          </Link>
+                        </li>
+
+                        {/* SETTINGS */}
+                        <li>
+                          <Link
+                            href="/dashboard/account_settings"
+                            className="flex gap-1 items-center"
+                          >
+                            <UserRoundCog />
+                            Settings
+                          </Link>
+                        </li>
+
+                        {/* MY SUBSCRIPTIONS */}
+                        <li>
+                          <Link
+                            href="/dashboard/test_history"
+                            className="flex gap-1 items-center"
+                          >
+                            <Wallet />
+                            Subscription & Billing
                           </Link>
                         </li>
 

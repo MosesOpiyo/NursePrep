@@ -59,12 +59,6 @@ export default function ProfileSettings () {
           </TabsTrigger>
           <TabsTrigger
             className="rounded-none tabs-trigger"
-            value="subscription"
-          >
-            Subscription & Billing
-          </TabsTrigger>
-          <TabsTrigger
-            className="rounded-none tabs-trigger"
             value="notification"
           >
             Notifications & Preferences
@@ -181,82 +175,6 @@ export default function ProfileSettings () {
                 </Form>
               </div>
             </div>
-
-            <Separator />
-          </div>
-        </TabsContent>
-
-        {/* subscription */}
-        <TabsContent value="subscription">
-          <div className="subscription-container p-4 w-full">
-
-            {/* PLAN STATISTICS */}
-            <div className="current-plan px-4 py-8 flex flex-col gap-8">
-              {/* general plan stats */}
-              <div className="general-stats flex ">
-                {/* plan */}
-                <div className="currentplan-label basis-full flex flex-col justify-center gap-1">
-                  <h2 className="font-bold">Current Plan</h2>
-
-                  <div className="currentplan-text">
-                    <p className="font-bold text-3xl">Monthly Access</p>
-                  </div>
-                </div>
-
-                {/* payment */}
-                <div className="currentplan-label basis-full flex flex-col justify-center gap-1">
-                  <h2 className="font-bold">Payment</h2>
-
-                  <div className="currentplan-text flex items-center gap-1">
-                    <p className="font-bold text-3xl">$29</p>
-                    <span>per month</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* specific plan info */}
-              <div className="detailed-stats flex items-center">
-                <div className="created basis-full">
-                  <h2 className="font-bold">Created</h2>
-
-                  <div className="currentplan-text">
-                    <p className="text-base">22/7/2024</p>
-                  </div>
-                </div>
-
-                <div className="expires basis-full">
-                  <h2 className="font-bold">Expires</h2>
-
-                  <div className="currentplan-text">
-                    <p className="text-base">22/10/2024</p>
-                  </div>
-                </div>
-
-                <div className="next-billing basis-full">
-                  <h2 className="font-bold">Next Billing</h2>
-
-                  <div className="currentplan-text">
-                    <p className="text-base">22/10/2024</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* plan actions */}
-              <div className="actions-container flex gap-2">
-                <div className="cancel-action">
-                  <Button className="text-black-700 bg-white ">Cancel Subscription</Button>
-                </div>
-
-                <div className="upgrade-action">
-                  <Button>Upgrade Plan</Button>
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
-            {/* PAYMENT METHOD */}
-
 
             <Separator />
           </div>

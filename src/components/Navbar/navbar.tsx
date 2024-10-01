@@ -39,6 +39,9 @@ import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDot
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/app/contexts/AuthContext";
+import { FileClock, LayoutDashboard, LogOut, UserRoundCog } from 'lucide-react'
+
+
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
@@ -189,29 +192,45 @@ const Navbar: React.FC = () => {
                   </PopoverTrigger>
                   <PopoverContent>
                     <div>
-                      <ul>
+                      <ul className="flex flex-col gap-1">
+
+                        {/* MY DASHBOARD */}
                         <li>
                           <Link
                             href="/dashboard"
                             className="flex gap-1 items-center"
                           >
-                            <FaClone />
+                            <LayoutDashboard />
                             My Dashboard
                           </Link>
                         </li>
+
+                        {/* SETTINGS */}
                         <li>
                           <Link
                             href="/dashboard/profile"
                             className="flex gap-1 items-center"
                           >
-                            <FaGear />
+                            <UserRoundCog />
                             Settings
                           </Link>
                         </li>
+
+                        {/* SETTINGS */}
+                        <li>
+                          <Link
+                            href="/dashboard/test_history"
+                            className="flex gap-1 items-center"
+                          >
+                            <FileClock />
+                            My Test History
+                          </Link>
+                        </li>
+
                         {/* LOG OUT */}
                         <li>
                           <button type="button" onClick={handleLogout} className="flex gap-1 items-center">
-                            <FaArrowRightFromBracket />
+                            <LogOut />
                             Log out
                           </button>
                         </li>

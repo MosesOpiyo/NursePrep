@@ -7,6 +7,10 @@ import { FaClone, FaBook, FaGear, FaCommentDots, FaArrowRightToBracket, FaChevro
 import './DashboardSidebar.css'
 import { useAuth } from '@/app/contexts/AuthContext'
 import { Button } from "@/components/ui/button"
+import { FileClock, LayoutDashboard, UserRoundCog, LogOut } from 'lucide-react'
+import { useRouter } from 'next/navigation';
+
+
 
 type SidebarState = 'full' | 'icon' | 'hidden'
 
@@ -16,7 +20,9 @@ interface DashboardSidebarProps {
 }
 
 export default function DashboardSidebar({ sidebarState, setSidebarState }: DashboardSidebarProps) {
-  const { isLoggedIn } = useAuth()
+  const router = useRouter()
+  const { isLoggedIn, setIsLoggedIn } = useAuth()
+  // const { isLoggedIn } = useAuth()
 
   if (!isLoggedIn) return null
 
@@ -29,6 +35,12 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
   }
 
   const sidebarWidth = sidebarState === 'full' ? 'w-64' : sidebarState === 'icon' ? 'w-16' : 'w-0'
+
+  const handleLogout = () => {
+    setIsLoggedIn(false)
+    localStorage.removeItem('isLoggedIn')
+    router.push('/')
+  }
 
   return (
     <>
@@ -51,33 +63,41 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
             <ul className="space-y-2">
               <li>
                 <Link href="/dashboard" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
-                  <FaClone className="text-gray-500" />
+                  <LayoutDashboard className="text-gray-500" />
                   {sidebarState === 'full' && <span>My Dashboard</span>}
                 </Link>
               </li>
+
               <li>
-                <Link href="/hesi" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
-                  <FaBook className="text-gray-500" />
-                  {sidebarState === 'full' && <span>My Courses</span>}
+                <Link href="/dashboard/test_history" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
+                  <FileClock className="text-gray-500" />
+                  {sidebarState === 'full' && <span>My Test History</span>}
                 </Link>
               </li>
+
               <li>
                 <Link href="/dashboard/account_settings" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
-                  <FaGear className="text-gray-500" />
+                  <UserRoundCog className="text-gray-500" />
                   {sidebarState === 'full' && <span>Settings</span>}
                 </Link>
               </li>
+
               <li>
                 <Link href="/dashboard/account_settings" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
                   <FaCommentDots className="text-gray-500" />
                   {sidebarState === 'full' && <span>Help & Support</span>}
                 </Link>
               </li>
+
               <li>
-                <Link href="/dashboard/account_settings" className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100">
-                  <FaArrowRightToBracket className="text-gray-500" />
-                  {sidebarState === 'full' && <span>Log Out</span>}
-                </Link>
+                <button
+                    type="button"
+                    onClick={handleLogout}
+                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 w-full"
+                  >
+                    <LogOut className="text-gray-500" />
+                    {sidebarState === 'full' && <span>Log Out</span>}
+                  </button>
               </li>
             </ul>
           </div>

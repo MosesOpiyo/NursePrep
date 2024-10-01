@@ -27,8 +27,3 @@
 .maincontent-container {
     width: 100%;
 }
-
-.dashboard-container .dashboard-nav .navbar-container nav ul li.home,
-.dashboard-container .dashboard-nav .navbar-container nav ul li.about {
-    display: none;
-}

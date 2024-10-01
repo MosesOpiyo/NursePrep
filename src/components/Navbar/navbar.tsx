@@ -1,34 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./navbar.css";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nursingCourses } from "@/assets/servicesData/services";
+import { nursingCourses, navLinks } from "@/assets/servicesData/services";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
   SheetFooter,
 } from "@/components/ui/sheet";
-import { navLinks } from "@/assets/servicesData/services";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -45,9 +39,6 @@ import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDot
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/app/contexts/AuthContext";
-
-
-
 
 const Navbar: React.FC = () => {
   const currentPath = usePathname();
@@ -73,21 +64,23 @@ const Navbar: React.FC = () => {
 
       {/* LARGE SCREEN NAVBAR */}
       <ul className="navbar-link text-white lg:flex gap-4 list-none hidden">
-        <li className="home">
-          <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
-            Home
-          </Link>
-        </li>
-
-        <li className="about">
-          <Link
-            href="/about"
-            className={currentPath === "/about" ? "active p-2" : "p-2"}
-          >
-            About
-          </Link>
-        </li>
-
+        {!isLoggedIn && (
+          <>
+            <li className="home">
+              <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
+                Home
+              </Link>
+            </li>
+            <li className="about">
+              <Link
+                href="/about"
+                className={currentPath === "/about" ? "active p-2" : "p-2"}
+              >
+                About
+              </Link>
+            </li>
+          </>
+        )}
         <li className="dropdown">
           <Link
             href="/teas"
@@ -96,7 +89,6 @@ const Navbar: React.FC = () => {
             ATI LEAS 7
           </Link>
         </li>
-
         <li>
           <Link
             href="/hesi"
@@ -105,7 +97,6 @@ const Navbar: React.FC = () => {
             HESI A2
           </Link>
         </li>
-
         <li className="dropdown relative">
           <Link
             href="/nursing_school"
@@ -116,7 +107,6 @@ const Navbar: React.FC = () => {
               <FaChevronDown className="inline relative bottom-0.5" />
             </span>
           </Link>
-
           {/* dropdown menu */}
           <div className="nursing-dropdown">
             <ul className="grid grid-cols-2 gap-2">
@@ -141,7 +131,6 @@ const Navbar: React.FC = () => {
             </ul>
           </div>
         </li>
-
         <li>
           <Link
             href="/nurseevent"
@@ -161,12 +150,9 @@ const Navbar: React.FC = () => {
               {/* NOTIFS ICON */}
               <div className="notifications">
                 <Popover>
-                  {/* POPOVER TRIGGER */}
                   <PopoverTrigger className="flex items-center justify-center gap-1">
                     <FaBell />
                   </PopoverTrigger>
-
-                  {/* POPOVER CONTENT */}
                   <PopoverContent>
                     <div>
                       <p>Your exam date is tomorrow</p>
@@ -178,19 +164,15 @@ const Navbar: React.FC = () => {
               {/* SEARCH ICON*/}
               <div className="search">
               <Popover>
-                  {/* POPOVER TRIGGER */}
                   <PopoverTrigger className="flex items-center justify-center gap-1">
                     <FaMagnifyingGlass  />
                   </PopoverTrigger>
-
-                  {/* POPOVER CONTENT */}
                   <PopoverContent>
                     <div>
                      <Input type="search" placeholder="Search..." />
                     </div>
                   </PopoverContent>
                 </Popover>
-                
               </div>
 
               {/* AVATAR */}
@@ -201,13 +183,10 @@ const Navbar: React.FC = () => {
                 </Avatar>
 
                 <Popover>
-                  {/* POPOVER TRIGGER */}
                   <PopoverTrigger className="user-name flex items-center justify-center gap-1">
                     Hi, Isaac
                     <FaChevronDown />
                   </PopoverTrigger>
-
-                  {/* POPOVER CONTENT */}
                   <PopoverContent>
                     <div>
                       <ul>
@@ -220,7 +199,6 @@ const Navbar: React.FC = () => {
                             My Dashboard
                           </Link>
                         </li>
-
                         <li>
                           <Link
                             href="/dashboard/profile"
@@ -230,7 +208,6 @@ const Navbar: React.FC = () => {
                             Settings
                           </Link>
                         </li>
-
                         {/* LOG OUT */}
                         <li>
                           <button type="button" onClick={handleLogout} className="flex gap-1 items-center">
@@ -246,29 +223,20 @@ const Navbar: React.FC = () => {
             </div>
           </>
         ) : (
-
           // DISPLAY IF USER IS NOT LOGGED IN
           <div className="flex items-center justify-center">
             {/* LOG IN BUTTON AND SIGN UP BUTTON DISPLAY IF NOT LOGGED IN */}
             <Dialog>
-              {/* LOG IN BUTTON */}
               <DialogTrigger asChild>
                 <Button variant="outline" className="login-button">
                   Sign In
                 </Button>
               </DialogTrigger>
-
-              {/* DIALOG BOX CONTENT */}
               <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
-                {/* DIALOG BOX HEADER */}
                 <DialogHeader>
                   <DialogTitle className="text-center">Login</DialogTitle>
                 </DialogHeader>
-                {/* END OF DIALOG BOX HEADER */}
-
-                {/* DIALOG BOX INFO */}
                 <div className="flex flex-col w-full gap-4 py-4">
-                  {/* NAME LABEL AND INPUT  */}
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="name" className="text-right">
                       Name
@@ -279,9 +247,6 @@ const Navbar: React.FC = () => {
                       className="col-span-3"
                     />
                   </div>
-                  {/* END OF NAME LABEL AND INPUT  */}
-
-                  {/* PASSWORD LABEL AND INPUT */}
                   <div
                     className="grid grid-cols-4 items-center gap-4"
                   >
@@ -295,19 +260,14 @@ const Navbar: React.FC = () => {
                       type="password"
                     />
                   </div>
-                  {/* END OF PASSWORD LABEL AND INPUT */}
                 </div>
-
-                {/* DIALOG FOOTER */}
                 <DialogFooter>
                   <Button type="submit" onClick={handleLogin}>
                     Sign In
                   </Button>
                 </DialogFooter>
-                {/* END OF DIALOG FOOTER */}
               </DialogContent>
             </Dialog>
-
             <div className="sign-up-button">
               <Link href="/register">Sign Up</Link>
             </div>
@@ -321,7 +281,6 @@ const Navbar: React.FC = () => {
           <DialogTrigger>
             <FaRegCircleUser className="text-white text-2xl" />
           </DialogTrigger>
-
           <DialogContent>
             <div className="flex flex-col gap-4 navbar-auth items-center text-black">
               {isLoggedIn ? (
@@ -337,27 +296,16 @@ const Navbar: React.FC = () => {
                 </>
               ) : (
                 <Dialog>
-                  {/* LOG IN BUTTON */}
                   <DialogTrigger asChild>
                     <Button variant="outline" className="login-button">
                       Sign In
                     </Button>
                   </DialogTrigger>
-
-                  {/* DIALOG BOX CONTENT */}
                   <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
-                    {/* DIALOG BOX HEADER */}
                     <DialogHeader>
                       <DialogTitle className="text-center">Login</DialogTitle>
-                      {/* <DialogDescription>
-                  Login
-                </DialogDescription> */}
                     </DialogHeader>
-                    {/* END OF DIALOG BOX HEADER */}
-
-                    {/* DIALOG BOX INFO */}
                     <div className="flex flex-col w-full gap-4 py-4">
-                      {/* NAME LABEL AND INPUT  */}
                       <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="name" className="text-right">
                           Name
@@ -368,9 +316,6 @@ const Navbar: React.FC = () => {
                           className="col-span-3"
                         />
                       </div>
-                      {/* END OF NAME LABEL AND INPUT  */}
-
-                      {/* PASSWORD LABEL AND INPUT */}
                       <div
                         className="grid grid-cols-4 items-center gap-4"
                       >
@@ -384,20 +329,15 @@ const Navbar: React.FC = () => {
                           type="password"
                         />
                       </div>
-                      {/* END OF PASSWORD LABEL AND INPUT */}
                     </div>
-
-                    {/* DIALOG FOOTER */}
                     <DialogFooter>
                       <Button type="submit" onClick={handleLogin}>
                         Sign In
                       </Button>
                     </DialogFooter>
-                    {/* END OF DIALOG FOOTER */}
                   </DialogContent>
                 </Dialog>
               )}
-
               <div className="sign-up-button">
                 <Link href="/membership">Sign Up</Link>
               </div>
@@ -409,22 +349,29 @@ const Navbar: React.FC = () => {
       {/* MOBILE NAV*/}
       <div className="mobile-nav lg:hidden flex">
         <Sheet>
-          {/* MENU ICON */}
           <SheetTrigger>
             <FaBarsStaggered className="text-white text-2xl cursor-pointer" />
           </SheetTrigger>
-
-          {/* CONTENT */}
           <SheetContent>
-            {/* HEADER */}
             <SheetHeader>
               <SheetTitle>MENU</SheetTitle>
-              {/* <SheetDescription>Choose menu items</SheetDescription> */}
             </SheetHeader>
-
-            {/* MENU LIST ITEM */}
             <nav>
               <ul className="navbar-link flex flex-col gap-4 list-none">
+                {!isLoggedIn && (
+                  <>
+                    <li>
+                      <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>
+                        About
+                      </Link>
+                    </li>
+                  </>
+                )}
                 {navLinks.map((navlink) => (
                   <li key={navlink.id}>
                     <Link
@@ -439,7 +386,6 @@ const Navbar: React.FC = () => {
                             {navlink.linkName}
                             <FaChevronDown className="text-sml inline relative bottom-0.5 left-1" />
                           </DropdownMenuTrigger>
-
                           <DropdownMenuContent>
                             <p className="ps-4 text-sm pt-4 pb-1 cursor-pointer">
                               All {navlink.linkName} Courses
@@ -471,11 +417,7 @@ const Navbar: React.FC = () => {
                 ))}
               </ul>
             </nav>
-
             <SheetFooter>
-              {/* <SheetClose asChild>
-                <Button type="button">Close Menu Bar</Button>
-              </SheetClose> */}
             </SheetFooter>
           </SheetContent>
         </Sheet>

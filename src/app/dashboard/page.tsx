@@ -42,6 +42,8 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { FileClock, Wallet, UserRoundCog, LogOut } from "lucide-react";
+
 
 const FormSchema = z.object({
   type: z.enum(["social_media", "my_school", "online_ads", "word", "search", "blog", "other"], {
@@ -255,17 +257,29 @@ export default function Dashboard() {
               <div className="qlinks-container flex w-full">
                 <div className="qlinks-content">
                   <ul className="flex flex-col gap-1">
-                    <li><Link href="">My Test History</Link></li>
-                    <li><Link href="">My subscriptions</Link></li>
+                    <li>
+                      <Link href="/dashboard/test_history" className="flex gap-1 items-center">
+                      <FileClock/>
+                      My Test History
+                      </Link>
+                      </li>
+
+                    <li>
+                      <Link href="/dashboard/subscription" className="flex gap-1 items-center">
+                      <Wallet />
+                      Subscriptions & Billing</Link>
+                      </li>
+                      
                     <li>
                       <Link href="/dashboard/account_settings" className="flex items-center gap-1">
-                        <FaGear />
+                        <UserRoundCog />
                         Account Settings
                       </Link>
                     </li>
+
                     <li>
                       <button type="button" onClick={handleLogout} className="flex gap-1 items-center">
-                        <FaArrowRightFromBracket />
+                        <LogOut />
                         Log out
                       </button>
                     </li>

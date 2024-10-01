@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { toast } from "@/hooks/use-toast"
 import { Bell, Mail, MessageSquare, ShieldAlert, Star, Zap } from "lucide-react"
+import '../../styles/globals.css'
 
 interface NotificationPreference {
   id: string

@@ -39,6 +39,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { profileDetailsSchema } from "../../../../schema";
 import EmailNotificationPreferences from "@/components/Email_Notif_Preference/Email_Notif_Preference";
+import LoginInfoTab from "@/components/LoginInfo/LoginInfo";
 
 export default function ProfileSettings() {
   // username and name details form
@@ -73,24 +74,34 @@ export default function ProfileSettings() {
           <TabsTrigger className="rounded-none tabs-trigger" value="profile">
             Profile Info
           </TabsTrigger>
+
+          <TabsTrigger className="rounded-none tabs-trigger" value="login">
+            Login Info
+          </TabsTrigger>
+
           <TabsTrigger
             className="rounded-none tabs-trigger"
             value="notification"
           >
             Notifications & Preferences
           </TabsTrigger>
-          <TabsTrigger className="rounded-none tabs-trigger" value="security">
-            Account Security
+
+          <TabsTrigger className="rounded-none tabs-trigger" value="social">
+            Social Accounts
           </TabsTrigger>
-          <TabsTrigger className="rounded-none tabs-trigger" value="management">
-            Account Management
-          </TabsTrigger>
-          <TabsTrigger className="rounded-none tabs-trigger" value="support">
-            Support
-          </TabsTrigger>
+
           <TabsTrigger className="rounded-none tabs-trigger" value="privacy">
             Privacy
           </TabsTrigger>
+
+          <TabsTrigger className="rounded-none tabs-trigger" value="export">
+            Export Data
+          </TabsTrigger>
+
+          <TabsTrigger className="rounded-none tabs-trigger" value="delete">
+            Delete Account
+          </TabsTrigger>
+         
         </TabsList>
 
         {/* TABS CONTENT */}
@@ -180,6 +191,11 @@ export default function ProfileSettings() {
               </CardContent>
             </Card>
           </div>
+        </TabsContent>
+
+        {/* login */}
+        <TabsContent value="login">
+          <LoginInfoTab />
         </TabsContent>
 
         {/* notification */}

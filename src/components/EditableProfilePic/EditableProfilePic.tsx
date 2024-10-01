@@ -12,6 +12,7 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Camera, Upload } from "lucide-react";
 import Cropper from 'react-easy-crop';
+import '../../styles/globals.css'
 
 export default function EditableProfilePic() {
   const [image, setImage] = useState<string | null>(null)

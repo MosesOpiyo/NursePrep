@@ -40,6 +40,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { profileDetailsSchema } from "../../../../schema";
 import EmailNotificationPreferences from "@/components/Email_Notif_Preference/Email_Notif_Preference";
 import LoginInfoTab from "@/components/LoginInfo/LoginInfo";
+import SocialAccountsTab from "@/components/SocialAccounts/SocialAccounts";
 
 export default function ProfileSettings() {
   // username and name details form
@@ -203,19 +204,23 @@ export default function ProfileSettings() {
           <EmailNotificationPreferences />
         </TabsContent>
 
-        {/* security */}
-        <TabsContent value="security">Change your security here.</TabsContent>
-
-        {/* management */}
-        <TabsContent value="management">
-          Change your account management here.
+        {/* socials */}
+        <TabsContent value="social">
+          <SocialAccountsTab />
         </TabsContent>
-
-        {/* support */}
-        <TabsContent value="support">Change your support here.</TabsContent>
 
         {/* privacy */}
         <TabsContent value="privacy">Change your privacy here.</TabsContent>
+
+        {/* export */}
+        <TabsContent value="export">
+          Change your account management here.
+        </TabsContent>
+
+        {/* delete */}
+        <TabsContent value="delete">Change your support here.</TabsContent>
+
+        
       </Tabs>
     </div>
   );

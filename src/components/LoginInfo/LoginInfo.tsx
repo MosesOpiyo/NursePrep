@@ -101,7 +101,7 @@ export default function LoginInfoTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-8">
       <Card>
         <CardHeader>
           <CardTitle>Login Information</CardTitle>

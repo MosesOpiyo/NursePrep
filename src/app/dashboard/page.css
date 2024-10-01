@@ -21,13 +21,18 @@
     text-align: start;
 }
 
-.welcome {
+.welcome,
+.mycourses-container,
+.myevents-container,
+.links-container,
+.add_course-card,
+.survey-container {
     background-color: #f1f4f9;
     border-radius: 20px;
 }
 
 .course-card {
-    background-color: #f6f6f6;
+    background-color: #fff;
     border-radius: 20px;
 }
 
@@ -51,4 +56,20 @@
     opacity: .6;
     z-index: -1;
     border-radius: 20px;
+}
+
+.tabs-trigger {
+    border-bottom: 1px solid #00000036;
+    border-radius: 0px;
+}
+
+button.data-\[state\=active\]\:bg-background[data-state=active] {
+    /* background-color: hsl(var(--background)); */
+    border-bottom: 1px solid #000000;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+button.data-\[state\=active\]\:shadow[data-state=active] {
+    box-shadow: none;
 }

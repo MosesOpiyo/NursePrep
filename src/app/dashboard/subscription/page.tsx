@@ -7,6 +7,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge"
 import { CreditCard, Download } from "lucide-react"
 import { FaCcPaypal, FaCcVisa } from "react-icons/fa6";
+import './page.css'
+import '../../../styles/globals.css'
 
 export default function BillingSubscriptionTab() {
   const [currentPlan, setCurrentPlan] = useState("Monthly")
@@ -52,13 +54,18 @@ export default function BillingSubscriptionTab() {
   }
 
   return (
-    <div className="container mx-auto p-6 space-y-8">
-      <h1 className="text-3xl font-bold mb-6">Subscription & Billing</h1>
+    <div className="container mx-auto space-y-8">
+      <Card className="subscription-header shadow-none border-none p-8 flex flex-col gap-2">
+        <CardTitle className="text-5xl font-normal mb-6">Subscription & Billing</CardTitle>
+        <CardDescription>Manage your subscription and billing details here. Stay updated on your current plan, view payment history, and easily update your payment methods.</CardDescription>
+      </Card>
 
       <Card>
         <CardHeader>
           <CardTitle>Plan Details</CardTitle>
-          <CardDescription>Your current plan and billing information</CardDescription>
+          <CardDescription>
+            Your current plan and billing information
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4">
@@ -69,6 +76,14 @@ export default function BillingSubscriptionTab() {
           <div className="flex justify-between items-center">
             <span className="font-semibold">Plan Cost:</span>
             <span>{planDetails.cost} / month</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-semibold">Subscription:</span>
+            <span>Enabled</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-semibold">Active:</span>
+            <Badge variant="secondary">Yes</Badge>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-semibold">Expiry Date:</span>
@@ -84,7 +99,9 @@ export default function BillingSubscriptionTab() {
           </div>
         </CardContent>
         <CardFooter className="flex justify-end space-x-4">
-          <Button variant="outline" onClick={handleCancel}>Cancel Plan</Button>
+          <Button variant="outline" onClick={handleCancel}>
+            Cancel Plan
+          </Button>
           <Button onClick={handleUpgrade}>Upgrade Plan</Button>
         </CardFooter>
       </Card>
@@ -104,7 +121,9 @@ export default function BillingSubscriptionTab() {
             <div>
               <p className="font-semibold">{paymentMethod}</p>
               <p className="text-sm text-gray-500">
-                {paymentMethod === "Visa" ? "Ending in 1234" : "example@email.com"}
+                {paymentMethod === "Visa"
+                  ? "Ending in 1234"
+                  : "example@email.com"}
               </p>
             </div>
           </div>
@@ -113,14 +132,18 @@ export default function BillingSubscriptionTab() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button variant="outline" onClick={handleChangePaymentMethod}>Change Payment Method</Button>
+          <Button variant="outline" onClick={handleChangePaymentMethod}>
+            Change Payment Method
+          </Button>
         </CardFooter>
       </Card>
 
       <Card>
         <CardHeader>
           <CardTitle>Invoices</CardTitle>
-          <CardDescription>Your billing history and invoice downloads</CardDescription>
+          <CardDescription>
+            Your billing history and invoice downloads
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
@@ -140,7 +163,11 @@ export default function BillingSubscriptionTab() {
                 <TableRow key={invoice.invoiceNumber}>
                   <TableCell>{invoice.date}</TableCell>
                   <TableCell>
-                    <Badge variant={invoice.status === "Paid" ? "secondary" : "destructive"}>
+                    <Badge
+                      variant={
+                        invoice.status === "Paid" ? "secondary" : "destructive"
+                      }
+                    >
                       {invoice.status}
                     </Badge>
                   </TableCell>
@@ -152,7 +179,9 @@ export default function BillingSubscriptionTab() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => handleDownloadInvoice(invoice.invoiceNumber)}
+                      onClick={() =>
+                        handleDownloadInvoice(invoice.invoiceNumber)
+                      }
                     >
                       <Download className="h-4 w-4 mr-2" />
                       Download
@@ -171,5 +200,5 @@ export default function BillingSubscriptionTab() {
         </CardFooter>
       </Card>
     </div>
-  )
+  );
 }

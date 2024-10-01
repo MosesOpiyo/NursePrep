@@ -1,8 +1,10 @@
-.settings-header {
+div.settings-header {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     /* border: 1px solid #0000002b; */
     background-color: #f1f4f9;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .tabs-list.rounded-lg {

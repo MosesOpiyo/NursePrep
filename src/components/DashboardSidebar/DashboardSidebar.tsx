@@ -7,7 +7,7 @@ import { FaClone, FaBook, FaGear, FaCommentDots, FaArrowRightToBracket, FaChevro
 import './DashboardSidebar.css'
 import { useAuth } from '@/app/contexts/AuthContext'
 import { Button } from "@/components/ui/button"
-import { FileClock, LayoutDashboard, UserRoundCog, LogOut, Wallet } from 'lucide-react'
+import { FileClock, LayoutDashboard, UserRoundCog, LogOut, Wallet, BadgeHelp } from 'lucide-react'
 import { useRouter } from 'next/navigation';
 
 
@@ -63,7 +63,7 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
           )}
         </div>
         {sidebarState !== "hidden" && (
-          <div className="dashboard-menu flex-1 p-4">
+          <div className="dashboard-menu flex-1 p-2">
             <ul className="space-y-2">
               <li>
                 <Link
@@ -111,7 +111,7 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
                   href="/dashboard/account_settings"
                   className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100"
                 >
-                  <FaCommentDots className="text-gray-500" />
+                  <BadgeHelp className="text-gray-500" />
                   {sidebarState === "full" && <span>Help & Support</span>}
                 </Link>
               </li>

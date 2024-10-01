@@ -31,6 +31,14 @@
     border-radius: 20px;
 }
 
+.mycourses-container,
+.myevents-container,
+.links-container,
+.add_course-card,
+.survey-container {
+    background-color: #fff;
+}
+
 .course-card {
     background-color: #fff;
     border-radius: 20px;

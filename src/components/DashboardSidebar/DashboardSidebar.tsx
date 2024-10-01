@@ -88,9 +88,10 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
           onClick={toggleSidebar}
           variant="ghost"
           size="icon"
-          className="fixed top-4 left-4 z-50"
+          className="fixed left-4 toggle-button"
         >
           <FaBars />
+          <span>Show Menu</span>
         </Button>
       )}
     </>

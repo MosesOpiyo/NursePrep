@@ -12,7 +12,9 @@
     height: 500px;
 }
 
-.teas-layout .layoutcontent-container,
-.teas-layout .footer-container {
-    top: 70px;
+.teas-layout .sidenav-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100svh;
 }

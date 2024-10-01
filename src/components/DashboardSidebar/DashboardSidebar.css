@@ -11,3 +11,17 @@
 .sidenav-container ul li a:hover {
   background-color: #e9ecef;
 }
+
+button.toggle-button {
+  background-color: #000;
+  color: #fff;
+  z-index: 1000;
+  width: fit-content;
+  padding: 10px;
+  top: 10px;
+}
+
+button.toggle-button:hover {
+  background-color: #020141;
+  color: #fff;
+}

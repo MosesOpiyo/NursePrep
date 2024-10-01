@@ -12,7 +12,9 @@
     height: 500px;
 }
 
-.layoutcontent-container,
-.footer-container {
-    top: 70px;
+.hesi-layout .sidenav-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100svh;
 }

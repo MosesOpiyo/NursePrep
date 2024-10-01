@@ -2,11 +2,6 @@
     background-color: #f1f4f9;
 }
 
-.dashboard-content {
-    position: relative;
-    top: 80px;
-}
-
 .navbar-container {
     width: 100%;
 }
@@ -31,18 +26,6 @@
 
 .maincontent-container {
     width: 100%;
-}
-
-/* .dashboard-nav {
-    width: calc(100% - 258px);
-} */
-
-.sixteenrems {
-    width: calc(100% - 16rem);
-}
-
-.fourrems {
-    width: calc(100% - 4rem);
 }
 
 .dashboard-container .dashboard-nav .navbar-container nav ul li.home,

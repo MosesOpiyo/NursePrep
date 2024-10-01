@@ -56,7 +56,7 @@ export default function DashboardLayout ({
         {/* CONTENT */}
         <div className="maincontent-container flex flex-col gap-4 relative">
           {/* DASHBOARD-NAV */}
-          <div className={`dashboard-nav ${sidebarWidth} fixed bg-white z-50 flex`}>
+          <div className={`dashboard-nav bg-white z-50 flex`}>
             <div className="navbar-container">
               <Navbar />
             </div>

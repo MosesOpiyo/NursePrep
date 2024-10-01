@@ -36,18 +36,18 @@ export default async function SideNav({
   const subject = await getSingleLesson(params.subjectId);
 
   return (
-    <section className="teas-layout flex flex-col sidebar gap-4">
+    <section className="teas-layout flex flex-col sidebar">
       {/* Include shared UI here e.g. a header or sidebar */}
 
       {/* NAVBAR */}
-      <div className="navbar-container z-10 bg-white fixed w-full border-b-2 border-solid">
+      <div className="navbar-container z-10 bg-white border-b-2 border-solid">
         <Navbar />
       </div>
 
       {/* MAIN CONTENT */}
       <div className="flex relative layoutcontent-container h-full">
         {/* SIDENAV */}
-        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 fixed h-full border-solid p-4 flex-col gap-8 hidden md:flex">
+        <div className="sidenav-container overflow-y-auto w-1/4 border-x-2 border-solid p-4 flex-col gap-8 hidden md:flex">
           <h1 className="font-bold text-3xl sm:text-3xl">
             Subject: {subject.subject}{" "}
           </h1>
@@ -74,7 +74,7 @@ export default async function SideNav({
         </div>
 
         {/* CONTENT */}
-        <div className="maincontent-container w-full md:w-3/4 relative md:left-1/4">
+        <div className="maincontent-container w-full md:w-3/4 relative">
         {children}
         </div>
         

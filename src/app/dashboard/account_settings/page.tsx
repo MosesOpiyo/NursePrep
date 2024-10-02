@@ -44,6 +44,7 @@ import SocialAccountsTab from "@/components/SocialAccounts/SocialAccounts";
 import ProfileVisibilitySettings from "@/components/ProfileVisibility/ProfileVisibility";
 import ExportDataTab from "@/components/ExportData/ExportData";
 import DeleteAccountTab from "@/components/DeleteAccount/DeleteAccount";
+import ProfilePage from "@/components/ProfileInfo/ProfileInfo";
 
 
 export default function ProfileSettings() {
@@ -111,91 +112,8 @@ export default function ProfileSettings() {
 
         {/* TABS CONTENT */}
         {/* profile */}
-        <TabsContent value="profile" className="w-full">
-          <div className="profile-container w-full flex flex-col gap-8 mt-8">
-            {/* PROFILE PICTURE */}
-            <Card className="profile-picture px-4 py-8 grid gap-12">
-              <CardHeader className="picture-label flex flex-col justify-center gap-1 p-0">
-                <CardTitle className="font-bold">Profile Picture</CardTitle>
-                <CardDescription>
-                  Edit your profile picture. Your profile photo will be used on
-                  your profile and throughout the site.
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="picture-edit flex items-center justify-center">
-                <EditableProfilePic />
-              </CardContent>
-            </Card>
-
-            {/* PROFILE DETAILS */}
-            <Card className="profile-details px-4 py-8 grid gap-12">
-              <CardHeader className="details-label flex flex-col justify-center gap-1 p-0">
-                <CardTitle className="font-bold">Profile Details</CardTitle>
-                <CardDescription>
-                  Edit your name and username. Your profile name and username
-                  will be used on your profile and throughout the site.
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="profile-form p-0 flex items-center justify-center">
-                <Form {...form}>
-                  <form
-                    className="flex flex-col items-center gap-8"
-                    onSubmit={form.handleSubmit(onSubmit)}
-                  >
-                    <div className="flex gap-4">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem className="relative">
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                              <Input
-                                placeholder="John Doe"
-                                autoComplete="true"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormDescription>
-                              This is your public full name.
-                            </FormDescription>
-                            <FormMessage className="absolute -top-1 left-36" />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="username"
-                        render={({ field }) => (
-                          <FormItem className="relative">
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                              <Input
-                                placeholder="John_Doe1"
-                                autoComplete="true"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormDescription>
-                              This is your public display name.
-                            </FormDescription>
-                            <FormMessage className="absolute -top-1 left-36" />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <Button className="w-1/2 self-center" type="submit">
-                      Submit
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
-          </div>
+        <TabsContent value="profile">
+          <ProfilePage />
         </TabsContent>
 
         {/* login */}

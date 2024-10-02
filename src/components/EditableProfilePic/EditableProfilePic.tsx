@@ -1,21 +1,25 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+import { useState, useRef, useCallback } from 'react'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Camera, Upload } from "lucide-react";
-import Cropper from 'react-easy-crop';
-import '../../styles/globals.css'
+} from "@/components/ui/dropdown-menu"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Camera, Upload } from "lucide-react"
+import Cropper, { Area } from 'react-easy-crop'
 
-export default function EditableProfilePic() {
-  const [image, setImage] = useState<string | null>(null)
+interface EditableProfilePicProps {
+  onImageChange: (image: string) => void
+  initialImage?: string
+}
+
+export default function EditableProfilePic({ onImageChange, initialImage }: EditableProfilePicProps) {
+  const [image, setImage] = useState<string | null>(initialImage || null)
   const [croppedImage, setCroppedImage] = useState<string | null>(null)
   const [isCropping, setIsCropping] = useState(false)
   const [isCapturing, setIsCapturing] = useState(false)
@@ -65,7 +69,7 @@ export default function EditableProfilePic() {
     }
   }
 
-  const onCropComplete = useCallback((croppedArea: any, croppedAreaPixels: any) => {
+  const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
     if (image) {
       const canvas = document.createElement('canvas')
       const img = new Image()
@@ -88,11 +92,13 @@ export default function EditableProfilePic() {
             croppedAreaPixels.width,
             croppedAreaPixels.height
           )
-          setCroppedImage(canvas.toDataURL('image/jpeg'))
+          const croppedImageData = canvas.toDataURL('image/jpeg')
+          setCroppedImage(croppedImageData)
+          onImageChange(croppedImageData)
         }
       }
     }
-  }, [image])
+  }, [image, onImageChange])
 
   return (
     <div className="flex flex-col items-center justify-center w-fit space-y-4">
@@ -116,12 +122,12 @@ export default function EditableProfilePic() {
         </DropdownMenuContent>
       </DropdownMenu>
       <input
-        title='file'
         type="file"
         ref={fileInputRef}
         onChange={handleFileChange}
         accept="image/*"
         className="hidden"
+        title='choose file'
       />
       <Dialog open={isCropping} onOpenChange={setIsCropping}>
         <DialogContent className="sm:max-w-[425px]">

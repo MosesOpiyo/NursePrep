@@ -41,6 +41,8 @@ import { profileDetailsSchema } from "../../../../schema";
 import EmailNotificationPreferences from "@/components/Email_Notif_Preference/Email_Notif_Preference";
 import LoginInfoTab from "@/components/LoginInfo/LoginInfo";
 import SocialAccountsTab from "@/components/SocialAccounts/SocialAccounts";
+import ProfileVisibilitySettings from "@/components/ProfileVisibility/ProfileVisibility";
+
 
 export default function ProfileSettings() {
   // username and name details form
@@ -210,7 +212,9 @@ export default function ProfileSettings() {
         </TabsContent>
 
         {/* privacy */}
-        <TabsContent value="privacy">Change your privacy here.</TabsContent>
+        <TabsContent value="privacy">
+          <ProfileVisibilitySettings />
+        </TabsContent>
 
         {/* export */}
         <TabsContent value="export">

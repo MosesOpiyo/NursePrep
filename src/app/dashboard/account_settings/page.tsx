@@ -42,6 +42,7 @@ import EmailNotificationPreferences from "@/components/Email_Notif_Preference/Em
 import LoginInfoTab from "@/components/LoginInfo/LoginInfo";
 import SocialAccountsTab from "@/components/SocialAccounts/SocialAccounts";
 import ProfileVisibilitySettings from "@/components/ProfileVisibility/ProfileVisibility";
+import ExportDataTab from "@/components/ExportData/ExportData";
 
 
 export default function ProfileSettings() {
@@ -218,7 +219,7 @@ export default function ProfileSettings() {
 
         {/* export */}
         <TabsContent value="export">
-          Change your account management here.
+          <ExportDataTab />
         </TabsContent>
 
         {/* delete */}

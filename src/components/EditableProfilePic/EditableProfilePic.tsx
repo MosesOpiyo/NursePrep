@@ -12,6 +12,7 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Camera, Upload } from "lucide-react"
 import Cropper, { Area } from 'react-easy-crop'
+import '../../styles/globals.css'
 
 interface EditableProfilePicProps {
   onImageChange: (image: string) => void

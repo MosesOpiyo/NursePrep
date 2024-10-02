@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Camera } from "lucide-react"
 import Cropper, { Area, Point } from 'react-easy-crop'
+import '../../styles/globals.css'
 
 interface EditableCoverImageProps {
   onImageChange: (image: string) => void

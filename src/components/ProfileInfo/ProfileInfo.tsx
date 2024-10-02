@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast"
 import { Globe, Lock, Users } from "lucide-react"
 import EditableProfilePic from "../EditableProfilePic/EditableProfilePic"
 import EditableCoverImage from "../EditableCoverImg/EditableCoverImg"
+import '../../styles/globals.css'
 
 type Visibility = 'public' | 'members' | 'private'
 

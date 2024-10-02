@@ -39,7 +39,7 @@ import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDot
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/app/contexts/AuthContext";
-import { FileClock, LayoutDashboard, LogOut, UserRoundCog, Wallet } from 'lucide-react'
+import { FileClock, LayoutDashboard, LogOut, UserRoundCog, User, Wallet } from 'lucide-react'
 
 
 
@@ -70,7 +70,10 @@ const Navbar: React.FC = () => {
         {!isLoggedIn && (
           <>
             <li className="home">
-              <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
+              <Link
+                href="/"
+                className={currentPath === "/" ? "active p-2" : "p-2"}
+              >
                 Home
               </Link>
             </li>
@@ -166,13 +169,13 @@ const Navbar: React.FC = () => {
 
               {/* SEARCH ICON*/}
               <div className="search">
-              <Popover>
+                <Popover>
                   <PopoverTrigger className="flex items-center justify-center gap-1">
-                    <FaMagnifyingGlass  />
+                    <FaMagnifyingGlass />
                   </PopoverTrigger>
                   <PopoverContent>
                     <div>
-                     <Input type="search" placeholder="Search..." />
+                      <Input type="search" placeholder="Search..." />
                     </div>
                   </PopoverContent>
                 </Popover>
@@ -193,6 +196,22 @@ const Navbar: React.FC = () => {
                   <PopoverContent>
                     <div>
                       <ul className="flex flex-col gap-1">
+                        {/* MY PROFILE */}
+                        <li>
+                          <Link
+                            href="/dashboard/profile"
+                            className="flex gap-3 py-4 items-center"
+                          >
+                            <Avatar>
+                              <AvatarImage src="https://github.com/shadcn.png" />
+                              <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
+                            <span className="flex flex-col">
+                              <span className="font-semibold leading-4">Isaac</span>
+                              <span className="leading-4">isaac@gmail.com</span>
+                            </span>
+                          </Link>
+                        </li>
 
                         {/* MY DASHBOARD */}
                         <li>
@@ -240,7 +259,11 @@ const Navbar: React.FC = () => {
 
                         {/* LOG OUT */}
                         <li>
-                          <button type="button" onClick={handleLogout} className="flex gap-1 items-center">
+                          <button
+                            type="button"
+                            onClick={handleLogout}
+                            className="flex gap-1 items-center"
+                          >
                             <LogOut />
                             Log out
                           </button>
@@ -277,9 +300,7 @@ const Navbar: React.FC = () => {
                       className="col-span-3"
                     />
                   </div>
-                  <div
-                    className="grid grid-cols-4 items-center gap-4"
-                  >
+                  <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="username" className="text-right">
                       Password
                     </Label>
@@ -346,9 +367,7 @@ const Navbar: React.FC = () => {
                           className="col-span-3"
                         />
                       </div>
-                      <div
-                        className="grid grid-cols-4 items-center gap-4"
-                      >
+                      <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="username" className="text-right">
                           Password
                         </Label>
@@ -391,12 +410,20 @@ const Navbar: React.FC = () => {
                 {!isLoggedIn && (
                   <>
                     <li>
-                      <Link href="/" className={currentPath === "/" ? "active p-2" : "p-2"}>
+                      <Link
+                        href="/"
+                        className={currentPath === "/" ? "active p-2" : "p-2"}
+                      >
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about" className={currentPath === "/about" ? "active p-2" : "p-2"}>
+                      <Link
+                        href="/about"
+                        className={
+                          currentPath === "/about" ? "active p-2" : "p-2"
+                        }
+                      >
                         About
                       </Link>
                     </li>
@@ -447,8 +474,7 @@ const Navbar: React.FC = () => {
                 ))}
               </ul>
             </nav>
-            <SheetFooter>
-            </SheetFooter>
+            <SheetFooter></SheetFooter>
           </SheetContent>
         </Sheet>
       </div>

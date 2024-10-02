@@ -60,7 +60,7 @@ export default function EditableCoverImage({ onImageChange, initialImage }: Edit
   }, [onImageChange])
 
   return (
-    <div className="relative h-[300px]">
+    <div className="relative h-[300px] bg-blue-200 rounded-xl">
       <Image
         src={image}
         alt="Cover"
@@ -84,7 +84,7 @@ export default function EditableCoverImage({ onImageChange, initialImage }: Edit
         onChange={handleFileChange}
         title='file'
       />
-      <div className="absolute bottom-4 left-4 text-white text-sm bg-black bg-opacity-50 p-2 rounded">
+      <div className="absolute bottom-4 right-4 text-white text-sm bg-black bg-opacity-50 p-2 rounded">
         For best results, upload an image that is 1950px by 450px or larger.
       </div>
       <Dialog open={isCropping} onOpenChange={setIsCropping}>

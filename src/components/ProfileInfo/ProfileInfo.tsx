@@ -31,8 +31,8 @@ export default function ProfilePage() {
     username: "johndoe",
     joinDate: "January 2023",
     onlineStatus: "online",
-    coverImage: "/default-cover.jpg",
-    profileImage: "/default-avatar.jpg",
+    coverImage: "/dosage-large.jpg",
+    profileImage: "https://github.com/shadcn.png",
     lastNameVisibility: 'private'
   })
 

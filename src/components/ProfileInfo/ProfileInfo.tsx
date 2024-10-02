@@ -99,10 +99,11 @@ export default function ProfilePage() {
             </div>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <span>Joined {profile.joinDate}</span>
-              <span>•</span>
               <span className="flex items-center">
                 {profile.onlineStatus === 'online' && <span className="h-2 w-2 rounded-full bg-green-500 mr-1" />}
-                {profile.onlineStatus === 'online' ? 'Online now' : 'Last seen recently'}
+                {profile.onlineStatus === 'offline' && <span className="h-2 w-2 rounded-full bg-gray-500 mr-1" />}
+                {profile.onlineStatus === 'away' && <span className="h-2 w-2 rounded-full bg-red-500 mr-1" />}
+                {profile.onlineStatus === 'online' ? 'Online now' : profile.onlineStatus === 'offline' ? 'Last seen recently' : 'Away'}
               </span>
             </div>
           </div>

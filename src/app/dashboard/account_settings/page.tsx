@@ -43,6 +43,7 @@ import LoginInfoTab from "@/components/LoginInfo/LoginInfo";
 import SocialAccountsTab from "@/components/SocialAccounts/SocialAccounts";
 import ProfileVisibilitySettings from "@/components/ProfileVisibility/ProfileVisibility";
 import ExportDataTab from "@/components/ExportData/ExportData";
+import DeleteAccountTab from "@/components/DeleteAccount/DeleteAccount";
 
 
 export default function ProfileSettings() {
@@ -223,7 +224,9 @@ export default function ProfileSettings() {
         </TabsContent>
 
         {/* delete */}
-        <TabsContent value="delete">Change your support here.</TabsContent>
+        <TabsContent value="delete">
+          <DeleteAccountTab />
+        </TabsContent>
 
         
       </Tabs>

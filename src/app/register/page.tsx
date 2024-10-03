@@ -1,10 +1,14 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
 import React from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { pricingArray } from "../../assets/servicesData/services";
 import { FaInfoCircle } from "react-icons/fa";
 import { FaCircleXmark, FaLock } from "react-icons/fa6";
 import { pricingFeatures } from "../../assets/servicesData/services";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Navbar from "@/components/Navbar/navbar";
 import "../../styles/globals.css";
 import "./page.css";
@@ -18,15 +22,16 @@ import {
 import { faqData } from "../../assets/servicesData/services";
 import Link from "next/link";
 
-
-
-
 export default function Register() {
-
   const firstItem = pricingArray[0];
+  const router = useRouter()
+
+  const handlePlanSelect = (plan: 'monthly' | 'three_month') => {
+    router.push(`/register/${plan}`)
+  }
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       {/* NAVBAR SECTION */}
       <div className="navbar-container">
         <Navbar />
@@ -72,19 +77,22 @@ export default function Register() {
                       </li>
                     </ul>
                   ))}
-
                 </div>
               </div>
 
               <div className="pricing-disclaimers flex justify-center items-start text-start flex-col">
-                    <div className="secure flex items-center justify-center gap-1">
-                      <div className="icon-container flex items-center justify-center">
-                        <FaLock />
-                      </div>
-
-                      <p>Guaranteed to be safe & secure, ensuring that all transactions are protected with the highest level of security.</p>
-                    </div>
+                <div className="secure flex items-center justify-center gap-1">
+                  <div className="icon-container flex items-center justify-center">
+                    <FaLock />
                   </div>
+
+                  <p>
+                    Guaranteed to be safe & secure, ensuring that all
+                    transactions are protected with the highest level of
+                    security.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -116,9 +124,12 @@ export default function Register() {
                 </div>
 
                 <div className="pricing-cta">
-                  <Link href={`/register/${item.id}`} className="pricing-link">
+                  <Button
+                    onClick={() => handlePlanSelect(`${item.signupbtn_text as "monthly" | "three_month"}`)}
+                    className="w-fit"
+                  >
                     SIGN UP
-                  </Link>
+                  </Button>
                 </div>
               </div>
             ))}

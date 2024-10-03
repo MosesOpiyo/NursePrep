@@ -230,7 +230,8 @@ export const pricingArray =  [
         period: 'month',
         btn_period: 'Monthly',
         ideal: 'Ideal for students testing within two months',
-        className: 'pricing-card p-8 flex flex-col gap-8 month relative'
+        className: 'pricing-card p-8 flex flex-col gap-8 month relative',
+        signupbtn_text: 'monthly'
     },
 
     {
@@ -241,7 +242,8 @@ export const pricingArray =  [
         btn_period: '3-Month',
         ideal: 'Ideal for students testing in three months or later',
         className: 'pricing-card p-8 flex flex-col gap-8 quarter relative',
-        save: 'Save $12'
+        save: 'Save $12',
+        signupbtn_text: 'three_month'
     }
 ]
 

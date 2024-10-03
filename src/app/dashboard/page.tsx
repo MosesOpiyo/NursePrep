@@ -42,7 +42,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileClock, Wallet, UserRoundCog, LogOut } from "lucide-react";
+import { FileClock, Wallet, UserRoundCog, Settings, LogOut } from "lucide-react";
 
 
 const FormSchema = z.object({
@@ -272,7 +272,7 @@ export default function Dashboard() {
                       
                     <li>
                       <Link href="/dashboard/account_settings" className="flex items-center gap-1">
-                        <UserRoundCog />
+                        <Settings />
                         Account Settings
                       </Link>
                     </li>

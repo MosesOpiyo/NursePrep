@@ -7,7 +7,7 @@ import { FaClone, FaBook, FaGear, FaCommentDots, FaArrowRightToBracket, FaChevro
 import './DashboardSidebar.css'
 import { useAuth } from '@/app/contexts/AuthContext'
 import { Button } from "@/components/ui/button"
-import { FileClock, LayoutDashboard, UserRoundCog, User, LogOut, Wallet, BadgeHelp } from 'lucide-react'
+import { FileClock, LayoutDashboard, UserRoundCog, User, LogOut, Wallet, BadgeHelp, Settings } from 'lucide-react'
 import { useRouter } from 'next/navigation';
 
 
@@ -90,7 +90,7 @@ export default function DashboardSidebar({ sidebarState, setSidebarState }: Dash
                   href="/dashboard/account_settings"
                   className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100"
                 >
-                  <UserRoundCog className="text-gray-500" />
+                  <Settings className="text-gray-500" />
                   {sidebarState === "full" && <span>Settings</span>}
                 </Link>
               </li>

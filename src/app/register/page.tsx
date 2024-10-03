@@ -31,7 +31,7 @@ export default function Register() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="register-container">
       {/* NAVBAR SECTION */}
       <div className="navbar-container">
         <Navbar />

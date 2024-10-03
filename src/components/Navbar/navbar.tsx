@@ -39,7 +39,7 @@ import { FaChevronDown, FaMagnifyingGlass, FaArrowRightFromBracket, FaCommentDot
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/app/contexts/AuthContext";
-import { FileClock, LayoutDashboard, LogOut, UserRoundCog, User, Wallet } from 'lucide-react'
+import { Settings, FileClock, LayoutDashboard, LogOut, UserRoundCog, User, Wallet } from 'lucide-react'
 
 
 
@@ -241,7 +241,7 @@ const Navbar: React.FC = () => {
                             href="/dashboard/account_settings"
                             className="flex gap-1 items-center"
                           >
-                            <UserRoundCog />
+                            <Settings />
                             Settings
                           </Link>
                         </li>

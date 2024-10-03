@@ -379,7 +379,7 @@ const Homepage = () => {
                 </div>
 
                 <div className="pricing-cta">
-                  <Link href={`/register/${item.id}`} className="pricing-link">
+                  <Link href={`/register/${item.signupbtn_text}`} className="pricing-link">
                      Get {item.btn_period} Plan
                   </Link>
                 </div>

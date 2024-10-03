@@ -31,10 +31,14 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { comparisonData } from "../../assets/servicesData/services";
+import Link from "next/link";
+import { FaLock } from "react-icons/fa6";
 
 
 
 const Homepage = () => {
+
+  const firstItem = pricingArray[0];
 
   const form = useForm ({
     resolver: zodResolver(contactSchema),
@@ -128,7 +132,7 @@ const Homepage = () => {
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
 
-        <div className="works-content w-full md:w-4/5 grid grid-cols-1 md:grid-cols-12 md:grid-rows-12 gap-4">
+        <div className="works-content w-full md:w-4/5 grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-4">
           {worksArray.map((item) => (
             <div className={item.class} key={item.id}>
               <div className="card-number flex flex-col gap-4 items-center justify-center">
@@ -227,7 +231,7 @@ const Homepage = () => {
       </section>
 
       {/* PRICING SECTION */}
-      <section className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16" id="pricing">
+      {/* <section className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16" id="pricing">
         <div className="pricing-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl">
             Our pricing is simple with no hidden fees
@@ -288,6 +292,100 @@ const Homepage = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section> */}
+
+      {/* PRICING SECTION */}
+      <section
+        className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16"
+        id="pricing"
+      >
+        <div className="pricing-header flex flex-col gap-8 text-center">
+          <h2 className="font-bold text-5xl">
+          Our pricing is simple with no hidden fees
+          </h2>
+
+          <p className="w-4/5 mx-auto">
+             We offer flexible subscription plans to fit your study schedule and
+            budget. Whether you need short-term access or a more extended
+            commitment, we have a plan for you.
+          </p>
+        </div>
+
+        <div className="pricing-content gap-4 flex flex-col-reverse md:grid md:grid-cols-2 md:grid-rows-1">
+          {/* SITE CONTENT */}
+          <div className="site-content">
+            <div
+              key={firstItem.id}
+              className={`h-full items-center justify-center pricingcard-content ${firstItem.className}`}
+            >
+              <div className="pricing-features flex flex-col gap-12">
+                <div className="features-list flex flex-col gap-2">
+                  <p className="uppercase text-sm">
+                    All site features available for both plans including:
+                  </p>
+
+                  {pricingFeatures.map((item) => (
+                    <ul key={item.id} className="flex flex-col gap-1 ps-4">
+                      <li className="flex items-center gap-1">
+                        <span>
+                          <FaRegCheckCircle className="text-white" />
+                        </span>
+                        {item.feature}
+                      </li>
+                    </ul>
+                  ))}
+
+                </div>
+              </div>
+
+              <div className="pricing-disclaimers flex justify-center items-start text-start flex-col">
+                    <div className="secure flex items-center justify-center gap-1">
+                      <div className="icon-container flex items-center justify-center">
+                        <FaLock />
+                      </div>
+
+                      <p>Guaranteed to be safe & secure, ensuring that all transactions are protected with the highest level of security.</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          {/* 2 PRICING CHOICES */}
+          <div className="pricingcard-container grid grid-cols-1 grid-rows-2 gap-8">
+            {pricingArray.map((item) => (
+              <div key={item.id} className={item.className}>
+                <div className="save absolute right-8 top-3 bg-black text-white p-4">
+                  <p>{item.save}</p>
+                  <span className="bg-white absolute pricetag"></span>
+                </div>
+
+                <div className="pricing-title">
+                  <h3 className="font-bold">{item.access} Access</h3>
+                </div>
+
+                <div className="pricing-price">
+                  <p>
+                    <span className="text-7xl">${item.pricing}</span>/
+                    {item.period}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="flex items-center">
+                    <FaInfoCircle />
+                    &nbsp;{item.ideal}
+                  </p>
+                </div>
+
+                <div className="pricing-cta">
+                  <Link href={`/register/${item.id}`} className="pricing-link">
+                     Get {item.btn_period} Plan
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -361,7 +459,7 @@ const Homepage = () => {
       </section>
 
       {/* CONTACT US SECTION */}
-      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-24" id="contact">
+      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-16" id="contact">
 
         <div className="contact-content p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:grid-rows-1 md:gap-2">
           <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">

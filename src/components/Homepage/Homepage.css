@@ -223,6 +223,28 @@ button.start:hover {
     width: 90%;
 }
 
+.pricing-content .pricingcard-content {
+    background-image: url('../../assets/site-content.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.pricing-content .pricingcard-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .6;
+    z-index: -1;
+    border-radius: 20px;
+}
+
 .pricing-card {
     background-color: #d6f2fe;
     border-radius: 20px;
@@ -247,6 +269,22 @@ button.start:hover {
     border-radius: 50%;
     top: 5px;
     right: 10px;
+}
+
+.pricing-disclaimers .cancel,
+.pricing-disclaimers .secure {
+    padding-inline: 10px;
+}
+
+.pricing-cta a {
+    background-color: #0f172a;
+    color: rgb(248, 250, 252);
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.pricing-cta a:hover {
+    background-color: #0f172ae6;
 }
 
 
@@ -298,8 +336,12 @@ button.start:hover {
 }
 
 /* CONTACT SECTION */
+.contact-container {
+    background-color: #d3e4f6;
+}
+
 .contact-form {
-    background-color: #f2f2f0;
+    background-color: #fff;
     box-shadow: 0 0 5px #ccc;
 }
 
@@ -341,22 +383,22 @@ button.start:hover {
     }
 
     .works-card.signup {
-        grid-area: 1 / 1 / 4 / 7;
+        grid-area: 1 / 1 / 2 / 2;
         /* background-color: #edf0f7; */
     }
     
     .works-card.resources {
-        grid-area: 4 / 7 / 7 / 13;
+        grid-area: 2 / 2 / 3 / 3;
         /* background-color: #fbf1f0; */
     }
     
     .works-card.practice {
-        grid-area: 7 / 1 / 10 / 7;
+        grid-area: 3 / 1 / 4 / 2;
         /* background-color: #edf7f9; */
     }
     
     .works-card.success {
-        grid-area: 10 / 7 / 13 / 13;
+        grid-area: 4 / 2 / 5 / 3;
         /* background-color: #fdf0e7; */
     }
 }

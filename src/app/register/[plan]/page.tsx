@@ -153,53 +153,52 @@ export default function SignUpForm() {
             <CardHeader>
               <div className="text-center p-4">
                 <p className="text-sm text-gray-500">
-                Already have an account?{" "}
-                
-                <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="outline" className="login-button">
-                  Sign In
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
-                <DialogHeader>
-                  <DialogTitle className="text-center">Login</DialogTitle>
-                </DialogHeader>
-                <div className="flex flex-col w-full gap-4 py-4">
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="name" className="text-right">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue="Pedro Duarte"
-                      className="col-span-3"
-                    />
-                  </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="username" className="text-right">
-                      Password
-                    </Label>
-                    <Input
-                      id="username"
-                      defaultValue="@peduarte"
-                      className="col-span-3"
-                      type="password"
-                    />
-                  </div>
-                </div>
-                <DialogFooter>
-                  <Button type="submit" onClick={handleLogin}>
-                    Sign In
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-              </p>
+                  Already have an account?{" "}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="login-button">
+                        Sign In
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                      <DialogHeader>
+                        <DialogTitle className="text-center">Login</DialogTitle>
+                      </DialogHeader>
+                      <div className="flex flex-col w-full gap-4 py-4">
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="name" className="text-right">
+                            Name
+                          </Label>
+                          <Input
+                            id="name"
+                            defaultValue="Pedro Duarte"
+                            className="col-span-3"
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="username" className="text-right">
+                            Password
+                          </Label>
+                          <Input
+                            id="username"
+                            defaultValue="@peduarte"
+                            className="col-span-3"
+                            type="password"
+                          />
+                        </div>
+                      </div>
+                      <DialogFooter>
+                        <Button type="submit" onClick={handleLogin}>
+                          Sign In
+                        </Button>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                </p>
               </div>
 
-              <CardTitle className="text-4xl">Create your account</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-4xl text-center">Create your account</CardTitle>
+              <CardDescription className="text-center">
                 Sign up to get started with our service.
               </CardDescription>
 
@@ -213,12 +212,12 @@ export default function SignUpForm() {
                   onClick={() => handleSocialSignIn("facebook")}
                 >
                   <Image
-                  className="object-top object-cover"
-                  src='/facebook.svg'
-                  alt="Facebook Logo"
-                  width={24}
-                  height={24} 
-                />
+                    className="object-top object-cover"
+                    src="/facebook.svg"
+                    alt="Facebook Logo"
+                    width={24}
+                    height={24}
+                  />
                   Continue with Facebook
                 </Button>
 
@@ -230,12 +229,12 @@ export default function SignUpForm() {
                   onClick={() => handleSocialSignIn("google")}
                 >
                   <Image
-                  className="object-top object-cover"
-                  src='/google.svg'
-                  alt="Google Logo"
-                  width={24}
-                  height={24} 
-                />
+                    className="object-top object-cover"
+                    src="/google.svg"
+                    alt="Google Logo"
+                    width={24}
+                    height={24}
+                  />
                   Continue with Google
                 </Button>
               </div>
@@ -451,6 +450,7 @@ export default function SignUpForm() {
                       {planDetails.name} ({planDetails.price})
                     </AlertDescription>
                   </Alert>
+
                   <FormField
                     control={form.control}
                     name="paymentMethod"
@@ -461,8 +461,10 @@ export default function SignUpForm() {
                           <RadioGroup
                             onValueChange={field.onChange}
                             defaultValue={field.value}
-                            className="flex flex-col space-y-1"
+                            className="flex gap-2 justify-between items-center w-1/2"
                           >
+                            
+                            {/* PAYPAL */}
                             <FormItem className="flex items-center space-x-3 space-y-0">
                               <FormControl>
                                 <RadioGroupItem value="paypal" />
@@ -470,9 +472,17 @@ export default function SignUpForm() {
                               {/* LABEL */}
                               <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
                                 PayPal
-                                <FaCcPaypal className="text-4xl" />
+                                <Image
+                                  className="object-top object-cover"
+                                  src="/paypal.svg"
+                                  alt="Paypal Logo"
+                                  width={24}
+                                  height={24}
+                                />
                               </FormLabel>
                             </FormItem>
+
+                            {/* CREDIT CARD */}
                             <FormItem className="flex items-center space-x-3 space-y-0">
                               <FormControl>
                                 <RadioGroupItem value="creditCard" />
@@ -480,7 +490,14 @@ export default function SignUpForm() {
                               {/* LABEL */}
                               <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
                                 Credit Card
-                                <FaCreditCard className="text-4xl" />
+                                
+                                <Image
+                                  className="object-top object-cover"
+                                  src="/credit-card.png"
+                                  alt="Credit card Logo"
+                                  width={24}
+                                  height={24}
+                                />
                               </FormLabel>
                             </FormItem>
                           </RadioGroup>
@@ -522,14 +539,12 @@ export default function SignUpForm() {
                   </Button>
                 </form>
               </Form>
-              
             </CardContent>
 
             <CardFooter className="flex flex-col items-center space-y-2">
               <Button variant="link" asChild>
                 <Link href="/help">Need help signing up?</Link>
               </Button>
-              
             </CardFooter>
           </Card>
         </div>

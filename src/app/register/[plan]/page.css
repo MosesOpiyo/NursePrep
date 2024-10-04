@@ -15,7 +15,7 @@
 } */
 
 .sidebar {
-    background-color: #d3e4f6;
+    background-color: #b5cdf9;
     position: sticky;
     top: 20px;
     height: 600px;
@@ -56,9 +56,9 @@
     border-radius: 10px;
 }
 
-.choice-container {
+/* .choice-container {
     border-top: 1px solid #e8f0fd;
-}
+} */
 
 @media (max-width: 425px) {
     .choice-form {

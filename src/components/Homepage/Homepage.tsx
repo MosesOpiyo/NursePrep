@@ -34,6 +34,7 @@ import { comparisonData } from "../../assets/servicesData/services";
 import Link from "next/link";
 import { FaLock } from "react-icons/fa6";
 import Comparison from "../StudyComparison/StudyComparison";
+import CookieConsent from "../Cookies/Cookies";
 
 
 const Homepage = () => {
@@ -229,71 +230,6 @@ const Homepage = () => {
             <Button className="h-12 w-2/4">View More</Button>
           </div>
       </section>
-
-      {/* PRICING SECTION */}
-      {/* <section className="pricing-container mx-auto flex flex-col gap-16 mb-16 pt-16" id="pricing">
-        <div className="pricing-header flex flex-col gap-8 text-center">
-          <h2 className="font-bold text-5xl">
-            Our pricing is simple with no hidden fees
-          </h2>
-
-          <p className="w-4/5 mx-auto">
-            We offer flexible subscription plans to fit your study schedule and
-            budget. Whether you need short-term access or a more extended
-            commitment, we have a plan for you.
-          </p>
-        </div>
-
-        <div className="pricingcard-container grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-8">
-          {pricingArray.map((item) => (
-            <div key={item.id} className={item.className}>
-              <div className="save absolute right-8 top-3 bg-black text-white p-4">
-                <p>{item.save}</p>
-                <span className="bg-white absolute pricetag"></span>
-              </div>
-
-              <div className="pricing-title">
-                <h3 className="font-bold">{item.access} Access</h3>
-              </div>
-
-              <div className="pricing-price">
-                <p>
-                  <span className="text-7xl">${item.pricing}</span>/
-                  {item.period}
-                </p>
-              </div>
-
-              <div className="pricing-features flex flex-col gap-12">
-                <p className="flex items-center">
-                  <FaInfoCircle />
-                  &nbsp;{item.ideal}
-                </p>
-
-                <div className="features-list flex flex-col gap-2">
-                  <p className="uppercase text-sm">
-                    All site features including:
-                  </p>
-
-                  {pricingFeatures.map((item) => (
-                    <ul key={item.id} className="flex flex-col gap-1 ps-4">
-                      <li className="flex items-center gap-1">
-                        <span>
-                          <FaRegCheckCircle className="text-green-900" />
-                        </span>
-                        {item.feature}
-                      </li>
-                    </ul>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pricing-cta">
-                <Button>Get {item.btn_period} Plan</Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* PRICING SECTION */}
       <section
@@ -565,6 +501,9 @@ const Homepage = () => {
 
         </div>
       </section>
+
+      {/* COOKIE CONSENT */}
+      {/* < CookieConsent /> */}
     </div>
   );
 };

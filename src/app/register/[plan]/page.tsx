@@ -14,6 +14,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
@@ -45,6 +53,7 @@ import { useRouter, useParams } from "next/navigation"; // Use useParams for dyn
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { signIn } from 'next-auth/react'
+import { useAuth } from "@/app/contexts/AuthContext";
 
 // Import country data (you'll need to create this file)
 // import { countries } from '@/lib/countries'
@@ -72,6 +81,13 @@ export default function SignUpForm() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const router = useRouter();
   const params = useParams(); // Use useParams to get dynamic route parameter
+  const { isLoggedIn, setIsLoggedIn } = useAuth()
+
+  const handleLogin = () => {
+    setIsLoggedIn(true)
+    localStorage.setItem('isLoggedIn', 'true')
+    router.push('/dashboard')
+  }
 
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
@@ -116,9 +132,9 @@ export default function SignUpForm() {
       </div>
 
       {/* INDIVIDUAL CHOICE CONTENT */}
-      <div className="choice-container md:grid">
+      <div className="choice-container p-4 md:grid md:grid-cols-2 gap-2">
         {/* SIDEBAR */}
-        <div className="sidebar py-16 px-4 hidden md:flex flex-col justify-between">
+        <div className="sidebar rounded-xl py-16 px-4 hidden md:flex flex-col justify-between">
           <div className="sidebar-header flex flex-col gap-4">
             <h2 className="md:text-4xl">
               A few clicks away from passing your entrance exam.
@@ -133,158 +149,256 @@ export default function SignUpForm() {
 
         {/* FORM */}
         <div className="container mx-auto p-4">
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader>
-          <CardTitle>Create your account</CardTitle>
-          <CardDescription>Sign up to get started with our service.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="John Doe" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="john@example.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Input 
-                          type={showPassword ? "text" : "password"} 
-                          placeholder="********" 
-                          {...field} 
-                        />
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                          onClick={() => setShowPassword(!showPassword)}
+          <Card className="w-full max-w-2xl mx-auto">
+            <CardHeader>
+              <div className="text-center p-4">
+                <p className="text-sm text-gray-500">
+                Already have an account?{" "}
+                
+                <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="login-button">
+                  Sign In
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                <DialogHeader>
+                  <DialogTitle className="text-center">Login</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col w-full gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      defaultValue="Pedro Duarte"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="username" className="text-right">
+                      Password
+                    </Label>
+                    <Input
+                      id="username"
+                      defaultValue="@peduarte"
+                      className="col-span-3"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button type="submit" onClick={handleLogin}>
+                    Sign In
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+              </p>
+              </div>
+
+              <CardTitle className="text-4xl">Create your account</CardTitle>
+              <CardDescription>
+                Sign up to get started with our service.
+              </CardDescription>
+
+              {/* SOCIAL LOGIN */}
+              <div className="grid grid-cols-2 p-4 items-center justify-center gap-2">
+                {/* FACEBOOK */}
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full flex gap-2 items-center"
+                  onClick={() => handleSocialSignIn("facebook")}
+                >
+                  <Image
+                  className="object-top object-cover"
+                  src='/facebook.svg'
+                  alt="Facebook Logo"
+                  width={24}
+                  height={24} 
+                />
+                  Continue with Facebook
+                </Button>
+
+                {/* GOOGLE */}
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full flex gap-2 items-center"
+                  onClick={() => handleSocialSignIn("google")}
+                >
+                  <Image
+                  className="object-top object-cover"
+                  src='/google.svg'
+                  alt="Google Logo"
+                  width={24}
+                  height={24} 
+                />
+                  Continue with Google
+                </Button>
+              </div>
+            </CardHeader>
+
+            {/* <Separator className="my-4" /> */}
+
+            <CardContent>
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="John Doe" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="john@example.com"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="password"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Password</FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Input
+                              type={showPassword ? "text" : "password"}
+                              placeholder="********"
+                              {...field}
+                            />
+                            <Button
+                              type="button"
+                              variant="ghost"
+                              size="sm"
+                              className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                              onClick={() => setShowPassword(!showPassword)}
+                            >
+                              {showPassword ? (
+                                <EyeOffIcon className="h-4 w-4" />
+                              ) : (
+                                <EyeIcon className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="confirmPassword"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Confirm Password</FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Input
+                              type={showConfirmPassword ? "text" : "password"}
+                              placeholder="********"
+                              {...field}
+                            />
+                            <Button
+                              type="button"
+                              variant="ghost"
+                              size="sm"
+                              className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                              onClick={() =>
+                                setShowConfirmPassword(!showConfirmPassword)
+                              }
+                            >
+                              {showConfirmPassword ? (
+                                <EyeOffIcon className="h-4 w-4" />
+                              ) : (
+                                <EyeIcon className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="address"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Address</FormLabel>
+                        <FormControl>
+                          <Input placeholder="123 Main St" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="city"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>City</FormLabel>
+                        <FormControl>
+                          <Input placeholder="New York" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="country"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Country</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
                         >
-                          {showPassword ? (
-                            <EyeOffIcon className="h-4 w-4" />
-                          ) : (
-                            <EyeIcon className="h-4 w-4" />
-                          )}
-                        </Button>
-                      </div>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="confirmPassword"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Confirm Password</FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Input 
-                          type={showConfirmPassword ? "text" : "password"} 
-                          placeholder="********" 
-                          {...field} 
-                        />
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        >
-                          {showConfirmPassword ? (
-                            <EyeOffIcon className="h-4 w-4" />
-                          ) : (
-                            <EyeIcon className="h-4 w-4" />
-                          )}
-                        </Button>
-                      </div>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="address"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Address</FormLabel>
-                    <FormControl>
-                      <Input placeholder="123 Main St" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="city"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>City</FormLabel>
-                    <FormControl>
-                      <Input placeholder="New York" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="country"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Country</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a country" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                      <SelectItem value="kenya">
-                        <div>
-                          <p>kenya</p>
-                          
-                        </div>
-                      
-                      </SelectItem>
-                      <SelectItem value="usa">
-                        <div>
-                          <p>USA</p>
-                        </div>
-                      
-                      </SelectItem>
-                        
-                        {/* {countries.map((country) => (
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select a country" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="kenya">
+                              <div>
+                                <p>kenya</p>
+                              </div>
+                            </SelectItem>
+                            <SelectItem value="usa">
+                              <div>
+                                <p>USA</p>
+                              </div>
+                            </SelectItem>
+
+                            {/* {countries.map((country) => (
                           <SelectItem key={country.code} value={country.code}>
                             <div className="flex items-center">
                               <Image
@@ -298,141 +412,127 @@ export default function SignUpForm() {
                             </div>
                           </SelectItem>
                         ))} */}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="state"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>State</FormLabel>
-                    <FormControl>
-                      <Input placeholder="NY" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="zip"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>ZIP Code</FormLabel>
-                    <FormControl>
-                      <Input placeholder="10001" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Alert>
-                <InfoCircledIcon className="h-4 w-4" />
-                <AlertTitle>Selected Plan</AlertTitle>
-                <AlertDescription>
-                  {planDetails.name} ({planDetails.price})
-                </AlertDescription>
-              </Alert>
-              <FormField
-                control={form.control}
-                name="paymentMethod"
-                render={({ field }) => (
-                  <FormItem className="space-y-3">
-                    <FormLabel>Payment Method</FormLabel>
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                        className="flex flex-col space-y-1"
-                      >
-                        <FormItem className="flex items-center space-x-3 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem value="paypal" />
-                          </FormControl>
-                          {/* LABEL */}
-                          <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="state"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>State</FormLabel>
+                        <FormControl>
+                          <Input placeholder="NY" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="zip"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>ZIP Code</FormLabel>
+                        <FormControl>
+                          <Input placeholder="10001" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Alert>
+                    <InfoCircledIcon className="h-4 w-4" />
+                    <AlertTitle>Selected Plan</AlertTitle>
+                    <AlertDescription>
+                      {planDetails.name} ({planDetails.price})
+                    </AlertDescription>
+                  </Alert>
+                  <FormField
+                    control={form.control}
+                    name="paymentMethod"
+                    render={({ field }) => (
+                      <FormItem className="space-y-3">
+                        <FormLabel>Payment Method</FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="flex flex-col space-y-1"
+                          >
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="paypal" />
+                              </FormControl>
+                              {/* LABEL */}
+                              <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
                                 PayPal
-                                <FaCcPaypal className="text-4xl"/>
+                                <FaCcPaypal className="text-4xl" />
                               </FormLabel>
-                        </FormItem>
-                        <FormItem className="flex items-center space-x-3 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem value="creditCard" />
-                          </FormControl>
-                          {/* LABEL */}
-                          <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
+                            </FormItem>
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <FormControl>
+                                <RadioGroupItem value="creditCard" />
+                              </FormControl>
+                              {/* LABEL */}
+                              <FormLabel className="font-normal flex flex-row-reverse items-center gap-2">
                                 Credit Card
                                 <FaCreditCard className="text-4xl" />
                               </FormLabel>
-                        </FormItem>
-                      </RadioGroup>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="couponCode"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Coupon Code (optional)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter coupon code" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <p className="text-sm text-gray-500">
-                By continuing, you acknowledge you&apos;ve read our{" "}
-                <Link href="/privacy-policy" className="underline">Privacy Policy</Link> and agree to our{" "}
-                <Link href="/terms-of-service" className="underline">Terms of Service</Link>.
-              </p>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Signing up..." : "Sign Up"}
+                            </FormItem>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="couponCode"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Coupon Code (optional)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter coupon code" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <p className="text-sm text-gray-500">
+                    By continuing, you acknowledge you&apos;ve read our{" "}
+                    <Link href="/privacy-policy" className="underline">
+                      Privacy Policy
+                    </Link>{" "}
+                    and agree to our{" "}
+                    <Link href="/terms-of-service" className="underline">
+                      Terms of Service
+                    </Link>
+                    .
+                  </p>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Signing up..." : "Sign Up"}
+                  </Button>
+                </form>
+              </Form>
+              
+            </CardContent>
+
+            <CardFooter className="flex flex-col items-center space-y-2">
+              <Button variant="link" asChild>
+                <Link href="/help">Need help signing up?</Link>
               </Button>
-            </form>
-          </Form>
-          <Separator className="my-4" />
-          <div className="space-y-2">
-            <Button 
-              type="button" 
-              variant="outline" 
-              className="w-full flex gap-2 items-center"
-              onClick={() => handleSocialSignIn('facebook')}
-            >
-              <FaFacebookF />
-              Continue with Facebook
-            </Button>
-            <Button 
-              type="button" 
-              variant="outline" 
-              className="w-full flex gap-2 items-center"
-              onClick={() => handleSocialSignIn('google')}
-            >
-              <FaGoogle />
-              Continue with Google
-            </Button>
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col items-center space-y-2">
-          <Button variant="link" asChild>
-            <Link href="/help">Need help signing up?</Link>
-          </Button>
-          <p className="text-sm text-gray-500">
-            Already have an account?{" "}
-            <Button variant="link" asChild className="p-0">
-              <Link href="/signin">Sign in</Link>
-            </Button>
-          </p>
-        </CardFooter>
-      </Card>
-    </div>
+              
+            </CardFooter>
+          </Card>
+        </div>
       </div>
 
       {/* FOOTER */}

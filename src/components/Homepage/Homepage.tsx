@@ -33,7 +33,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { comparisonData } from "../../assets/servicesData/services";
 import Link from "next/link";
 import { FaLock } from "react-icons/fa6";
-
+import Comparison from "../StudyComparison/StudyComparison";
 
 
 const Homepage = () => {
@@ -184,7 +184,7 @@ const Homepage = () => {
 
           <h2 className="font-bold text-5xl">What our clients say</h2>
 
-          <p>
+          <p className="text-[#71717a]">
             Don&apos;t just take our word for it—hear from our successful
             students! Our comprehensive courses and personalized support have
             helped countless aspiring nurses achieve their dreams.{" "}
@@ -305,7 +305,7 @@ const Homepage = () => {
           Our pricing is simple with no hidden fees
           </h2>
 
-          <p className="w-4/5 mx-auto">
+          <p className="w-4/5 mx-auto text-[#71717a]">
              We offer flexible subscription plans to fit your study schedule and
             budget. Whether you need short-term access or a more extended
             commitment, we have a plan for you.
@@ -390,13 +390,14 @@ const Homepage = () => {
       </section>
 
       {/* WHY US/ COMPARISON */}
-      <section className="comparison-container hidden md:flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto" id="why-us">
-        <div className="comparison-header">
+      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto" id="why-us">
+        <div className="comparison-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
+          <p className="w-4/5 mx-auto text-[#71717a]">At NursePrep, we offer a smarter, more flexible way to learn. Access up-to-date resources, interactive tools, and personalized study plans anytime, anywhere—making studying easier and more efficient than traditional methods</p>
         </div>
 
         <div className="comparison-content">
-          <div className="comparisoncard-container p-4 grid grid-cols-1">
+          {/* <div className="comparisoncard-container p-4 grid grid-cols-1">
 
           {comparisonData.map((item) => (
 
@@ -414,7 +415,9 @@ const Homepage = () => {
             </div>
           </div>
           ))}
-          </div>
+          </div> */}
+
+          <Comparison />
           
         </div>
       </section>
@@ -422,13 +425,13 @@ const Homepage = () => {
       {/* CTA BANNER SECTION */}
       <section className="banner-container bg-black text-white flex flex-col gap-12 p-12 mb-16 items-center justify-center text-center">
         <div className="banner-text flex-flex-col gap-4">
-          <p className="text-slate-300 text-7xl md:text-9xl">Prepare.</p>
-          <p className="text-slate-200 text-7xl md:text-9xl">Pass.</p>
-          <p className="text-slate-50 text-7xl md:text-9xl">Prevail.</p>
+          <p className="text-slate-300 text-7xl">Prepare.</p>
+          <p className="text-slate-200 text-7xl">Pass.</p>
+          <p className="text-slate-50 text-7xl">Prevail.</p>
         </div>
 
         <div className="banner-btn w-full">
-          <Button className="h-16 w-full hover:text-white sm:w-2/4 md:w-1/4 bg-white text-black">
+          <Button className="w-full hover:text-white sm:w-2/4 md:w-1/4 bg-white text-black">
             START TODAY
           </Button>
         </div>

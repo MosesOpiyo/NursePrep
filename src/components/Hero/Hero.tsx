@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
       <section className="hero-container grid items-center justify-center w-full relative">
-        <div className={`hero-text sm:pt-32 text-white p sm:px-16 h-full w-full flex flex-col gap-10 items-center justify-center lg:w-11/12 lg:mx-auto ${styles.box} ${isVisible ? styles.visible : ""}`} ref={boxRef}>
+        <div className={`hero-text sm:pt-32 text-white p sm:px-16 h-full w-full flex flex-col gap-10 items-center justify-center lg:w-11/12 lg:mx-auto`}>
 
           {/* HERO HEADER TEXT */}
           <h1 className="hero-header relative text-center sm:text-6xl md:text-7xl text-5xl font-extralight lg:w-4/5">

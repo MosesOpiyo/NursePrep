@@ -140,9 +140,9 @@ button.start:hover {
     color: #7b7bfccf;
 }
 
-.testimonial-header button {
+/* .testimonial-header button {
     background-color: #7b7bfc;
-}
+} */
 
 .testimonials-btn {
     display: none;
@@ -224,25 +224,7 @@ button.start:hover {
 }
 
 .pricing-content .pricingcard-content {
-    background-image: url('https://images.stockcake.com/public/d/5/1/d51e8dca-29e1-40ff-83d6-d89d221d0b06/man-using-laptop-stockcake.jpg');
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    z-index: 2;
-    color: #fff;
-}
-
-.pricing-content .pricingcard-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    opacity: .6;
-    z-index: -1;
-    border-radius: 20px;
+    background-color: #feeeca;
 }
 
 .pricing-card {
@@ -370,7 +352,24 @@ button.start:hover {
 
 /* CONTACT SECTION */
 .contact-container {
-    background-color: #d3e4f6;
+    background-image: url('../../assets/contact2.jpg');
+    background-position: left;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .4;
+    z-index: -1;
+    border-radius: 20px;
 }
 
 .contact-form {

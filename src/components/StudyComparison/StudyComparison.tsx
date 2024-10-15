@@ -67,12 +67,12 @@ export default function Comparison() {
         <span className="ml-2 text-sm font-medium">Online</span>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-3">
         {comparisonData.map((item, index) => (
-          <Card key={index} className="md:col-span-1">
-            <CardHeader className="flex flex-row items-center space-x-4 pb-2">
-              <item.icon className="h-8 w-8 text-primary" />
-              <CardTitle>{item.title}</CardTitle>
+          <Card key={index} className="md:col-span-1 flex flex-col gap-6 p-6 rounded-none">
+            <CardHeader className="flex flex-col gap-4 items-center pb-2">
+              <item.icon className="h-16 w-16 text-primary" />
+              <CardTitle className='text-xl'>{item.title}</CardTitle>
             </CardHeader>
 
             <CardContent>

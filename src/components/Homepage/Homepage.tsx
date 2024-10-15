@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
-import nurse from "../../assets/hero.jpg";
+import nurse from "../../assets/pediatricnurse.jpg";
 import Image from "next/image";
 import { dataArray } from "../../assets/servicesData/services";
 import { worksArray } from "../../assets/servicesData/services";
@@ -253,7 +253,7 @@ const Homepage = () => {
           <div className="site-content">
             <div
               key={firstItem.id}
-              className={`h-full items-center justify-center pricingcard-content ${firstItem.className}`}
+              className={`h-full items-center justify-evenly pricingcard-content ${firstItem.className}`}
             >
               <div className="pricing-features flex flex-col gap-12">
                 <div className="features-list flex flex-col gap-2">
@@ -265,7 +265,7 @@ const Homepage = () => {
                     <ul key={item.id} className="flex flex-col gap-1 ps-4">
                       <li className="flex items-center gap-1">
                         <span>
-                          <FaRegCheckCircle className="text-white" />
+                          <FaRegCheckCircle className="text-green-800" />
                         </span>
                         {item.feature}
                       </li>
@@ -275,7 +275,7 @@ const Homepage = () => {
                 </div>
               </div>
 
-              <div className="pricing-disclaimers flex justify-center items-start text-start flex-col">
+              <div className="pricing-disclaimers w-[90%] mx-auto flex justify-center items-start text-start flex-col">
                     <div className="secure flex items-center justify-center gap-1">
                       <div className="icon-container flex items-center justify-center">
                         <FaLock />
@@ -326,7 +326,7 @@ const Homepage = () => {
       </section>
 
       {/* WHY US/ COMPARISON */}
-      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-4/5 mx-auto" id="why-us">
+      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-[90%] mx-auto" id="why-us">
         <div className="comparison-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
           <p className="w-4/5 mx-auto text-[#71717a]">At NursePrep, we offer a smarter, more flexible way to learn. Access up-to-date resources, interactive tools, and personalized study plans anytime, anywhere—making studying easier and more efficient than traditional methods</p>
@@ -401,7 +401,7 @@ const Homepage = () => {
       <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-16" id="contact">
 
         <div className="contact-content p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:grid-rows-1 md:gap-2">
-          <div className="contact-text w-4/5 flex flex-col gap-16 justify-center mx-auto">
+          <div className="contact-text text-white w-4/5 flex flex-col gap-16 justify-center mx-auto">
             <h2 className="font-bold text-5xl">Or <br /> Contact Us</h2>
 
             <ul className="flex flex-col gap-4">

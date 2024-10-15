@@ -14,11 +14,20 @@ import { FaInfoCircle } from "react-icons/fa";
 import { pricingArray } from "../../assets/servicesData/services";
 import { pricingFeatures } from "../../assets/servicesData/services";
 import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Label } from "@/components/ui/label";
 import { faqData } from "../../assets/servicesData/services";
 import { contactSchema } from "../../../schema";
 import { useForm } from "react-hook-form";
@@ -35,11 +44,15 @@ import Link from "next/link";
 import { FaLock } from "react-icons/fa6";
 import Comparison from "../StudyComparison/StudyComparison";
 import CookieConsent from "../Cookies/Cookies";
+import { useAuth } from "@/app/contexts/AuthContext";
+import { useRouter } from 'next/navigation';
 
 
 const Homepage = () => {
 
   const firstItem = pricingArray[0];
+  const { isLoggedIn, setIsLoggedIn } = useAuth()
+  const router = useRouter()
 
   const form = useForm ({
     resolver: zodResolver(contactSchema),
@@ -54,6 +67,12 @@ const Homepage = () => {
     console.log(data)
   }
 
+  const handleLogin = () => {
+    setIsLoggedIn(true)
+    localStorage.setItem('isLoggedIn', 'true')
+    router.push('/dashboard')
+  }
+
 
 
 
@@ -62,7 +81,10 @@ const Homepage = () => {
       {/* SERVICES SECTION */}
       <section className="services-container flex flex-col gap-4">
         {/* SERVICES-HEADER */}
-        <div className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]" id="overview">
+        <div
+          className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]"
+          id="overview"
+        >
           <div className="header">
             <h2 className="font-bold text-4xl sm:text-5xl">
               Unlock Your Nursing <br /> Career Success
@@ -85,7 +107,10 @@ const Homepage = () => {
         </div>
 
         {/* SERVICES LIST */}
-        <div className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="services">
+        <div
+          className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          id="services"
+        >
           {dataArray.map((item) => (
             <div
               key={item.id}
@@ -128,7 +153,10 @@ const Homepage = () => {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="works-container mt-16 flex flex-col gap-8 mx-auto items-center" id="works">
+      <section
+        className="works-container mt-16 flex flex-col gap-8 mx-auto items-center"
+        id="works"
+      >
         <div className="works-header text-center">
           <h2 className="font-bold text-5xl">How it works</h2>
         </div>
@@ -180,9 +208,11 @@ const Homepage = () => {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="testimonials-container overflow-hidden mb-16 grid" id="testimonials">
+      <section
+        className="testimonials-container overflow-hidden mb-16 grid"
+        id="testimonials"
+      >
         <div className="testimonial-header flex mx-auto justify-center flex-col gap-8 p-4 relative">
-
           <h2 className="font-bold text-5xl">What our clients say</h2>
 
           <p className="text-[#71717a]">
@@ -194,7 +224,6 @@ const Homepage = () => {
           <div className="testimonials-btn">
             <Button className="h-12 w-2/4">View More</Button>
           </div>
-          
         </div>
 
         <div className="testimonialcard-container cursor-pointer gap-12 mx-auto">
@@ -227,8 +256,8 @@ const Homepage = () => {
         </div>
 
         <div className="mobiletestimonials-btn lg:hidden">
-            <Button className="h-12 w-2/4">View More</Button>
-          </div>
+          <Button className="h-12 w-2/4">View More</Button>
+        </div>
       </section>
 
       {/* PRICING SECTION */}
@@ -238,11 +267,11 @@ const Homepage = () => {
       >
         <div className="pricing-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl">
-          Our pricing is simple with no hidden fees
+            Our pricing is simple with no hidden fees
           </h2>
 
           <p className="w-4/5 mx-auto text-[#71717a]">
-             We offer flexible subscription plans to fit your study schedule and
+            We offer flexible subscription plans to fit your study schedule and
             budget. Whether you need short-term access or a more extended
             commitment, we have a plan for you.
           </p>
@@ -271,19 +300,22 @@ const Homepage = () => {
                       </li>
                     </ul>
                   ))}
-
                 </div>
               </div>
 
               <div className="pricing-disclaimers w-[90%] mx-auto flex justify-center items-start text-start flex-col">
-                    <div className="secure flex items-center justify-center gap-1">
-                      <div className="icon-container flex items-center justify-center">
-                        <FaLock />
-                      </div>
-
-                      <p>Guaranteed to be safe & secure, ensuring that all transactions are protected with the highest level of security.</p>
-                    </div>
+                <div className="secure flex items-center justify-center gap-1">
+                  <div className="icon-container flex items-center justify-center">
+                    <FaLock />
                   </div>
+
+                  <p>
+                    Guaranteed to be safe & secure, ensuring that all
+                    transactions are protected with the highest level of
+                    security.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -315,8 +347,11 @@ const Homepage = () => {
                 </div>
 
                 <div className="pricing-cta">
-                  <Link href={`/register/${item.signupbtn_text}`} className="pricing-link">
-                     Get {item.btn_period} Plan
+                  <Link
+                    href={`/register/${item.signupbtn_text}`}
+                    className="pricing-link"
+                  >
+                    Get {item.btn_period} Plan
                   </Link>
                 </div>
               </div>
@@ -326,10 +361,18 @@ const Homepage = () => {
       </section>
 
       {/* WHY US/ COMPARISON */}
-      <section className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-[90%] mx-auto" id="why-us">
+      <section
+        className="comparison-container flex flex-col gap-16 mb-32 pt-16 w-[90%] mx-auto"
+        id="why-us"
+      >
         <div className="comparison-header flex flex-col gap-8 text-center">
           <h2 className="font-bold text-5xl text-center">Why Choose Us?</h2>
-          <p className="w-4/5 mx-auto text-[#71717a]">At NursePrep, we offer a smarter, more flexible way to learn. Access up-to-date resources, interactive tools, and personalized study plans anytime, anywhere—making studying easier and more efficient than traditional methods</p>
+          <p className="w-4/5 mx-auto text-[#71717a]">
+            At NursePrep, we offer a smarter, more flexible way to learn. Access
+            up-to-date resources, interactive tools, and personalized study
+            plans anytime, anywhere—making studying easier and more efficient
+            than traditional methods
+          </p>
         </div>
 
         <div className="comparison-content">
@@ -354,7 +397,6 @@ const Homepage = () => {
           </div> */}
 
           <Comparison />
-          
         </div>
       </section>
 
@@ -374,7 +416,10 @@ const Homepage = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="faq-container mx-auto flex flex-col gap-8 mb-16 md:p-4" id="faq">
+      <section
+        className="faq-container mx-auto flex flex-col gap-8 mb-16 md:p-4"
+        id="faq"
+      >
         <div className="faq-header">
           <h2 className="font-bold text-5xl">
             Have Questions? <br /> We&apos;re here
@@ -398,11 +443,15 @@ const Homepage = () => {
       </section>
 
       {/* CONTACT US SECTION */}
-      <section className="contact-container mx-auto flex justify-center flex-col gap-8 px-4 py-16" id="contact">
-
+      <section
+        className="contact-container mb-16 mx-auto flex justify-center flex-col gap-8 px-4 py-16"
+        id="contact"
+      >
         <div className="contact-content p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:grid-rows-1 md:gap-2">
           <div className="contact-text text-white w-4/5 flex flex-col gap-16 justify-center mx-auto">
-            <h2 className="font-bold text-5xl">Or <br /> Contact Us</h2>
+            <h2 className="font-bold text-5xl">
+              Or <br /> Contact Us
+            </h2>
 
             <ul className="flex flex-col gap-4">
               <li>
@@ -413,14 +462,18 @@ const Homepage = () => {
 
               <li>
                 <a href="tel:+254 300 000 000" className="flex items-center">
-                  <FaPhoneAlt />&nbsp;&nbsp; +254 300 000 000 &nbsp;&nbsp; +254 300
-                  000 000
+                  <FaPhoneAlt />
+                  &nbsp;&nbsp; +254 300 000 000 &nbsp;&nbsp; +254 300 000 000
                 </a>
               </li>
 
               <li>
-                <a href="mailto:contact@nurseprep.com" className="flex items-center">
-                  <FaEnvelope />&nbsp;&nbsp; contact@nurseprep.com
+                <a
+                  href="mailto:contact@nurseprep.com"
+                  className="flex items-center"
+                >
+                  <FaEnvelope />
+                  &nbsp;&nbsp; contact@nurseprep.com
                 </a>
               </li>
             </ul>
@@ -428,14 +481,16 @@ const Homepage = () => {
 
           <div className="contact-form p-4 sm:p-8 mx-auto">
             <Form {...form}>
-              <form className="flex flex-col gap-8" onSubmit={form.handleSubmit(onSubmit)}>
-
+              <form
+                className="flex flex-col gap-8"
+                onSubmit={form.handleSubmit(onSubmit)}
+              >
                 <div className="flex flex-col gap-4">
                   <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem className="relative" >
+                      <FormItem className="relative">
                         <FormLabel>Email</FormLabel>
                         <FormControl>
                           <Input
@@ -463,7 +518,7 @@ const Homepage = () => {
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage className="absolute -top-1 left-36"  />
+                        <FormMessage className="absolute -top-1 left-36" />
                       </FormItem>
                     )}
                   />
@@ -472,33 +527,103 @@ const Homepage = () => {
                     control={form.control}
                     name="text"
                     render={({ field }) => (
-                      <FormItem className="relative" >
+                      <FormItem className="relative">
                         <FormLabel>Message / Question</FormLabel>
                         <FormControl>
                           <Textarea
-                          className="h-24"
+                            className="h-24"
                             placeholder="Enter a Message / Question"
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage className="absolute -top-1 left-36"  />
+                        <FormMessage className="absolute -top-1 left-36" />
                       </FormItem>
                     )}
                   />
                 </div>
 
                 <div className="disclaimer text-center">
-                  <p>By continuing, you acknowledge you&apos;ve read our Privacy Policy and agree to Our Terms of Service</p>
+                  <p>
+                    By continuing, you acknowledge you&apos;ve read our Privacy
+                    Policy and agree to Our Terms of Service
+                  </p>
                 </div>
 
                 <Button type="submit">Submit</Button>
-
               </form>
-
-              
             </Form>
           </div>
+        </div>
+      </section>
 
+      {/* FINAL CTA */}
+      <section className="py-10 w-4/5 mx-auto rounded-xl mb-16 bg-gray-100">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+              Get full access to NursePrep
+            </h2>
+            <p className="mt-4 text-[#71717a] font-medium">
+              130+ Well-Crafted Courses
+            </p>
+
+            <div className="flex flex-col items-center justify-center px-16 mt-8 space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row lg:mt-12 sm:px-0">
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-semibold text-white transition-all duration-200 border border-black rounded-md sm:w-auto bg-black hover:bg-transparent hover:text-black focus:bg-black focus:text-white"
+                role="button"
+              >
+                {" "}
+                Try For Free{" "}
+              </a>
+            </div>
+
+            <p className="mt-6 text-base text-black">
+              Already have an account?{" "}
+              <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="bg-transparent border-none shadow-none text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">
+                  Log In
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                <DialogHeader>
+                  <DialogTitle className="text-center">Login</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col w-full gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      defaultValue="Pedro Duarte"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="username" className="text-right">
+                      Password
+                    </Label>
+                    <Input
+                      id="username"
+                      defaultValue="@peduarte"
+                      className="col-span-3"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button type="submit" onClick={handleLogin}>
+                    Sign In
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+             
+            </p>
+          </div>
         </div>
       </section>
 

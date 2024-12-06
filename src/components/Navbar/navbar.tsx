@@ -89,8 +89,8 @@ const Navbar: React.FC = () => {
         )}
         <li className="dropdown">
           <Link
-            href="/teas"
-            className={currentPath === "/teas" ? "active p-2" : "p-2"}
+            href="/teas-test"
+            className={currentPath === "/teas-test" ? "active p-2" : "p-2"}
           >
             ATI LEAS 7
           </Link>

@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation'
 import CourseBanner from '@/components/CourseBanner/CourseBanner'
 import SubjectContent from '@/components/SubjectContent/SubjectContent'
 import React from 'react'
+import Footer from '@/components/Footer/Footer'
+import Navbar from '@/components/Navbar/navbar'
+import './page.css'
 
 interface LessonContent {
   type: 'lesson' | 'quiz'
@@ -450,6 +453,12 @@ export default function SubjectPage({ params }: { params: { subject: string } })
   }
 
   return (
+    <>
+    {/* NAVBAR */}
+    <section className="navbar-container">
+          <Navbar></Navbar>
+        </section>
+
     <div className="container mx-auto py-12">
       <CourseBanner
         title={subject.name}
@@ -458,5 +467,11 @@ export default function SubjectPage({ params }: { params: { subject: string } })
       />
       <SubjectContent subject={params.subject} topics={subject.topics} />
     </div>
+
+    {/* FOOTER */}
+    <Footer />
+    
+    </>
+    
   )
 }

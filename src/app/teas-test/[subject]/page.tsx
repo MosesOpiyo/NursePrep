@@ -30,7 +30,7 @@ const subjects: Record<string, Subject> = {
     english: {
         name: "English",
         description: "Master English language skills for TEAS",
-        image: "/placeholder.svg?height=400&width=800",
+        image: "/english.jpg",
         topics: [
           {
             title: "Vocabulary Acquisition",
@@ -135,7 +135,7 @@ const subjects: Record<string, Subject> = {
   math: {
     name: "Math",
     description: "Master Math language skills for TEAS",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "/math.jpg",
     topics: [
       {
         title: "Math Acquisition",
@@ -226,6 +226,212 @@ const subjects: Record<string, Subject> = {
               {
                 type: "quiz",
                 title: "Identifying Misspelled Maths (30 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  science: {
+    name: "Science",
+    description: "Master Science language skills for TEAS",
+    image: "/Science.jpg",
+    topics: [
+      {
+        title: "Science Acquisition",
+        subtopic: [
+          {
+            title: "Determine meaning of Sciences by analyzing Science parts",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Determining Meaning Using Science Parts Introduction",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Determining Meaning Using Science Parts Introduction quiz",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "lesson",
+                title: "Using Prefixes to Determine Science Meaning",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Using Prefixes to Determine Science Meaning Quiz (20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+          {
+            title: "Use Context Clues to Determine Science Meaning",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Use Context Clues to Determine Science Meaning",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Use Context Clues to Determine Science Meaning Quiz(20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "lesson",
+                title: "Troublesome Science Pairs",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Troublesome Science Pairs (30 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Conventions of Standard Science",
+        subtopic: [
+          {
+            title: "Conventions of Standard Science Pre-Section Quiz",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Conventions of Standard Science Pre-Section",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Conventions of Standard Science Pre-Section Quiz",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+          {
+            title: "Conventions of Standard Science Spelling",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Identifying Correct Spelling",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Identifying Correct Spelling Quiz(20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Identifying Misspelled Sciences (30 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  reading: {
+    name: "Reading",
+    description: "Master Reading language skills for TEAS",
+    image: "/reading.jpg",
+    topics: [
+      {
+        title: "Reading Acquisition",
+        subtopic: [
+          {
+            title: "Determine meaning of Readings by analyzing Reading parts",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Determining Meaning Using Reading Parts Introduction",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Determining Meaning Using Reading Parts Introduction quiz",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "lesson",
+                title: "Using Prefixes to Determine Reading Meaning",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Using Prefixes to Determine Reading Meaning Quiz (20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+          {
+            title: "Use Context Clues to Determine Reading Meaning",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Use Context Clues to Determine Reading Meaning",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Use Context Clues to Determine Reading Meaning Quiz(20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "lesson",
+                title: "Troublesome Reading Pairs",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Troublesome Reading Pairs (30 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Conventions of Standard Reading",
+        subtopic: [
+          {
+            title: "Conventions of Standard Reading Pre-Section Quiz",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Conventions of Standard Reading Pre-Section",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Conventions of Standard Reading Pre-Section Quiz",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+            ],
+          },
+          {
+            title: "Conventions of Standard Reading Spelling",
+            lessonContent: [
+              {
+                type: "lesson",
+                title: "Identifying Correct Spelling",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Identifying Correct Spelling Quiz(20 Questions)",
+                content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
+              },
+              {
+                type: "quiz",
+                title: "Identifying Misspelled Readings (30 Questions)",
                 content: "Challenge yourself to identify misspelled words in this comprehensive 30-question quiz...",
               },
             ],

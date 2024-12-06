@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { subjects } from '@/lib/subjects'
 
-export default function TopicPage({ params }: { params: { subject: string; topic: string; type: string } }) {
-  const { subject, topic, type } = params
+export default function TopicPage({ params }: { params: { subject: string; topic: string; content: string } }) {
+  const { subject, topic, content } = params
   const subjectData = subjects[subject]
 
   if (!subjectData) {
@@ -15,22 +15,23 @@ export default function TopicPage({ params }: { params: { subject: string; topic
     notFound()
   }
 
-  const content = topicData.subtopic
+  const contentData = topicData.subtopic
     .flatMap(st => st.lessonContent)
-    .find(c => c.type === type)
+    .find(c => c.title.toLowerCase().replace(/\s+/g, '-') === content)
 
-  if (!content) {
+  if (!contentData) {
     notFound()
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-2xl">{content.title}</CardTitle>
+        <CardTitle className="text-2xl">{contentData.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p>This is the {type} content for {content.title} in the {subject} subject.</p>
+        <p>This is the {contentData.type} content for {contentData.title} in the {subject} subject.</p>
         {/* Add actual lesson or quiz content here */}
+        <p>{contentData.content}</p>
       </CardContent>
     </Card>
   )

@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
-import nurse from "../../assets/pediatricnurse.jpg";
+import nurse from "../../assets/nurse.jpg";
 import Image from "next/image";
 import { dataArray } from "../../assets/servicesData/services";
 import { worksArray } from "../../assets/servicesData/services";

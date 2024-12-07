@@ -4,7 +4,7 @@ import DashboardSidebar from '@/components/DashboardSidebar/DashboardSidebar';
 import LayoutWrapper from '@/components/LayoutWrapper/LayoutWrapper';
 import { AuthProvider } from './contexts/AuthContext';
 
-const outfit = Outfit({ subsets: ['latin'] })
+const outfit = Outfit({ subsets: ['latin', 'latin-ext'] })
 
 export const metadata = {
   title: 'NursePrep',

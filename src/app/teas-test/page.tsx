@@ -120,9 +120,9 @@ export default function TeasPage() {
        </section>
 
         {/* CTA */}
-        <div className="py-4 w-full">
+        <section className="w-[95%] mx-auto mb-16">
           <CTA />
-        </div>
+        </section>
 
         {/* FAQ SECTION */}
         <section className="faq-container mx-auto flex flex-col gap-8 mb-8 p-4 w-[95%]">

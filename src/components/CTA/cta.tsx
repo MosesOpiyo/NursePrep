@@ -13,7 +13,7 @@ export default function CTA() {
         {/* Left Column - Text Content */}
         <div className="space-y-6">
           <h2 className="basis-full text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Nursing <br /> success <br /> simplified.
+            Nursing <br /> <span className="text-[#4f46e5]">success</span>  <br /> simplified.
           </h2>
           <p className="text-lg text-gray-600">
           Maximize Your Nursing Potential with NursePrep. <br /> Start Your Success Journey Today.

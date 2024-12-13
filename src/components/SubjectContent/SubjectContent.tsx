@@ -24,9 +24,10 @@ interface Topic {
 interface SubjectContentProps {
   subject: string
   topics: Topic[]
+  testType: 'hesi' | 'teas'  // New prop to specify the test type
 }
 
-export default function SubjectContent({ subject, topics }: SubjectContentProps) {
+export default function SubjectContent({ subject, topics, testType }: SubjectContentProps) {
   const [openItems, setOpenItems] = useState<Record<string, string[]>>({})
 
   const toggleAll = (topicIndex: number, open: boolean) => {
@@ -34,6 +35,12 @@ export default function SubjectContent({ subject, topics }: SubjectContentProps)
       ...prev,
       [topicIndex]: open ? topics[topicIndex].subtopic.map((_, index) => `item-${topicIndex}-${index}`) : []
     }))
+  }
+
+  // Function to generate the correct link based on the test type
+  const getLink = (topic: string, content: string) => {
+    const baseUrl = testType === 'hesi' ? '/hesi-test' : '/teas-test'
+    return `${baseUrl}/${subject}/${topic.toLowerCase().replace(/\s+/g, '-')}/${content.toLowerCase().replace(/\s+/g, '-')}`
   }
 
   return (
@@ -61,9 +68,8 @@ export default function SubjectContent({ subject, topics }: SubjectContentProps)
                       {subtopic.lessonContent.map((content, contentIndex) => (
                         <li key={contentIndex}>
                           <Link
-                            // href={`/hesi-test/${subject}/${topic.title.toLowerCase()}/${content.type}`}
                             className="flex items-center space-x-2 text-blue-600 hover:underline"
-                            href={`/hesi-test/${subject}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            href={getLink(topic.title, content.title)}
                           >
                             {content.type === 'lesson' ? (
                               <Book className="w-4 h-4" />
@@ -85,3 +91,4 @@ export default function SubjectContent({ subject, topics }: SubjectContentProps)
     </div>
   )
 }
+

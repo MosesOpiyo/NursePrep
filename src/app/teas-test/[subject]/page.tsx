@@ -459,13 +459,13 @@ export default function SubjectPage({ params }: { params: { subject: string } })
           <Navbar></Navbar>
         </section>
 
-    <div className="container mx-auto py-12">
+    <div className="container mx-auto pt-8 pb-12">
       <CourseBanner
         title={subject.name}
         description={subject.description}
         image={subject.image}
       />
-      <SubjectContent subject={params.subject} topics={subject.topics} />
+      <SubjectContent subject={params.subject} topics={subject.topics} testType="teas" />
     </div>
 
     {/* FOOTER */}

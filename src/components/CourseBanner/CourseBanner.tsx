@@ -8,7 +8,7 @@ interface CourseBannerProps {
 
 export default function CourseBanner({ title, description, image }: CourseBannerProps) {
   return (
-    <div className="relative w-full h-80 mb-8 rounded-lg overflow-hidden">
+    <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
       <Image
         src={image}
         alt={title}

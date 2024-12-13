@@ -52,7 +52,7 @@ export default function TeasPage() {
         </section>
 
         {/* ati HERO SECTION */}
-        <section className="ati-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
+        <section className="ati-hero mt-8 mb-16 w-[95%] h-[400px] relative mx-auto bg-bottom bg-cover rounded-3xl text-white flex items-center justify-center">
           <div className="atihero-header z-10 flex flex-col items-center justify-center gap-8">
             <h2 className="font-extralight text-4xl sm:text-5xl">
               ATI TEAS 7 Lessons and Practice Tests
@@ -79,6 +79,7 @@ export default function TeasPage() {
                 <Link href={`/teas-test/${subject.slug}`} key={subject.slug}>
                   <Card
                     className={`h-80 text-white flex flex-col justify-center hover:shadow-lg hover:scale-110 transition-shadow relative overflow-hidden ${subject.slug}`}
+                    id={subject.slug}
                   >
                     {/* <span className="ml-6 w-1/5 border-t-2 border-t-white"></span> */}
 
@@ -120,7 +121,7 @@ export default function TeasPage() {
        </section>
 
         {/* CTA */}
-        <section className="w-[95%] mx-auto mb-16">
+        <section className="w-full mx-auto mb-16">
           <CTA />
         </section>
 

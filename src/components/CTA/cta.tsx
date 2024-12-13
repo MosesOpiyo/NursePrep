@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export default function CTA() {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto p-10 border-y border-[#0000005c]">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Column - Text Content */}
         <div className="space-y-6">

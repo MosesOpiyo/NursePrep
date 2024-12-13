@@ -13,12 +13,7 @@
 }
 
 .ati-hero {
-    height: 400px;
-    background: linear-gradient(to right, #010066 0%, #010066 100%);
-    width: 95%;
     background-image: url('../../assets/teas7.jpg');
-    background-size: cover;
-    background-position: bottom;
 }
 
 .ati-hero::after {
@@ -35,25 +30,26 @@
 }
 
 /* CARDS */
-.english {
+#english.english {
     background: linear-gradient(to right, #0a0a0a 0%, #0a0a0a 100%);
     
 }
 
-.math {
+#math.math {
     background: linear-gradient(to right, #1e1f33 0%, #1e1f33 100%);
 }
-.science {
+
+#science.science {
     background: linear-gradient(to right, #ca9bf8 0%, #ca9bf8 100%);
     color: #000;
 }
 
-.science span,
-.reading span {
+#science.science span,
+#reading.reading span {
     border-color: #000;
 }
 
-.reading {
+#reading.reading {
     background: linear-gradient(to right, #f5f5f5 0%, #f5f5f5 100%);
     color: #000;
 }

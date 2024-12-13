@@ -53,7 +53,7 @@ export default function TeasPage() {
 
         {/* ati HERO SECTION */}
         <section className="ati-hero mt-8 mb-16 w-[95%] h-[400px] relative mx-auto bg-bottom bg-cover rounded-3xl text-white flex items-center justify-center">
-          <div className="atihero-header z-10 flex flex-col items-center justify-center gap-8">
+          <div className="atihero-header text-center z-10 flex flex-col items-center justify-center gap-8">
             <h2 className="font-extralight text-4xl sm:text-5xl">
               ATI TEAS 7 Lessons and Practice Tests
             </h2>

@@ -52,8 +52,8 @@ export default function HesiPage() {
         </section>
 
         {/* HESI HERO SECTION */}
-        <section className="hesi-hero mt-8 mb-16 relative mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
-          <div className="hesihero-header z-10 flex flex-col items-center justify-center gap-8">
+        <section className="hesi-hero mt-8 mb-16 w-[95%] h-[400px] relative mx-auto bg-bottom bg-cover rounded-3xl text-white flex items-center justify-center">
+          <div className="hesihero-header text-center z-10 flex flex-col items-center justify-center gap-8">
             <h2 className="font-extralight text-4xl sm:text-5xl">
               HESI A2 Lessons and Practice Tests
             </h2>
@@ -79,6 +79,7 @@ export default function HesiPage() {
                 <Link href={`/hesi-test/${subject.slug}`} key={subject.slug}>
                   <Card
                     className={`h-80 text-white flex flex-col justify-center hover:shadow-lg hover:scale-110 transition-shadow relative overflow-hidden ${subject.slug}`}
+                    id={subject.slug}
                   >
                     {/* <span className="ml-6 w-1/5 border-t-2 border-t-white"></span> */}
 

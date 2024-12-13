@@ -7,6 +7,7 @@ export default function Attributions() {
       <a rel='noopener' target="_blank" href="https://icons8.com/icon/13611/paypal">PayPal</a> icon by <a rel='noopener' target="_blank" href="https://icons8.com">Icons8</a>
       <a rel='noopener' target="_blank" href="https://icons8.com/icon/118497/facebook">Facebook</a> icon by <a rel='noopener' target="_blank" href="https://icons8.com">Icons8</a>
       <a rel='noopener' target="_blank" href="https://icons8.com/icon/3EFzPFftonWA/credit-card">Credit Card</a> icon by <a rel='noopener' target="_blank" href="https://icons8.com">Icons8</a>
+      Photo by <a href="https://stockcake.com/i/girl-studying-online_1269519_1051114">Stockcake</a>
     </div>
   )
 }

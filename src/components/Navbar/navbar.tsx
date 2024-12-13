@@ -97,8 +97,8 @@ const Navbar: React.FC = () => {
         </li>
         <li>
           <Link
-            href="/hesi"
-            className={currentPath === "/hesi" ? "active p-2" : "p-2"}
+            href="/hesi-test"
+            className={currentPath === "/hesi-test" ? "active p-2" : "p-2"}
           >
             HESI A2
           </Link>

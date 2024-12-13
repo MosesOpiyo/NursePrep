@@ -33,10 +33,10 @@ export default function Sidebar({ subject }: { subject: Subject }) {
                         {subtopic.lessonContent.map((content, contentIndex) => (
                           <li key={contentIndex}>
                             <Link
-                              href={`/teas-test/${subject.name.toLowerCase()}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`}
+                              href={`/hesi-test/${subject.name.toLowerCase()}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`}
                               className={cn(
                                 "flex items-center space-x-2 text-sm hover:underline",
-                                pathname === `/teas-test/${subject.name.toLowerCase()}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`
+                                pathname === `/hesi-test/${subject.name.toLowerCase()}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`
                                   ? "text-blue-600 font-semibold"
                                   : "text-gray-700"
                               )}

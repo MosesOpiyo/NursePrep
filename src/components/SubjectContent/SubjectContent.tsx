@@ -61,9 +61,9 @@ export default function SubjectContent({ subject, topics }: SubjectContentProps)
                       {subtopic.lessonContent.map((content, contentIndex) => (
                         <li key={contentIndex}>
                           <Link
-                            // href={`/teas-test/${subject}/${topic.title.toLowerCase()}/${content.type}`}
+                            // href={`/hesi-test/${subject}/${topic.title.toLowerCase()}/${content.type}`}
                             className="flex items-center space-x-2 text-blue-600 hover:underline"
-                            href={`/teas-test/${subject}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            href={`/hesi-test/${subject}/${topic.title.toLowerCase().replace(/\s+/g, '-')}/${content.title.toLowerCase().replace(/\s+/g, '-')}`}
                           >
                             {content.type === 'lesson' ? (
                               <Book className="w-4 h-4" />

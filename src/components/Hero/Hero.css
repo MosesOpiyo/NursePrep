@@ -21,9 +21,11 @@
     line-height: 1;
 } */
 
-.image-container {
+section.hero-container .image-container {
     grid-area: 1 / 1 / 3 / 3;
     background-color: #5f9ea047;
+    height: 100%;
+    width: 100%;
 }
 
 .hero-text {

@@ -43,7 +43,7 @@ export default function Sidebar({ subject, testType }: { subject: Subject; testT
   }
 
   return (
-    <div className="w-64 bg-gray-100 p-4 overflow-auto">
+    <div className="w-[300px] sticky h-svh top-0 left-0 bg-gray-100 p-4 overflow-auto">
       <h2 className="text-2xl font-bold mb-4">{subject.name}</h2>
       <Accordion type="multiple" value={openTopics} onValueChange={handleTopicChange} className="w-full">
         {subject.topics.map((topic, topicIndex) => (
@@ -61,11 +61,14 @@ export default function Sidebar({ subject, testType }: { subject: Subject; testT
                 >
                   <AccordionItem value={`subtopic-${topicIndex}-${subtopicIndex}`}>
                     <AccordionTrigger className="text-sm">
+                      <div className='flex flex-col items-start text-start'>
                       {subtopic.title}
-                      <span className="text-xs text-gray-500 ml-2">
-                        {subtopic.lessonContent.filter(c => c.type === 'lesson').length} lessons |{' '}
-                        {subtopic.lessonContent.filter(c => c.type === 'quiz').length} quizzes
-                      </span>
+                      <p className="text-xs text-gray-500">
+                       <span>{subtopic.lessonContent.filter(c => c.type === 'lesson').length} lessons |{' '}</span>
+                        <span>{subtopic.lessonContent.filter(c => c.type === 'quiz').length} quizzes</span>
+                      </p>
+                      </div>
+                      
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="space-y-2">

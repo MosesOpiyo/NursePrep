@@ -1,152 +1,135 @@
-"use client"
-
-import * as React from "react"
-import useEmblaCarousel from "embla-carousel-react"
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import Image from 'next/image'
+import { Card, CardContent } from "@/components/ui/card"
 
 interface Testimonial {
-  author: {
-    name: string
-    title: string
-    company: string
-    location: string
-    image: string
-  }
-  companyLogo: string
-  text: string
+  id: number
+  name: string
+  role: string
+  quote: string
+  image: string
+  position: 'top' | 'top-right' | 'bottom-right' | 'bottom' | 'bottom-left' | 'top-left'
+  bgColor?: string
 }
 
 const testimonials: Testimonial[] = [
   {
-    author: {
-      name: "Denis Slavska",
-      title: "CTO",
-      company: "Alitic",
-      location: "New York City, New York",
-      image: "/placeholder.svg?height=100&width=100",
-    },
-    companyLogo: "/placeholder.svg?height=40&width=100",
-    text: "They tailor their solutions to our specific needs and goals."
+    id: 1,
+    name: "John Mark",
+    role: "Business Owner",
+    quote: "Took the TEAS 7 and scored 93%! The practice tests and study guides were incredibly helpful. I felt well-prepared and confident going into the exam.",
+    image: "/ceo.jpg",
+    position: 'top-left',
+    bgColor: 'bg-[#0134f1b5]'
   },
   {
-    author: {
-      name: "Jahan Melad",
-      title: "Project Manager",
-      company: "Buildwave",
-      location: "New York City, New York",
-      image: "/placeholder.svg?height=100&width=100",
-    },
-    companyLogo: "/placeholder.svg?height=40&width=100",
-    text: "They organized their work and internal management was outstanding."
+    id: 2,
+    name: "Jane Doe",
+    role: "Digital Creator",
+    quote: "I studied for three weeks and scored a 74%. The platform's resources, especially the practice tests and study guides, made a huge difference. I'm officially admitted into the nursing program!",
+    image: "/co-founder.jpg",
+    position: 'top',
   },
   {
-    author: {
-      name: "Jim Halpert",
-      title: "Lead Engineering",
-      company: "InHive Space",
-      location: "New York City, New York",
-      image: "/placeholder.svg?height=100&width=100",
-    },
-    companyLogo: "/placeholder.svg?height=40&width=100",
-    text: "Working with them was a great experience."
+    id: 3,
+    name: "Alex Jones",
+    role: "Entrepreneur",
+    quote: "I scored 92% on the TEAS 7. The comprehensive study package and Mometrix flashcards were invaluable. I highly recommend this platform for anyone preparing for the exam.",
+    image: "/founder.jpg",
+    position: 'top-right',
+    bgColor: 'bg-[#0134f1b5]'
   },
   {
-    author: {
-      name: "Jahan Melad",
-      title: "Project Manager",
-      company: "Buildwave",
-      location: "New York City, New York",
-      image: "/placeholder.svg?height=100&width=100",
-    },
-    companyLogo: "/placeholder.svg?height=40&width=100",
-    text: "They organized their work and internal management was outstanding."
+    id: 4,
+    name: "Mary Magda",
+    role: "Content Creator",
+    quote: "The ATI TEAS 7 platform was a game-changer for me. I was able to focus on my weak areas and improve significantly. The personalized study plan was very effective.",
+    image: "/hero.jpg",
+    position: 'bottom-left',
+  },
+  {
+    id: 5,
+    name: "James Eric",
+    role: "Business Coach",
+    quote: "I found the video tutorials and practice quizzes on the ATI TEAS 7 platform extremely useful. They helped me understand complex concepts and boosted my confidence.",
+    image: "/ceo.jpg",
+    position: 'bottom',
+    bgColor: 'bg-[#0134f1b5]'
+  },
+  {
+    id: 6,
+    name: "Martha Ann",
+    role: "Online Educator",
+    quote: "Using the ATI TEAS 7 platform, I managed to score 90% on my first attempt. The variety of study materials and the flexibility of the platform made it easy to fit studying into my schedule.",
+    image: "/co-founder.jpg",
+    position: 'bottom-right',
   },
 ]
 
-export default function TestimonialCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: true,
-    skipSnaps: false,
-    dragFree: true,
-  })
-
-  const scrollPrev = React.useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = React.useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
-  }, [emblaApi])
-
+export default function TestimonialSection() {
   return (
-    <div className="w-[95%] mx-auto px-4">
-      <div className="flex justify-between items-center mb-12">
-        <h2 className="text-4xl font-bold">
-          What Our <span className="text-gray-400">Clients</span> Say
-        </h2>
-        <div className="flex gap-2">
-          <Button
-            onClick={scrollPrev}
-            size="icon"
-            className="h-10 w-10 rounded-full bg-black text-white hover:bg-gray-800"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            onClick={scrollNext}
-            size="icon"
-            className="h-10 w-10 rounded-full bg-black text-white hover:bg-gray-800"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+    <section className="relative w-full max-w-7xl mx-auto px-4 py-20">
+      <div className="text-center mb-20">
+        <p className="mb-4 text-sm font-medium uppercase text-indigo-600">
+          TESTIMONIALS
+        </p>
+
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="basis-full text-3xl md:text-4xl font-bold tracking-tight">
+            Real People
+          </h2>
+          <span className="text-indigo-600 text-lg italic">with</span>
+          <h2 className="basis-full text-3xl md:text-4xl font-bold tracking-tight">
+            Real Results
+          </h2>
         </div>
       </div>
 
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="flex-[0_0_90%] md:flex-[0_0_45%] lg:flex-[0_0_30%] bg-gray-50 p-8 relative">
-              <div className="flex justify-between items-start mb-8">
-                <div className="relative h-12 w-12 rounded-full overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+        {testimonials.map((testimonial) => (
+          <Card
+            key={testimonial.id}
+            className={`
+              max-w-sm mx-auto
+              ${
+                testimonial.bgColor
+                  ? "text-white " + testimonial.bgColor
+                  : "bg-white"
+              }
+              transform transition-transform hover:scale-105 flex items-center justify-center
+              ${testimonial.position === "top" ? "lg:col-start-2" : ""}
+              ${testimonial.position === "top-right" ? "lg:col-start-3" : ""}
+              ${testimonial.position === "bottom" ? "lg:col-start-2" : ""}
+            `}
+          >
+            <CardContent className="p-6">
+              <div className="mb-4">
+                <p className="text-lg leading-none">{testimonial.quote}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
-                    src={testimonial.author.image}
-                    alt={testimonial.author.name}
+                    src={testimonial.image}
+                    alt={testimonial.name}
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div className="bg-white rounded-full px-4 py-2 flex items-center gap-2">
-                  <Image
-                    src={testimonial.companyLogo}
-                    alt={testimonial.author.company}
-                    width={80}
-                    height={20}
-                    className="object-contain"
-                  />
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p
+                    className={`text-sm ${
+                      testimonial.bgColor ? "text-white/80" : "text-gray-600"
+                    }`}
+                  >
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
-              
-              <Quote className="text-gray-300 h-12 w-12 absolute top-8 right-8" />
-              
-              <blockquote className="text-2xl font-medium mb-8 relative">
-                {testimonial.text}
-              </blockquote>
-              
-              <div className="mt-auto">
-                <div className="font-semibold">{testimonial.author.name}</div>
-                <div className="text-sm text-gray-600">
-                  {testimonial.author.title}, {testimonial.author.company}
-                </div>
-                <div className="text-sm text-gray-600">{testimonial.author.location}</div>
-              </div>
-            </Card>
-          ))}
-        </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
-    </div>
-  )
+    </section>
+  );
 }
+

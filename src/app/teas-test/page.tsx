@@ -16,7 +16,7 @@ import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
 import CTA from '@/components/CTA/cta';
 import { motion } from "framer-motion"
-import TestimonialCarousel from '@/components/Testimonial-carousel/testimonialcarousel';
+import TestimonialSection from '@/components/Testimonial-carousel/testimonialcarousel';
 import React, { useState, useRef } from 'react'
 import VideoSection from '@/components/Videosection/VideoSection';
 
@@ -115,8 +115,8 @@ export default function TeasPage() {
         </section>
 
         {/* TESTIMONIAL */}
-       <section>
-       <TestimonialCarousel />
+       <section className='mb-16'>
+       <TestimonialSection />
        </section>
 
         {/* CTA */}

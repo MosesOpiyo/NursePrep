@@ -25,7 +25,7 @@ export default function SubjectLayout({
       </section>
 
       <div className="flex min-h-screen">
-      <Sidebar subject={subject} />
+      <Sidebar subject={subject} testType="teas"/>
       <main className="flex-1 p-6 overflow-auto">{children}</main>
 
       

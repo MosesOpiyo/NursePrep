@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     quote: "Took the TEAS 7 and scored 93%! The practice tests and study guides were incredibly helpful. I felt well-prepared and confident going into the exam.",
     image: "/ceo.jpg",
     position: 'top-left',
-    bgColor: 'bg-[#0134f1b5]'
+    bgColor: 'bg-[#0134f180]'
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
     quote: "I scored 92% on the TEAS 7. The comprehensive study package and Mometrix flashcards were invaluable. I highly recommend this platform for anyone preparing for the exam.",
     image: "/founder.jpg",
     position: 'top-right',
-    bgColor: 'bg-[#0134f1b5]'
+    bgColor: 'bg-[#0134f180]'
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
     quote: "I found the video tutorials and practice quizzes on the ATI TEAS 7 platform extremely useful. They helped me understand complex concepts and boosted my confidence.",
     image: "/ceo.jpg",
     position: 'bottom',
-    bgColor: 'bg-[#0134f1b5]'
+    bgColor: 'bg-[#0134f180]'
   },
   {
     id: 6,

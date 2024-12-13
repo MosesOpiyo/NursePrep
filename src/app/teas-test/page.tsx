@@ -126,12 +126,16 @@ export default function TeasPage() {
 
         {/* FAQ SECTION */}
         <section className="faq-container mx-auto flex flex-col gap-8 mb-8 p-4 w-[95%]">
-          <div className="faq-header text-start">
-            <h2 className="font-extralight text-[#000000a8] text-4xl sm:text-5xl">
+          <div className="faq-header flex flex-col gap-2 items-center justify-center">
+          <p className="text-sm font-medium uppercase text-indigo-600">
+              Frequently Asked Questions
+            </p>
+
+            <h2 className="basis-full text-3xl md:text-4xl font-bold tracking-tight">
               Got any questions?
             </h2>
-            <p className="font-extralight text-4xl sm:text-5xl text-black">
-              We&apos;ve got answers
+            <p className="text-gray-600 basis-full">
+              We&apos;ve got the As to your Qs
             </p>
           </div>
 
@@ -139,7 +143,7 @@ export default function TeasPage() {
             <Accordion
               type="single"
               collapsible
-              className="md:grid md:grid-cols-2 flex flex-col gap-2"
+              className="flex flex-col gap-2"
             >
               {faqData.map((item) => (
                 <AccordionItem
@@ -147,10 +151,10 @@ export default function TeasPage() {
                   value={item.value}
                   key={item.id}
                 >
-                  <AccordionTrigger className="text-xl">
+                  <AccordionTrigger className="text-[1.1rem]">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-lg text-slate-600">
+                  <AccordionContent className="text-[1.15rem] text-slate-600">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

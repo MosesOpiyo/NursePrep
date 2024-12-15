@@ -25,13 +25,14 @@ nav {
 }
 
 .navbar-auth .sign-up-button {
-  background-color: #555;
+  background-color: #000000c9;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 4px 16px;
   cursor: pointer;
   margin-left: 10px;
-  border-radius: 20px; /* Space between button and text */
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .navbar-link li a {

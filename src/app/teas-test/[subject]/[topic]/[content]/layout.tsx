@@ -24,7 +24,7 @@ export default function SubjectLayout({
         <Navbar></Navbar>
       </section>
 
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen border-t border-solid border-[#0000001c]">
       <Sidebar subject={subject} testType="teas"/>
       <main className="flex-1 p-6 overflow-auto">{children}</main>
 

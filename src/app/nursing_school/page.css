@@ -4,6 +4,7 @@
     color: #000;
 }
 
+.nursingnavbar-container .navbar button,
 .nursingnavbar-container .navbar button svg {
     color: black;
 }

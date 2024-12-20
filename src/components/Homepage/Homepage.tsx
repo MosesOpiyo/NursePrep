@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import "./Homepage.css";
-import nurse from "../../assets/nurse.jpg";
+import learner from "../../assets/learner.jpg";
 import Image from "next/image";
 import { dataArray } from "../../assets/servicesData/services";
 import { worksArray } from "../../assets/servicesData/services";
@@ -108,7 +108,7 @@ const Homepage = () => {
 
         {/* SERVICES LIST */}
         <div
-          className="services-list grid gap-y-8 gap-x-8 md:gap-y-12 md:gap-x-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          className="services-list grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           id="services"
         >
           {dataArray.map((item) => (
@@ -180,12 +180,12 @@ const Homepage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-container relative pb-16 mb-16 grid grid-cols-1 grid-rows-1 md:grid-cols-12 md:grid-rows-12 gap-12">
+      <section className="cta-container relative pb-16 mb-16 grid grid-cols-1 grid-rows-1 md:grid-cols-2 gap-4">
         <div className="cta-image ms-auto h-full md:relative">
           <Image
-            className="h-full w-full object-top object-cover"
-            src={nurse}
-            alt="a smiling nurse"
+            className="h-full w-full object-center object-cover"
+            src={learner}
+            alt="a smiling woman on laptop"
             fill={true}
             sizes="100%"
           />
@@ -277,24 +277,41 @@ const Homepage = () => {
           </p>
         </div>
 
-        <div className="pricing-content gap-4 flex flex-col-reverse md:grid md:grid-cols-2 md:grid-rows-1">
-          {/* SITE CONTENT */}
-          <div className="site-content">
-            <div
-              key={firstItem.id}
-              className={`h-full items-center justify-evenly pricingcard-content ${firstItem.className}`}
-            >
+        <div className="pricingcard-container grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-8">
+          {pricingArray.map((item) => (
+            <div key={item.id} className={item.className}>
+              <div className="save absolute right-8 top-3 bg-black text-white p-4">
+                <p>{item.save}</p>
+                <span className="bg-white absolute pricetag"></span>
+              </div>
+
+              <div className="pricing-title">
+                <h3 className="font-bold">{item.access} Access</h3>
+              </div>
+
+              <div className="pricing-price">
+                <p>
+                  <span className="text-7xl">${item.pricing}</span>/
+                  {item.period}
+                </p>
+              </div>
+
               <div className="pricing-features flex flex-col gap-12">
+                <p className="flex items-center">
+                  <FaInfoCircle />
+                  &nbsp;{item.ideal}
+                </p>
+
                 <div className="features-list flex flex-col gap-2">
                   <p className="uppercase text-sm">
-                    All site features available for both plans including:
+                    All site features including:
                   </p>
 
                   {pricingFeatures.map((item) => (
                     <ul key={item.id} className="flex flex-col gap-1 ps-4">
                       <li className="flex items-center gap-1">
                         <span>
-                          <FaRegCheckCircle className="text-green-800" />
+                          <FaRegCheckCircle className="text-green-900" />
                         </span>
                         {item.feature}
                       </li>
@@ -303,50 +320,7 @@ const Homepage = () => {
                 </div>
               </div>
 
-              <div className="pricing-disclaimers w-[90%] mx-auto flex justify-center items-start text-start flex-col">
-                <div className="secure flex items-center justify-center gap-1">
-                  <div className="icon-container flex items-center justify-center">
-                    <FaLock />
-                  </div>
-
-                  <p>
-                    Guaranteed to be safe & secure, ensuring that all
-                    transactions are protected with the highest level of
-                    security.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 2 PRICING CHOICES */}
-          <div className="pricingcard-container grid grid-cols-1 grid-rows-2 gap-8">
-            {pricingArray.map((item) => (
-              <div key={item.id} className={item.className}>
-                <div className="save absolute right-8 top-3 bg-black text-white p-4">
-                  <p>{item.save}</p>
-                  <span className="bg-white absolute pricetag"></span>
-                </div>
-
-                <div className="pricing-title">
-                  <h3 className="font-bold">{item.access} Access</h3>
-                </div>
-
-                <div className="pricing-price">
-                  <p>
-                    <span className="text-7xl">${item.pricing}</span>/
-                    {item.period}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="flex items-center">
-                    <FaInfoCircle />
-                    &nbsp;{item.ideal}
-                  </p>
-                </div>
-
-                <div className="pricing-cta">
+              <div className="pricing-cta">
                   <Link
                     href={`/register/${item.signupbtn_text}`}
                     className="pricing-link"
@@ -354,10 +328,10 @@ const Homepage = () => {
                     Get {item.btn_period} Plan
                   </Link>
                 </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+
       </section>
 
       {/* WHY US/ COMPARISON */}

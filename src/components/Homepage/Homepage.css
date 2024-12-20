@@ -352,7 +352,7 @@ button.start:hover {
 
 /* CONTACT SECTION */
 .contact-container {
-    background-image: url('../../assets/contact2.jpg');
+    background-image: url('../../assets/contact.jpg');
     background-position: left;
     background-size: cover;
     position: relative;
@@ -369,7 +369,6 @@ button.start:hover {
     background-color: #000;
     opacity: .4;
     z-index: -1;
-    border-radius: 20px;
 }
 
 .contact-form {
@@ -396,12 +395,10 @@ button.start:hover {
 
 @media (min-width: 768px) {
     .cta-image {
-        grid-area: 1 / 1 / 13 / 7;
         width: 90%;
     }
     
     .cta-text {
-        grid-area: 1 / 6 / 13 / 13;
         width: 90%;
         color: #000;
     }

@@ -53,7 +53,7 @@ export const dataArray =  [
         id: 2,
         title: "Practice Tests and Question Banks",
         description: "Full-length practice tests that mimic the actual exam format and timing. Detailed score reports with performance analysis.Extensive collection of practice questions covering all exam topics. Instant feedback and explanations for each question.",
-        coverImg: "/student.jpg",
+        coverImg: "/learner.jpg",
         buttonText: 'Get started'
     },
 
@@ -73,13 +73,13 @@ export const dataArray =  [
         buttonText: 'Get started'
     },
 
-    {
-        id: 5,
-        title: "One-on-One Tutoring",
-        description: "Personalized tutoring with expert instructors. Focus on individual strengths and weaknesses to maximize improvement.",
-        coverImg: "/oneonone.jpg",
-        buttonText: 'Get started'
-    },
+    // {
+    //     id: 5,
+    //     title: "One-on-One Tutoring",
+    //     description: "Personalized tutoring with expert instructors. Focus on individual strengths and weaknesses to maximize improvement.",
+    //     coverImg: "/oneonone.jpg",
+    //     buttonText: 'Get started'
+    // },
 
     {
         id: 6,
@@ -97,21 +97,21 @@ export const dataArray =  [
         buttonText: 'Get started'
     },
 
-    {
-        id: 8,
-        title: "Community Support",
-        description: "Online community for students to ask questions, share experiences, and support each other. Moderated by instructors and alumni for accurate information and guidance.",
-        coverImg: "/community.jpg",
-        buttonText: 'Get started'
-    },
+    // {
+    //     id: 8,
+    //     title: "Community Support",
+    //     description: "Online community for students to ask questions, share experiences, and support each other. Moderated by instructors and alumni for accurate information and guidance.",
+    //     coverImg: "/community.jpg",
+    //     buttonText: 'Get started'
+    // },
 
-    {
-        id: 9,
-        title: "Exam Day Preparation",
-        description: "Tips and strategies for managing time, handling stress, and maximizing performance on exam day. Mock exams under timed conditions to simulate the real exam experience. Comprehensive checklists to ensure students are fully prepared for exam day.",
-        coverImg: "/examday.jpg",
-        buttonText: 'Get started',
-    },
+    // {
+    //     id: 9,
+    //     title: "Exam Day Preparation",
+    //     description: "Tips and strategies for managing time, handling stress, and maximizing performance on exam day. Mock exams under timed conditions to simulate the real exam experience. Comprehensive checklists to ensure students are fully prepared for exam day.",
+    //     coverImg: "/examday.jpg",
+    //     buttonText: 'Get started',
+    // },
     
 ]
 

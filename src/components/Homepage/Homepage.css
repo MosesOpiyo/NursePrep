@@ -7,11 +7,6 @@
     width: 95%;
 }
 
-.service-paragraph p {
-    width: 75%;
-    margin-inline: auto;
-}
-
 .services-list {
     /* grid-template: auto / repeat(3, 1fr); */
     /* height: 700px; */

@@ -82,17 +82,26 @@ const Homepage = () => {
       <section className="services-container flex flex-col gap-4">
         {/* SERVICES-HEADER */}
         <div
-          className="services-header my-16 p-4 mx-auto grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr]"
+          className="services-header my-16 p-4 mx-auto"
           id="overview"
         >
+
+          <p className="text-sm font-medium uppercase text-indigo-600">
+            about Nurseprep
+          </p>
+
+          <div
+          className="grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr] mt-4"
+        >
           <div className="header">
-            <h2 className="font-bold text-4xl sm:text-5xl">
-              Unlock Your Nursing <br /> Career Success
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+              Unlock Your Nursing <br /> Career{" "}
+              <span className="text-indigo-600">Success</span>
             </h2>
           </div>
 
           <div className="service-paragraph">
-            <p>
+            <p className="text-gray-600 ">
               Our comprehensive suite of services is designed to cater to your
               unique learning needs and ensure your success. From in-depth
               course packages and personalized study plans to interactive live
@@ -106,9 +115,12 @@ const Homepage = () => {
           </div>
         </div>
 
+          
+        </div>
+
         {/* SERVICES LIST */}
         <div
-          className="services-list grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          className="services-list grid gap-4 grid-cols-1 sm:grid-cols-2"
           id="services"
         >
           {dataArray.map((item) => (
@@ -321,17 +333,16 @@ const Homepage = () => {
               </div>
 
               <div className="pricing-cta">
-                  <Link
-                    href={`/register/${item.signupbtn_text}`}
-                    className="pricing-link"
-                  >
-                    Get {item.btn_period} Plan
-                  </Link>
-                </div>
+                <Link
+                  href={`/register/${item.signupbtn_text}`}
+                  className="pricing-link"
+                >
+                  Get {item.btn_period} Plan
+                </Link>
+              </div>
             </div>
           ))}
         </div>
-
       </section>
 
       {/* WHY US/ COMPARISON */}
@@ -556,46 +567,48 @@ const Homepage = () => {
             <p className="mt-6 text-base text-black">
               Already have an account?{" "}
               <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="outline" className="bg-transparent border-none shadow-none text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">
-                  Log In
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
-                <DialogHeader>
-                  <DialogTitle className="text-center">Login</DialogTitle>
-                </DialogHeader>
-                <div className="flex flex-col w-full gap-4 py-4">
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="name" className="text-right">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue="Pedro Duarte"
-                      className="col-span-3"
-                    />
-                  </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="username" className="text-right">
-                      Password
-                    </Label>
-                    <Input
-                      id="username"
-                      defaultValue="@peduarte"
-                      className="col-span-3"
-                      type="password"
-                    />
-                  </div>
-                </div>
-                <DialogFooter>
-                  <Button type="submit" onClick={handleLogin}>
-                    Sign In
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="bg-transparent border-none shadow-none text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
+                  >
+                    Log In
                   </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-             
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] flex flex-col gap-4 items-center">
+                  <DialogHeader>
+                    <DialogTitle className="text-center">Login</DialogTitle>
+                  </DialogHeader>
+                  <div className="flex flex-col w-full gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="name" className="text-right">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue="Pedro Duarte"
+                        className="col-span-3"
+                      />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="username" className="text-right">
+                        Password
+                      </Label>
+                      <Input
+                        id="username"
+                        defaultValue="@peduarte"
+                        className="col-span-3"
+                        type="password"
+                      />
+                    </div>
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit" onClick={handleLogin}>
+                      Sign In
+                    </Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </p>
           </div>
         </div>

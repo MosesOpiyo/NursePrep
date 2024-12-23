@@ -118,34 +118,44 @@ export const dataArray =  [
 export const worksArray =  [
     {
         id: 1,
+        number: '01',
         title: 'Sign-up',
-        description: "Create your account and choose the study plan that fits your needs.",
-        coverImg: "/signup.svg",
-        class: 'works-card flex gap-8 p-4 relative items-start signup'
+    description: 'Create your account and choose the study plan that fits your needs.',
+    imageSrc: '/signup.jpg',
+    imageAlt: 'Student studying',
+    // gradientColor: 'from-blue-600/50 via-blue-600/10 to-transparent'
+       
     },
 
     {
         id: 2,
+        number: '02',
         title: 'Access Comprehensive Resources',
-        description: "Explore our extensive library of study guides, practice tests, and e-books.",
-        coverImg: "/resources.svg",
-        class: 'works-card flex gap-8 p-4 relative items-start resources'
+    description: 'Explore our extensive library of study guides, practice tests, and e-books.',
+    imageSrc: '/resources.jpg',
+    imageAlt: 'Digital resources',
+        // gradientColor: 'from-red-300/50 via-red-300/10 to-transparent'
+        
     },
 
     {
         id: 3,
+        number: '03',
         title: 'Practice and Assess',
-        description: "Take practice tests and quizzes to assess your knowledge and track your progress.",
-        coverImg: "/practice.svg",
-        class: 'works-card flex gap-8 p-4 relative items-start practice'
+    description: 'Take practice tests and quizzes to assess your knowledge and track your progress.',
+    imageSrc: '/practice.jpg',
+    imageAlt: 'Practice tests',
+        //  gradientColor: 'from-green-300/50 via-green-300/10 to-transparent'
     },
 
     {
         id: 4,
+        number: '04',
         title: 'Achieve Success',
-        description: "Confidently pass your nursing entrance exams and take the first step toward your nursing career.",
-        coverImg: "/success.svg",
-        class: 'works-card flex gap-8 p-4 relative items-start success'
+    description: 'Confidently pass your nursing entrance exams and take the first step toward your nursing career.',
+    imageSrc: '/success.jpg',
+    imageAlt: 'Success celebration',
+        // gradientColor: 'from-red-300/50 via-red-300/10 to-transparent'
     }
 ]
 

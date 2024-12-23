@@ -46,6 +46,7 @@ import Comparison from "../StudyComparison/StudyComparison";
 import CookieConsent from "../Cookies/Cookies";
 import { useAuth } from "@/app/contexts/AuthContext";
 import { useRouter } from 'next/navigation';
+import { HowItWorksCard } from "../HowItWorks/howItWorks";
 
 
 const Homepage = () => {
@@ -81,41 +82,33 @@ const Homepage = () => {
       {/* SERVICES SECTION */}
       <section className="services-container flex flex-col gap-4">
         {/* SERVICES-HEADER */}
-        <div
-          className="services-header my-16 p-4 mx-auto"
-          id="overview"
-        >
-
+        <div className="services-header my-16 p-4 mx-auto" id="overview">
           <p className="text-sm font-medium uppercase text-indigo-600">
             about Nurseprep
           </p>
 
-          <div
-          className="grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr] mt-4"
-        >
-          <div className="header">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Unlock Your Nursing <br /> Career{" "}
-              <span className="text-indigo-600">Success</span>
-            </h2>
-          </div>
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr] mt-4">
+            <div className="header">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                Unlock Your Nursing <br /> Career{" "}
+                <span className="text-indigo-600">Success</span>
+              </h2>
+            </div>
 
-          <div className="service-paragraph">
-            <p className="text-gray-600 ">
-              Our comprehensive suite of services is designed to cater to your
-              unique learning needs and ensure your success. From in-depth
-              course packages and personalized study plans to interactive live
-              classes and one-on-one tutoring, we provide all the resources and
-              support you need to excel. Practice with our extensive question
-              banks, track your progress with detailed analytics, and join a
-              community of learners for added motivation. Explore our offerings
-              below and discover how we can help you achieve your nursing career
-              goals.
-            </p>
+            <div className="service-paragraph">
+              <p className="text-gray-600 ">
+                Our comprehensive suite of services is designed to cater to your
+                unique learning needs and ensure your success. From in-depth
+                course packages and personalized study plans to interactive live
+                classes and one-on-one tutoring, we provide all the resources
+                and support you need to excel. Practice with our extensive
+                question banks, track your progress with detailed analytics, and
+                join a community of learners for added motivation. Explore our
+                offerings below and discover how we can help you achieve your
+                nursing career goals.
+              </p>
+            </div>
           </div>
-        </div>
-
-          
         </div>
 
         {/* SERVICES LIST */}
@@ -166,28 +159,35 @@ const Homepage = () => {
 
       {/* HOW IT WORKS SECTION */}
       <section
-        className="works-container mt-16 flex flex-col gap-8 mx-auto items-center"
+        className="works-container mt-16 flex flex-col gap-8 mx-auto"
         id="works"
       >
-        <div className="works-header text-center">
-          <h2 className="font-bold text-5xl">How it works</h2>
+        <div className="works-header">
+          <p className="text-sm font-medium uppercase text-indigo-600">
+            How it works
+          </p>
+
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-[1fr_1fr] mt-4 items-center">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+              Your Path to Passing
+              <br /> Made <span className="text-indigo-600">Simple</span>
+            </h2>
+
+            <div className="works-paragraph">
+              <p className="text-gray-600 ">
+                Follow the following steps to get started. Confidently prepare,
+                practice, and pass your nursing exams on the first try.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="works-content w-full md:w-4/5 grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-4">
-          {worksArray.map((item) => (
-            <div className={item.class} key={item.id}>
-              <div className="card-number flex flex-col gap-4 items-center justify-center">
-                <span className="text-5xl -rotate-90">0{item.id}</span>
-                <span className="text-4xl">|</span>
-              </div>
-
-              <div className="works-cardcontent flex flex-col gap-16">
-                <h3 className="text-2xl uppercase">{item.title}</h3>
-
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
+        <div className="container mx-auto max-w-full px-4 py-8 sm:py-12 md:py-16">
+          <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-4 md:h-[650px]">
+            {worksArray.map((item) => (
+              <HowItWorksCard key={item.number} {...item} />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-logo text-2xl">NursePrep</div>
 
       {/* LARGE SCREEN NAVBAR */}
-      <ul className="navbar-link text-white lg:flex gap-4 list-none hidden">
+      <ul className="navbar-link lg:flex gap-4 list-none hidden">
         {!isLoggedIn && (
           <>
             <li className="home">

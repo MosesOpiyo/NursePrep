@@ -16,65 +16,61 @@ import community from "../../assets/community.jpg";
 import exam from "../../assets/examday.jpg";
 import { useEffect, useRef, useState } from "react";
 import styles from './ScrollAnimation.module.css';
+import Link from "next/link"
 
 const Hero = () => {
 
-  // Intersection Observer
-  
-  const boxRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const boxElement = boxRef.current;
-
-    const handleScroll = () => {
-      if (boxElement) {
-        const rect = boxElement.getBoundingClientRect();
-        const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
-        setIsVisible(isInViewport);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    
-    // Initial check in case the element is already visible on load
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-
-
   return (
-      <section className="hero-container grid items-center justify-center w-full relative">
-        <div className={`hero-text sm:pt-32 text-white p sm:px-16 h-full w-full flex flex-col gap-10 items-center justify-center lg:w-11/12 lg:mx-auto`}>
+    <section className="relative h-[600px] w-[95%] overflow-hidden mb-16 mx-auto bg-center bg-cover rounded-3xl text-white flex items-center justify-center">
+    {/* Video Background */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    >
+       <source src="/nurse.mp4" type="video/mp4" />
+    </video>
+    
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/60" />
+    
+    {/* Content */}
+    <div className="relative z-10 flex h-full w-full items-center justify-center">
+      <div className="container mx-auto px-4 text-center flex flex-col items-center justify-center gap-8 mt-12">
+        <h1 className="font-bold text-4xl tracking-tight text-white sm:text-5xl md:text-[4rem]">
+          Ace your nursing school <br /> entrance exams. <br /> Guaranteed.
+        </h1>
+        <p className="mx-auto max-w-2xl font-light text-gray-200">
+          Pass your entrance tests with our accurate practice questions and detailed answer explanations.
+        </p>
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button
+            asChild
+            size="lg"
+            className="min-w-[200px] bg-primary font-semibold hover:bg-primary/90 hover:tracking-wide"
+          >
+            <Link href="/get-started">
+              GET STARTED NOW
+            </Link>
+          </Button>
 
-          {/* HERO HEADER TEXT */}
-          <h1 className="hero-header relative text-center sm:text-6xl md:text-7xl text-5xl font-extralight lg:w-4/5">
-            Ace your nursing school entrance exams. <span>Guaranteed.</span>
-          </h1>
 
-          {/* HERO PARAGRAPH */}
-          <p className="hero-paragraph text-center font-extralight">
-            Pass your entrance tests with our accurate practice questions and
-            detailed answer explanations.
-          </p>
-
-          {/* HERO BUTTONS */}
-          <div className="action-btn flex gap-4">
-            <Button className="p-5">GET STARTED NOW</Button>
-            <Button className="p-5">BROWSE FREE TESTS</Button>
-          </div>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="min-w-[200px] border-white font-semibold text-black hover:bg-white hover:text-black hover:tracking-wide"
+          >
+            <Link href="/free-tests">
+              BROWSE FREE TESTS
+            </Link>
+          </Button>
         </div>
-
-        <div className="image-container h-full w-full">
-          <video className="video h-full w-full object-cover" autoPlay muted loop>
-            <source src="/nurse.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
   );
 };
 

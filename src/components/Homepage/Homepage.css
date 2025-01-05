@@ -3,17 +3,6 @@
     margin-top: -64px;
 }
 
-.services-header {
-    width: 95%;
-}
-
-.services-list {
-    /* grid-template: auto / repeat(3, 1fr); */
-    /* height: 700px; */
-    width: 95%;
-    margin-inline: auto;
-}
-
 .service-card {
     height: 470px;
     border: 1px solid #00000030;
@@ -49,7 +38,7 @@
 .service-card:hover .card-content {
     transform: translateY(0);
     opacity: 1;
-    padding: 4rem;
+    padding: 2rem;
     z-index: 11;
 }
 
@@ -92,33 +81,6 @@ button.start:hover {
         grid-area: 1 / 2 / 3 / 3;
     }
 }
-
-
-
-
-
-/* CTA-CONTAINER */
-.cta-container {
-    height: 600px;
-    position: relative;
-}
-
-.cta-container::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #000000;
-    opacity: .5;
-    z-index: 1;
-} 
-
-.cta-text {
-    color: #fff;
-}
-
 
 
 /* TESTIMONIALS */
@@ -401,19 +363,6 @@ button.start:hover {
 @media (min-width: 768px) {
     .cta-image {
         width: 90%;
-    }
-    
-    .cta-text {
-        width: 90%;
-        color: #000;
-    }
-
-    .cta-container::after {
-        top: 35%;
-        height: 65%;
-        background-color: #a5c9ed;
-        opacity: .5;
-        z-index: -1;
     }
 
     .works-card.signup {

@@ -11,7 +11,7 @@ interface HowItWorksCardProps {
   
   export function HowItWorksCard({ number, title, description, imageSrc, imageAlt }: HowItWorksCardProps) {
     return (
-      <div className="group relative h-[400px] sm:h-[300px] md:h-full overflow-hidden rounded-2xl">
+      <div className="group relative h-[400px] sm:h-[300px] md:h-full overflow-hidden rounded-[20px]">
         <Image
           src={imageSrc}
           alt={imageAlt}

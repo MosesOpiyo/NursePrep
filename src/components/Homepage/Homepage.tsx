@@ -47,6 +47,7 @@ import CookieConsent from "../Cookies/Cookies";
 import { useAuth } from "@/app/contexts/AuthContext";
 import { useRouter } from 'next/navigation';
 import { HowItWorksCard } from "../HowItWorks/howItWorks";
+import { ArrowRight } from 'lucide-react'
 
 
 const Homepage = () => {
@@ -80,9 +81,9 @@ const Homepage = () => {
   return (
     <div>
       {/* SERVICES SECTION */}
-      <section className="services-container flex flex-col gap-4">
+      <section className="services-container w-[95%] mx-auto my-16 flex flex-col gap-8">
         {/* SERVICES-HEADER */}
-        <div className="services-header my-16 p-4 mx-auto" id="overview">
+        <div className="services-header" id="overview">
           <p className="text-sm font-medium uppercase text-indigo-600">
             about Nurseprep
           </p>
@@ -113,13 +114,13 @@ const Homepage = () => {
 
         {/* SERVICES LIST */}
         <div
-          className="services-list grid gap-4 grid-cols-1 sm:grid-cols-2"
+          className="services-list grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full mx-auto"
           id="services"
         >
           {dataArray.map((item) => (
             <div
               key={item.id}
-              className="service-card cursor-pointer relative flex flex-col"
+              className="rounded-[20px] service-card cursor-pointer relative flex flex-col"
             >
               <div className="card-image relative top-0 left-0 h-full w-full">
                 <Image
@@ -159,7 +160,7 @@ const Homepage = () => {
 
       {/* HOW IT WORKS SECTION */}
       <section
-        className="works-container mt-16 flex flex-col gap-8 mx-auto"
+        className="works-container mb-16 flex flex-col gap-8 mx-auto"
         id="works"
       >
         <div className="works-header">
@@ -182,8 +183,8 @@ const Homepage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto max-w-full px-4 py-8 sm:py-12 md:py-16">
-          <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-4 md:h-[650px]">
+        <div className="container w-full mx-w-full px-0 py-0 xl">
+          <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-2 md:h-[650px]">
             {worksArray.map((item) => (
               <HowItWorksCard key={item.number} {...item} />
             ))}
@@ -192,29 +193,42 @@ const Homepage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-container relative pb-16 mb-16 grid grid-cols-1 grid-rows-1 md:grid-cols-2 gap-4">
-        <div className="cta-image ms-auto h-full md:relative">
-          <Image
-            className="h-full w-full object-center object-cover"
-            src={learner}
-            alt="a smiling woman on laptop"
-            fill={true}
-            sizes="100%"
-          />
-        </div>
+      <section className="cta-container relative mb-16 h-screen w-full overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src={learner}
+          className="object-cover"
+          priority
+          alt="a smiling woman using a laptop"
+          fill={true}
+          sizes="100%"
+        />
 
-        <div className="cta-text me-auto justify-center flex flex-col z-10 gap-12 text-center md:text-start">
-          <h3 className="text-5xl">Built for all dreamers everywhere.</h3>
+        {/* Content */}
+        <div className="relative z-10 flex h-full items-end p-4 md:p-6 lg:p-10">
+          <div className="rounded-[20px] flex p-8 flex-col gap-4 bg-white">
+            <h2 className="capitalize text-4xl font-semibold leading-tight text-zinc-950 md:text-5xl lg:text-6xl">
+              Built for all <br /> <span className="text-indigo-600">dreamers</span> <br />everywhere.
+            </h2>
 
-          <div className="cta-inner text-lg flex flex-col gap-12 items-center ps-4 pe-4 md:ps-12 md:pe-0 md:items-start">
             <p>
-              Practice with our extensive question banks, track your progress
-              with detailed analytics, and join a community of learners for
-              added motivation. Sign up below and discover how we can help you
-              achieve your nursing career goals.
+              Sign up below and discover how we can help you achieve your
+              nursing career goals.
             </p>
 
-            <Button className="w-3/4 h-12">Get started now</Button>
+            <Button className="w-max relative group flex items-center gap-2 p-7 rounded-full bg-[#E4D5F7] transition-all duration-300 text-zinc-950 text-base font-medium hover:bg-[#E4D5F7]/90">
+              <span className="text-lg">Get Started</span>
+              <div className="overflow-hidden relative h-6 w-6">
+                {/* Default Arrow */}
+                <span className="absolute left-0 top-0 text-xl transition-transform duration-300 group-hover:-translate-y-6">
+                  <ArrowRight />
+                </span>
+                {/* Hover Arrow */}
+                <span className="absolute left-0 top-6 text-xl transition-transform duration-300 group-hover:-translate-y-6">
+                  <ArrowRight />
+                </span>
+              </div>
+            </Button>
           </div>
         </div>
       </section>

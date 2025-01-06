@@ -48,6 +48,7 @@ import { useAuth } from "@/app/contexts/AuthContext";
 import { useRouter } from 'next/navigation';
 import { HowItWorksCard } from "../HowItWorks/howItWorks";
 import { ArrowRight } from 'lucide-react'
+import HomeTestimonialsCarousel from "../HomeTestimonials/HomeTestimonials";
 
 // Define DefaultIcon component
 const DefaultIcon = () => <span>Default Icon</span>;
@@ -189,7 +190,11 @@ const Homepage = () => {
         <div className="container worksgrid-container w-full mx-w-full px-0 py-0 xl">
           <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-2">
             {worksArray.map((item) => (
-              <HowItWorksCard key={item.number} {...item} icon={item.icon || <DefaultIcon />} />
+              <HowItWorksCard
+                key={item.number}
+                {...item}
+                icon={item.icon || <DefaultIcon />}
+              />
             ))}
           </div>
         </div>
@@ -211,7 +216,9 @@ const Homepage = () => {
         <div className="relative z-10 flex h-full items-end p-4 md:p-6 lg:p-10">
           <div className="rounded-[20px] flex p-8 flex-col gap-4 bg-white">
             <h2 className="capitalize text-4xl font-semibold leading-tight text-zinc-950 md:text-5xl lg:text-6xl">
-              Built for all <br /> <span className="text-indigo-600">dreamers</span> <br />everywhere.
+              Built for all <br />{" "}
+              <span className="text-indigo-600">dreamers</span> <br />
+              everywhere.
             </h2>
 
             <p>
@@ -238,55 +245,14 @@ const Homepage = () => {
 
       {/* TESTIMONIALS SECTION */}
       <section
-        className="testimonials-container overflow-hidden mb-16 grid"
+        className="w-[95%] mx-auto testimonials-container mb-16 flex flex-col"
         id="testimonials"
       >
-        <div className="testimonial-header flex mx-auto justify-center flex-col gap-8 p-4 relative">
-          <h2 className="font-bold text-5xl">What our clients say</h2>
+        <p className="text-sm font-medium uppercase text-indigo-600">
+          Testimonials
+        </p>
 
-          <p className="text-[#71717a]">
-            Don&apos;t just take our word for it—hear from our successful
-            students! Our comprehensive courses and personalized support have
-            helped countless aspiring nurses achieve their dreams.{" "}
-          </p>
-
-          <div className="testimonials-btn">
-            <Button className="h-12 w-2/4">View More</Button>
-          </div>
-        </div>
-
-        <div className="testimonialcard-container cursor-pointer gap-12 mx-auto">
-          {testimonialArray.map((item) => (
-            <div className={item.class} key={item.id}>
-              <div className="testimonial-image absolute -z-10 w-full top-0 left-0 h-full">
-                <Image
-                  className="h-full w-full object-top object-cover"
-                  src={item.image}
-                  alt="a smiling nurse"
-                  fill={true}
-                  sizes="100%"
-                />
-              </div>
-
-              <div className="testimonial-content flex-col p-12 flex h-full w-full justify-between">
-                <div className="testimonial-name">
-                  <h3 className="text-2xl font-bold">{item.name}</h3>
-
-                  <p className="text-slate-500">{item.title}</p>
-                </div>
-
-                <div className="testimonial-text flex flex-col gap-2">
-                  <FaQuoteLeft className="text-slate-400" />
-                  <p>{item.testimony}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mobiletestimonials-btn lg:hidden">
-          <Button className="h-12 w-2/4">View More</Button>
-        </div>
+        <HomeTestimonialsCarousel />
       </section>
 
       {/* PRICING SECTION */}

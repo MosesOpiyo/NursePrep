@@ -19,7 +19,7 @@ interface HowItWorksCardProps {
           <div className='flex w-full justify-between gap-4'>
             <h3 className="w-[50%] text-2xl font-bold">{title}</h3>
 
-            <div className="bg-[#f1f5ff] h-[50px] w-[50px] flex items-center justify-center rounded-[50%] works-icon">
+            <div className="bg-[#5049d3] text-white h-[50px] w-[50px] flex items-center justify-center rounded-[50%] works-icon">
               {icon}
             </div>
           </div>

@@ -14,6 +14,8 @@ export default function Attributions() {
       Photo by <a href="https://stockcake.com/i/busy-professional-working_1339646_790087">Stockcake</a>
       Photo by <a href="https://stockcake.com/i/healthcare-team-walking_1542212_1179145">Stockcake</a>
       Photo by <a href="https://stockcake.com/i/graduate-s-joyful-moment_478312_672321">Stockcake</a>
+      Photo by Buro Millennial: https://www.pexels.com/photo/selective-focus-photo-of-man-using-laptop-1438081/
+      Photo by KATRIN  BOLOVTSOVA: https://www.pexels.com/photo/photo-of-man-using-laptop-4047811/
     </div>
   )
 }

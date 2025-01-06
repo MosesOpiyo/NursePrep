@@ -49,6 +49,9 @@ import { useRouter } from 'next/navigation';
 import { HowItWorksCard } from "../HowItWorks/howItWorks";
 import { ArrowRight } from 'lucide-react'
 
+// Define DefaultIcon component
+const DefaultIcon = () => <span>Default Icon</span>;
+
 
 const Homepage = () => {
 
@@ -160,7 +163,7 @@ const Homepage = () => {
 
       {/* HOW IT WORKS SECTION */}
       <section
-        className="works-container mb-16 flex flex-col gap-8 mx-auto"
+        className="works-container rounded-[20px] p-8 bg-[#f1f5ff] mb-16 flex flex-col gap-8 mx-auto"
         id="works"
       >
         <div className="works-header">
@@ -183,10 +186,10 @@ const Homepage = () => {
           </div>
         </div>
 
-        <div className="container w-full mx-w-full px-0 py-0 xl">
-          <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-2 md:h-[650px]">
+        <div className="container worksgrid-container w-full mx-w-full px-0 py-0 xl">
+          <div className="works-grid grid grid-cols-1 md:grid-cols-3 gap-2">
             {worksArray.map((item) => (
-              <HowItWorksCard key={item.number} {...item} />
+              <HowItWorksCard key={item.number} {...item} icon={item.icon || <DefaultIcon />} />
             ))}
           </div>
         </div>

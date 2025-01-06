@@ -1,6 +1,7 @@
 // This array is Mimicking Data which is usually captured through an API
 
 import { title } from "process"
+import { LucideUserPen, LucideUnplug, LucideGitCompareArrows, LucideTrophy  } from "lucide-react"
 
 export const navLinks = [
     {
@@ -123,6 +124,7 @@ export const worksArray =  [
     description: 'Create your account and choose the study plan that fits your needs.',
     imageSrc: '/signup.jpg',
     imageAlt: 'Student studying',
+    icon: <LucideUserPen />,
     // gradientColor: 'from-blue-600/50 via-blue-600/10 to-transparent'
        
     },
@@ -134,6 +136,7 @@ export const worksArray =  [
     description: 'Explore our extensive library of study guides, practice tests, and e-books.',
     imageSrc: '/resources.jpg',
     imageAlt: 'Digital resources',
+    icon: <LucideUnplug />,
         // gradientColor: 'from-red-300/50 via-red-300/10 to-transparent'
         
     },
@@ -145,6 +148,7 @@ export const worksArray =  [
     description: 'Take practice tests and quizzes to assess your knowledge and track your progress.',
     imageSrc: '/practice.jpg',
     imageAlt: 'Practice tests',
+    icon: <LucideGitCompareArrows />,
         //  gradientColor: 'from-green-300/50 via-green-300/10 to-transparent'
     },
 
@@ -155,6 +159,7 @@ export const worksArray =  [
     description: 'Confidently pass your nursing entrance exams and take the first step toward your nursing career.',
     imageSrc: '/success.jpg',
     imageAlt: 'Success celebration',
+    icon: <LucideTrophy />,
         // gradientColor: 'from-red-300/50 via-red-300/10 to-transparent'
     }
 ]

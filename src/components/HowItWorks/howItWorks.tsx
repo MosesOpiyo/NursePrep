@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
 import Image from 'next/image'
+import { LucideUserPen, LucideUnplug } from 'lucide-react'
+
 
 interface HowItWorksCardProps {
     number: string
@@ -7,33 +9,24 @@ interface HowItWorksCardProps {
     description: string
     imageSrc: string
     imageAlt: string
+    icon: React.ReactNode
   }
   
-  export function HowItWorksCard({ number, title, description, imageSrc, imageAlt }: HowItWorksCardProps) {
+  export function HowItWorksCard({ number, title, description, imageSrc, imageAlt, icon }: HowItWorksCardProps) {
     return (
-      <div className="group relative h-[400px] sm:h-[300px] md:h-full overflow-hidden rounded-[20px]">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill={true}
-          sizes="100%"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div className={`absolute inset-0 bg-gradient-to-t `}>
-          <div className="absolute bg-[#ece0c6] bottom-0 w-full p-4 sm:p-6 md:p-8">
-            <div>
-              <h3 className="mb-1 text-xl font-bold sm:mb-2 sm:text-2xl">
-                {title}
-              </h3>
-              <p className="text-xs  sm:text-sm">{description}</p>
-            </div>
+     
+        <div className="py-10 px-4 flex flex-col gap-8 h-full items-start bg-white group relative rounded-[20px]">
+          <div className='flex w-full justify-between gap-4'>
+            <h3 className="w-[50%] text-2xl font-bold">{title}</h3>
 
-            <div className="absolute right-0 top-0 z-10 flex w-full justify-end p-4 sm:p-6 md:p-8">
-              <span className="text-lg font-medium ">{number}</span>
+            <div className="bg-[#f1f5ff] h-[50px] w-[50px] flex items-center justify-center rounded-[50%] works-icon">
+              {icon}
             </div>
           </div>
+
+          <p>{description}</p>
         </div>
-      </div>
+     
     );
   }
   
